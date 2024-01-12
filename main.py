@@ -35,4 +35,3 @@ if optimize_for == 'max_defense':
 
 
     print(f"\n{selected_helmet.name.capitalize()}, {selected_chestplate.name}, and {selected_leggings.name} give the highest overall defense of {max_defense}\n")
-
