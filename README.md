@@ -1,7 +1,9 @@
-A tool which compares each possible armor combination at each stage of game in Terraria and finds the highest possible combination of stats.
+# Optimized Armor Tool
+Have you ever played Terraria and wondered if you were losing out on damage by simply picking the latest full set of armor. Do you actuallty have a life and don't feel like spending hours figuring out which armor is the best for you? Have you ever tried to become the next Dwayne the Rock Johnson and reach 100 defense before hardmode, but don't know how to do so? Never fear, the Optimized Armor Tool is here!
 
-Condenses hours of researching, caculating, and writing down various armor combinations into milliseconds. Suggests multiple viable options and includes info about set bonus and other abilities.
+This tool helps you find the best possible armor for YOU and condenses hours of researching, caculating, and writing down various armor combinations into milliseconds by suggests multiple viable options with their pros and cons.
 
-Support for all four main classes, all major game stages, and vanilla or Calamity mod armors.
+# Installation and Usage Instructions
+Simply click the green code button to download the zip file. Extract the file, and click open wordkspace in your favorite text editor. 
 
-Future UI will be added along with support for rogue class.
+New UI coming soon! But for now, you'll have to navigate through th comments in the code yourself.
