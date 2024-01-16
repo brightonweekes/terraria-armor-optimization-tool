@@ -1,3 +1,4 @@
+# Import necessary armor pieces, depending on whether Calamity mod is enabled or disabled
 calamity = True
 if calamity:
     from calamity_armor import armor_sets, leggings, chestplates, helmets
@@ -6,15 +7,12 @@ else:
 
 from copy import copy
 
-
-selected_helmet = helmets[0]
-selected_chestplate = chestplates[0]
-selected_leggings = leggings[0]
-
-optimization = 'balance'
+# Set the target class and stats to maximize
+target_stat = 'balance'
 target_class = 'melee'
 
-if optimization == 'balance':
+# Assign weight values to each stat based on target stat and target class
+if target_stat == 'balance':
     defense_weight, damage_weight, crit_weight, movement_weight = 1, 1, 1, .1
     if target_class == 'melee':
         melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
@@ -29,81 +27,47 @@ if optimization == 'balance':
         melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
             mana_weight, summon_damage_weight, minion_slots_weight = 0, 0, 0, 0, 0, 0, 0, 0, 1, 10
 
+# Create the list which will contain all combinations of armor and their weighted score
+combo_scores = []
 
+# Loop through every combination and append to combo_scores along with weighted score
 for helm in helmets:
-    if (helm.defense*defense_weight + helm.damage*damage_weight + helm.crit*crit_weight + helm.movement*movement_weight + helm.melee_damage*melee_damage_weight + 
-        helm.melee_crit*melee_crit_weight + helm.melee_speed*melee_speed_weight + helm.ranged_damage*ranged_damage_weight + helm.ranged_crit*ranged_crit_weight + 
-        helm.magic_damage*magic_damage_weight + helm.magic_crit*magic_crit_weight + helm.mana*mana_weight + helm.summon_damage*summon_damage_weight + 
-        helm.minion_slots*minion_slots_weight) > (selected_helmet.defense*defense_weight + selected_helmet.damage*damage_weight + selected_helmet.crit*crit_weight + 
-        selected_helmet.movement*movement_weight + selected_helmet.melee_damage*melee_damage_weight + selected_helmet.melee_crit*melee_crit_weight + 
-        selected_helmet.melee_speed*melee_speed_weight + selected_helmet.ranged_damage*ranged_damage_weight + selected_helmet.ranged_crit*ranged_crit_weight + 
-        selected_helmet.magic_damage*magic_damage_weight + selected_helmet.magic_crit*magic_crit_weight + selected_helmet.mana*mana_weight + 
-        selected_helmet.summon_damage*summon_damage_weight + selected_helmet.minion_slots*minion_slots_weight):
-        selected_helmet = copy(helm)
+    for chest in chestplates:
+        for leg in leggings:
+            set_bonus_score = 0
+            if helm.set_identifier == chest.set_identifier == leg.set_identifier:   # if combo is a full set, calculate the set_bonus score
+                set = armor_sets[helm.set_identifier]
+                set_bonus_score = (set.set_bonus.defense*defense_weight +
+                    set.set_bonus.damage*damage_weight + set.set_bonus.crit*crit_weight + set.set_bonus.movement*movement_weight + 
+                    set.set_bonus.melee_damage*melee_damage_weight + set.set_bonus.melee_crit*melee_crit_weight + set.set_bonus.melee_speed*melee_speed_weight + 
+                    set.set_bonus.ranged_damage*ranged_damage_weight + set.set_bonus.ranged_crit*ranged_crit_weight + 
+                    set.set_bonus.magic_damage*magic_damage_weight + set.set_bonus.magic_crit*magic_crit_weight + set.set_bonus.mana*mana_weight + 
+                    set.set_bonus.summon_damage*summon_damage_weight + set.set_bonus.minion_slots*minion_slots_weight)
+            combo_scores.append((helm.defense*defense_weight + helm.damage*damage_weight + helm.crit*crit_weight + helm.movement*movement_weight + helm.melee_damage*melee_damage_weight + 
+                helm.melee_crit*melee_crit_weight + helm.melee_speed*melee_speed_weight + helm.ranged_damage*ranged_damage_weight + helm.ranged_crit*ranged_crit_weight + 
+                helm.magic_damage*magic_damage_weight + helm.magic_crit*magic_crit_weight + helm.mana*mana_weight + helm.summon_damage*summon_damage_weight + 
+                helm.minion_slots*minion_slots_weight + chest.defense*defense_weight + chest.damage*damage_weight + chest.crit*crit_weight + chest.movement*movement_weight + chest.melee_damage*melee_damage_weight + 
+                chest.melee_crit*melee_crit_weight + chest.melee_speed*melee_speed_weight + chest.ranged_damage*ranged_damage_weight + chest.ranged_crit*ranged_crit_weight + 
+                chest.magic_damage*magic_damage_weight + chest.magic_crit*magic_crit_weight + chest.mana*mana_weight + chest.summon_damage*summon_damage_weight + 
+                chest.minion_slots*minion_slots_weight + leg.defense*defense_weight + leg.damage*damage_weight + leg.crit*crit_weight + leg.movement*movement_weight + leg.melee_damage*melee_damage_weight + 
+                leg.melee_crit*melee_crit_weight + leg.melee_speed*melee_speed_weight + leg.ranged_damage*ranged_damage_weight + leg.ranged_crit*ranged_crit_weight + 
+                leg.magic_damage*magic_damage_weight + leg.magic_crit*magic_crit_weight + leg.mana*mana_weight + leg.summon_damage*summon_damage_weight + 
+                leg.minion_slots*minion_slots_weight + set_bonus_score, (copy(helm), copy(chest), copy(leg))))
 
-for chest in chestplates:
-    if (chest.defense*defense_weight + chest.damage*damage_weight + chest.crit*crit_weight + chest.movement*movement_weight + chest.melee_damage*melee_damage_weight + 
-        chest.melee_crit*melee_crit_weight + chest.melee_speed*melee_speed_weight + chest.ranged_damage*ranged_damage_weight + chest.ranged_crit*ranged_crit_weight + 
-        chest.magic_damage*magic_damage_weight + chest.magic_crit*magic_crit_weight + chest.mana*mana_weight + chest.summon_damage*summon_damage_weight + 
-        chest.minion_slots*minion_slots_weight) > (selected_chestplate.defense*defense_weight + selected_chestplate.damage*damage_weight + selected_chestplate.crit*crit_weight + 
-        selected_chestplate.movement*movement_weight + selected_chestplate.melee_damage*melee_damage_weight + selected_chestplate.melee_crit*melee_crit_weight + 
-        selected_chestplate.melee_speed*melee_speed_weight + selected_chestplate.ranged_damage*ranged_damage_weight + selected_chestplate.ranged_crit*ranged_crit_weight + 
-        selected_chestplate.magic_damage*magic_damage_weight + selected_chestplate.magic_crit*magic_crit_weight + selected_chestplate.mana*mana_weight + 
-        selected_chestplate.summon_damage*summon_damage_weight + selected_chestplate.minion_slots*minion_slots_weight):
-        selected_chestplate = copy(chest)
+# Sort the combo_scores list based on descending scores
+not_sorted = True
+while not_sorted:
+    changed = False
+    for i in range(len(combo_scores) - 1):
+        if combo_scores[i][0] < combo_scores[i+1][0]:
+            temp = copy(combo_scores[i])
+            combo_scores[i] = combo_scores[i+1]
+            combo_scores[i+1] = copy(temp)
+            changed = True
+    if changed == False:
+        not_sorted = False
 
-for leg in leggings:
-    if (leg.defense*defense_weight + leg.damage*damage_weight + leg.crit*crit_weight + leg.movement*movement_weight + leg.melee_damage*melee_damage_weight + 
-        leg.melee_crit*melee_crit_weight + leg.melee_speed*melee_speed_weight + leg.ranged_damage*ranged_damage_weight + leg.ranged_crit*ranged_crit_weight + 
-        leg.magic_damage*magic_damage_weight + leg.magic_crit*magic_crit_weight + leg.mana*mana_weight + leg.summon_damage*summon_damage_weight + 
-        leg.minion_slots*minion_slots_weight) > (selected_leggings.defense*defense_weight + selected_leggings.damage*damage_weight + selected_leggings.crit*crit_weight + 
-        selected_leggings.movement*movement_weight + selected_leggings.melee_damage*melee_damage_weight + selected_leggings.melee_crit*melee_crit_weight + 
-        selected_leggings.melee_speed*melee_speed_weight + selected_leggings.ranged_damage*ranged_damage_weight + selected_leggings.ranged_crit*ranged_crit_weight + 
-        selected_leggings.magic_damage*magic_damage_weight + selected_leggings.magic_crit*magic_crit_weight + selected_leggings.mana*mana_weight + 
-        selected_leggings.summon_damage*summon_damage_weight + selected_leggings.minion_slots*minion_slots_weight):
-        selected_leggings = copy(leg)
+for i in combo_scores:
+    print(i[0], i[1][0].name, i[1][1].name, i[1][2].name)
 
-best_score = (selected_helmet.defense*defense_weight + selected_helmet.damage*damage_weight + selected_helmet.crit*crit_weight + 
-    selected_helmet.movement*movement_weight + selected_helmet.melee_damage*melee_damage_weight + selected_helmet.melee_crit*melee_crit_weight + 
-    selected_helmet.melee_speed*melee_speed_weight + selected_helmet.ranged_damage*ranged_damage_weight + selected_helmet.ranged_crit*ranged_crit_weight + 
-    selected_helmet.magic_damage*magic_damage_weight + selected_helmet.magic_crit*magic_crit_weight + selected_helmet.mana*mana_weight + 
-    selected_helmet.summon_damage*summon_damage_weight + selected_helmet.minion_slots*minion_slots_weight + selected_chestplate.defense*defense_weight + 
-    selected_chestplate.damage*damage_weight + selected_chestplate.crit*crit_weight + selected_chestplate.movement*movement_weight + 
-    selected_chestplate.melee_damage*melee_damage_weight + selected_chestplate.melee_crit*melee_crit_weight + selected_chestplate.melee_speed*melee_speed_weight + 
-    selected_chestplate.ranged_damage*ranged_damage_weight + selected_chestplate.ranged_crit*ranged_crit_weight + 
-    selected_chestplate.magic_damage*magic_damage_weight + selected_chestplate.magic_crit*magic_crit_weight + selected_chestplate.mana*mana_weight + 
-    selected_chestplate.summon_damage*summon_damage_weight + selected_chestplate.minion_slots*minion_slots_weight + selected_leggings.defense*defense_weight + 
-    selected_leggings.damage*damage_weight + selected_leggings.crit*crit_weight + selected_leggings.movement*movement_weight + 
-    selected_leggings.melee_damage*melee_damage_weight + selected_leggings.melee_crit*melee_crit_weight + 
-    selected_leggings.melee_speed*melee_speed_weight + selected_leggings.ranged_damage*ranged_damage_weight + selected_leggings.ranged_crit*ranged_crit_weight + 
-    selected_leggings.magic_damage*magic_damage_weight + selected_leggings.magic_crit*magic_crit_weight + selected_leggings.mana*mana_weight + 
-    selected_leggings.summon_damage*summon_damage_weight + selected_leggings.minion_slots*minion_slots_weight)
-
-for set in armor_sets:
-    set_score = (set.helmet.defense*defense_weight + set.helmet.damage*damage_weight + set.helmet.crit*crit_weight + 
-    set.helmet.movement*movement_weight + set.helmet.melee_damage*melee_damage_weight + set.helmet.melee_crit*melee_crit_weight + 
-    set.helmet.melee_speed*melee_speed_weight + set.helmet.ranged_damage*ranged_damage_weight + set.helmet.ranged_crit*ranged_crit_weight + 
-    set.helmet.magic_damage*magic_damage_weight + set.helmet.magic_crit*magic_crit_weight + set.helmet.mana*mana_weight + 
-    set.helmet.summon_damage*summon_damage_weight + set.helmet.minion_slots*minion_slots_weight + set.chestplate.defense*defense_weight + 
-    set.chestplate.damage*damage_weight + set.chestplate.crit*crit_weight + set.chestplate.movement*movement_weight + 
-    set.chestplate.melee_damage*melee_damage_weight + set.chestplate.melee_crit*melee_crit_weight + set.chestplate.melee_speed*melee_speed_weight + 
-    set.chestplate.ranged_damage*ranged_damage_weight + set.chestplate.ranged_crit*ranged_crit_weight + set.chestplate.magic_damage*magic_damage_weight + 
-    set.chestplate.magic_crit*magic_crit_weight + set.chestplate.mana*mana_weight + set.chestplate.summon_damage*summon_damage_weight + 
-    set.chestplate.minion_slots*minion_slots_weight + set.leggings.defense*defense_weight + set.leggings.damage*damage_weight + set.leggings.crit*crit_weight + 
-    set.leggings.movement*movement_weight + set.leggings.melee_damage*melee_damage_weight + set.leggings.melee_crit*melee_crit_weight + 
-    set.leggings.melee_speed*melee_speed_weight + set.leggings.ranged_damage*ranged_damage_weight + set.leggings.ranged_crit*ranged_crit_weight + 
-    set.leggings.magic_damage*magic_damage_weight + set.leggings.magic_crit*magic_crit_weight + set.leggings.mana*mana_weight + 
-    set.leggings.summon_damage*summon_damage_weight + set.leggings.minion_slots*minion_slots_weight)
-
-    if  set_score >= best_score:
-        selected_helmet = copy(set.helmet)
-        selected_chestplate = copy(set.chestplate)
-        selected_leggings = copy(set.leggings)
-
-        best_score = copy(set_score)
-
-
-if optimization == 'defense':
-    print(f'\n{selected_helmet.name.capitalize()}, {selected_chestplate.name}, and {selected_leggings.name} give the highest defense of {selected_helmet.defense+selected_chestplate.defense+selected_leggings.defense}\n')
-elif optimization == 'manual':
-    print(f'\n{selected_helmet.name.capitalize()}, {selected_chestplate.name}, and {selected_leggings.name} give the highest score of {best_score}.\n')
+print(f'\n{combo_scores[0][1][0].name.capitalize()}, {combo_scores[0][1][1].name}, and {combo_scores[0][1][2].name} give the highest score of {combo_scores[0][0]}, given class is set to {target_class} and target stat is set to {target_stat}.\n')
