@@ -50,7 +50,7 @@ copper = CopperSet()
 platinum = PlatinumSet()
 molten = MoltenSet()
 
-armor_sets = {copper, platinum, molten}
+armor_sets = (copper, platinum, molten)
 
 helmets = []
 chestplates = []

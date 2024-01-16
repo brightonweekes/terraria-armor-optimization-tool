@@ -67,6 +67,7 @@ while not_sorted:
     if changed == False:
         not_sorted = False
 
+# Output message
 for i in combo_scores:
     print(i[0], i[1][0].name, i[1][1].name, i[1][2].name)
 
