@@ -46,6 +46,21 @@ class MoltenSet:
     stage = 'Pre-Skeletron'
 
 
+stage_tranlsation = {
+    'Pre-Boss': 0,
+    'Pre-Brain of Cthulhu/Eater of Worlds': 1,
+    'Pre-Skeletron': 2,
+    'Pre-Wall of Flesh': 3,
+    'Pre-Mech Bosses': 4,
+    'Pre-Plantera': 5,
+    'Pre-Golem': 6,
+    'Pre-Lunatic Cultist': 7,
+    'Post-Moon Lord': 8
+}
+
+game_stage = 'Post-Moon Lord'
+
+
 copper = CopperSet()
 platinum = PlatinumSet()
 molten = MoltenSet()
@@ -57,6 +72,9 @@ chestplates = []
 leggings = []
 
 for set in armor_sets:
-    helmets.append(set.helmet)
-    chestplates.append(set.chestplate)
-    leggings.append(set.leggings)
+    if stage_tranlsation[set.stage] > stage_tranlsation[game_stage]:
+        armor_sets.remove(set)
+    else:
+        helmets.append(set.helmet)
+        chestplates.append(set.chestplate)
+        leggings.append(set.leggings)
