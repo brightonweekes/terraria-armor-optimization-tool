@@ -1,5 +1,16 @@
+# Current Issues: due to set identifiers being higher than number of sets of armor availaiable at lower stages, an error is throuwn when mode is set to anything befoee pre wall of flesh
+# More efficient sorting algorithm needed
+# Better UI needed
+# Better input needed
+# Better output needed
+# Harmode Armor
+# Calamity armor
+# Rogue class
+# More presets for target stat
+
+
 # Import necessary armor pieces, depending on whether Calamity mod is enabled or disabled
-calamity = True
+calamity = False
 if calamity:
     from calamity_armor import armor_sets, leggings, chestplates, helmets
 else:
@@ -31,6 +42,7 @@ if target_stat == 'balance':
 combo_scores = []
 
 # Loop through every combination and append to combo_scores along with weighted score
+x = 0
 for helm in helmets:
     for chest in chestplates:
         for leg in leggings:
@@ -54,21 +66,11 @@ for helm in helmets:
                 leg.magic_damage*magic_damage_weight + leg.magic_crit*magic_crit_weight + leg.mana*mana_weight + leg.summon_damage*summon_damage_weight + 
                 leg.minion_slots*minion_slots_weight + set_bonus_score, (copy(helm), copy(chest), copy(leg))))
 
+
 # Sort the combo_scores list based on descending scores
-not_sorted = True
-while not_sorted:
-    changed = False
-    for i in range(len(combo_scores) - 1):
-        if combo_scores[i][0] < combo_scores[i+1][0]:
-            temp = copy(combo_scores[i])
-            combo_scores[i] = combo_scores[i+1]
-            combo_scores[i+1] = copy(temp)
-            changed = True
-    if changed == False:
-        not_sorted = False
 
 # Output message
 for i in combo_scores:
-    print(i[0], i[1][0].name, i[1][1].name, i[1][2].name)
+        print(i[0], i[1][0].name, i[1][1].name, i[1][2].name)
 
 print(f'\n{combo_scores[0][1][0].name.capitalize()}, {combo_scores[0][1][1].name}, and {combo_scores[0][1][2].name} give the highest score of {combo_scores[0][0]}, given class is set to {target_class} and target stat is set to {target_stat}.\n')
