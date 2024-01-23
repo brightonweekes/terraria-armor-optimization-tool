@@ -68,6 +68,7 @@ for helm in helmets:
 
 
 # Sort the combo_scores list based on descending scores
+combo_scores.sort(key=lambda x: x[0])
 
 # Output message
 for i in combo_scores:

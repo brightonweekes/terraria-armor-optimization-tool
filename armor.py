@@ -484,10 +484,36 @@ shadow = ShadowSet
 ancient_shadow = AncientShadowSet
 crimson = CrimsonSet
 molten = MoltenSet
+pearlwood = PearlwoodSet
+spider = SpiderSet
+cobalt_melee = CobaltSet_melee
+cobalt_ranged = CobaltSet_ranged
+cobalt_magic = CobaltSet_magic
+palladium_melee = PalladiumSet_melee
+palladium_ranged = PalladiumSet_ranged
+palladium_magic = PalladiumSet_magic
+mythril_melee = MythrilSet_melee
+mythril_ranged = MythrilSet_ranged
+mythril_magic = MythrilSet_magic
+orichalcum_melee = OrichalcumSet_melee
+orichalcum_ranged = OrichalcumSet_ranged
+orichalcum_magic = OrichalcumSet_magic
+adamantite_melee = AdamantiteSet_melee
+adamantite_ranged = AdamantiteSet_ranged
+adamantite_magic = AdamantiteSet_magic
+titanium_melee = TitaniumSet_melee
+titanium_ranged = TitaniumSet_ranged
+titanium_magic = TitaniumSet_magic
+crystal_assassin = CrystalAssassinSet
+frost = FrostSet
+forbidden = ForbiddenSet
+
 
 armor_sets = [mining1, mining2, wood, rich_mahogany, boreal, palm, ebonwood, shadewood, ashwood, rain, snow, pink_snow, angler, cactus, copper, tin, pumpkin, 
               ninja, iron, lead, silver, tungsten, gold, platinum, fossil, bee, obsidian, gladiator, meteor, jungle, ancient_cobalt, necro, shadow, ancient_shadow,
-              crimson, molten]
+              crimson, molten, pearlwood, spider, cobalt_melee, cobalt_ranged, cobalt_magic, palladium_melee, palladium_ranged, palladium_magic, mythril_melee,
+              mythril_ranged, mythril_magic, orichalcum_melee, orichalcum_ranged, orichalcum_magic, adamantite_melee, adamantite_ranged, adamantite_magic,
+              titanium_melee, titanium_ranged, titanium_magic, crystal_assassin, frost, forbidden]
 
 helmets = []
 chestplates = []
