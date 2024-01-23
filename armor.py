@@ -272,6 +272,167 @@ class MoltenSet:
     set_bonus = Armor(35, '', 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cannot be set on fire')
     stage = 'Pre-Skeletron'
 
+class PearlwoodSet:
+    helmet = Armor(36, 'Pearlwood Helmet', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(36, 'Pearlwood Breastplate', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(36, 'Pearlwood Greaves', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(36, '', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    stage = 'Pre-Mech Bosses'
+
+class SpiderSet:
+    helmet = Armor(37, 'Spider Mask', 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 1, '')
+    chestplate = Armor(37, 'Spider Breastplate', 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 1, '')
+    leggings = Armor(37, 'Spider Greaves', 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 1, '')
+    set_bonus = Armor(37, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, '')
+    stage = 'Pre-Mech Bosses'
+
+class CobaltSet_melee:
+    helmet = Armor(38, 'Cobalt Helmet', 14, 0, 0, 10, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(38, 'Cobalt Breastplate', 10, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(38, 'Cobalt Leggings', 8, 3, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(38, '', 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, '')
+    stage = 'Pre-Mech Bosses'
+
+class CobaltSet_ranged:
+    helmet = Armor(39, 'Cobalt Helmet', 5, 0, 0, 0, 0, 0, 0, 10, 10, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(39, 'Cobalt Breastplate', 10, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(39, 'Cobalt Leggings', 8, 3, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(39, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '20% chance to save ammo')
+    stage = 'Pre-Mech Bosses'
+
+class CobaltSet_magic:
+    helmet = Armor(40, 'Cobalt Hat', 3, 0, 0, 0, 0, 0, 0, 0, 0, 10, 9, 40, 0, 0, '')
+    chestplate = Armor(40, 'Cobalt Breastplate', 10, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(40, 'Cobalt Leggings', 8, 3, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(40, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '14% reduced mana costs')
+    stage = 'Pre-Mech Bosses'
+
+class PalladiumSet_melee:
+    helmet = Armor(41, 'Palladium Mask', 14, 0, 0, 0, 12, 0, 12, 0, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(41, 'Palladium Breastplate', 10, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(41, 'Palladium Leggings', 8, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(41, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Greatly increases life regeneration after striking an enemy')
+    stage = 'Pre-Mech Bosses'
+
+class PalladiumSet_ranged:
+    helmet = Armor(42, 'Palladium Helmet', 5, 0, 0, 0, 0, 0, 0, 9, 9, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(42, 'Palladium Breastplate', 10, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(42, 'Palladium Leggings', 8, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(42, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Greatly increases life regeneration after striking an enemy')
+    stage = 'Pre-Mech Bosses'
+
+class PalladiumSet_magic:
+    helmet = Armor(43, 'Palladium Headgear', 3, 0, 0, 0, 0, 0, 0, 0, 0, 9, 9, 60, 0, 0, '')
+    chestplate = Armor(43, 'Palladium Breastplate', 10, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(43, 'Palladium Leggings', 8, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(43, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Greatly increases life regeneration after striking an enemy')
+    stage = 'Pre-Mech Bosses'
+
+class MythrilSet_melee:
+    helmet = Armor(44, 'Mythril Helmet', 16, 0, 0, 0, 10, 8, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(44, 'Mythril Chainmail', 12, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(44, 'Mythril Greaves', 9, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(44, '', 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    stage = 'Pre-Mech Bosses'
+
+class MythrilSet_ranged:
+    helmet = Armor(45, 'Mythril Hat', 6, 0, 0, 0, 0, 0, 0, 12, 7, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(45, 'Mythril Chanmail', 12, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(45, 'Mythril Greaves', 9, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(45, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '20% chance to save ammo')
+    stage = 'Pre-Mech Bosses'
+
+class MythrilSet_magic:
+    helmet = Armor(46, 'Mythril Hood', 3, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 60, 0, 0, '')
+    chestplate = Armor(46, 'Mythril Chanmail', 12, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(46, 'Mythril Greaves', 9, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(46, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '17% reduced mana costs')
+    stage = 'Pre-Mech Bosses'
+
+class OrichalcumSet_melee:
+    helmet = Armor(47, 'Orichalcum Mask', 19, 0, 0, 7, 11, 0, 11, 0, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(47, 'Orichalcum Breastplate', 13, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(47, 'Orichalcum Leggings', 10, 8, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(47, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Flower petals will fall on your target for extra damage')
+    stage = 'Pre-Mech Bosses'
+
+class OrichalcumSet_ranged:
+    helmet = Armor(48, 'Orichalcum Helmet', 7, 0, 0, 8, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(48, 'Orichalcum Breastplate', 13, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(48, 'Orichalcum Leggings', 10, 8, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(48, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Flower petals will fall on your target for extra damage')
+    stage = 'Pre-Mech Bosses'
+
+class OrichalcumSet_magic:
+    helmet = Armor(49, 'Orichalcum Headgear', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 80, 0, 0, '')
+    chestplate = Armor(49, 'Orichalcum Breastplate', 13, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(49, 'Orichalcum Leggings', 10, 8, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(49, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Flower petals will fall on your target for extra damage')
+    stage = 'Pre-Mech Bosses'
+
+class AdamantiteSet_melee:
+    helmet = Armor(50, 'Adamantite Helmet', 22, 0, 0, 0, 14, 7, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(50, 'Adamantite Breastplate', 16, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(50, 'Adamantite Leggings', 12, 0, 7, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(50, '', 0, 0, 0, 20, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, '')
+    stage = 'Pre-Mech Bosses'
+
+class AdamantiteSet_ranged:
+    helmet = Armor(51, 'Adamantite Mask', 8, 0, 0, 0, 0, 0, 0, 14, 10, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(51, 'Adamantite Breastplate', 16, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(51, 'Adamatite Leggings', 12, 0, 7, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(51, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '25% chance to save ammo')
+    stage = 'Pre-Mech Bosses'
+
+class AdamantiteSet_magic:
+    helmet = Armor(52, 'Adamantite Headgear', 4, 0, 0, 0, 0, 0, 0, 0, 0, 12, 12, 80, 0, 0, '')
+    chestplate = Armor(52, 'Adamantite Breastplate', 16, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(52, 'Adamatite Leggings', 12, 0, 7, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(52, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '19% reduced mana costs')
+    stage = 'Pre-Mech Bosses'
+
+class TitaniumSet_melee:
+    helmet = Armor(53, 'Titanium Mask', 23, 0, 0, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(53, 'Titanium Breastplate', 15, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(53, 'Titanium Leggings', 11, 3, 3, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(53, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Attacking generates a defensive barrier of titanium shards')
+    stage = 'Pre-Mech Bosses'
+
+class TitaniumSet_ranged:
+    helmet = Armor(54, 'Titanium Helmet', 8, 0, 0, 0, 0, 0, 0, 16, 7, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(54, 'Titanium Breastplate', 15, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(54, 'Titanium Leggings', 11, 3, 3, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(54, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Attacking generates a defensive barrier of titanium shards')
+    stage = 'Pre-Mech Bosses'
+
+class TitaniumSet_magic:
+    helmet = Armor(55, 'Titanium Headgear', 4, 0, 0, 0, 0, 0, 0, 0, 0, 16, 7, 100, 0, 0, '')
+    chestplate = Armor(55, 'Titanium Breastplate', 15, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(55, 'Titanium Leggings', 11, 3, 3, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(55, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Attacking generates a defensive barrier of titanium shards')
+    stage = 'Pre-Mech Bosses'
+
+class CrystalAssassinSet:
+    helmet = Armor(56, 'Crystal Assassin Hood', 12, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '10% reduced mana cost')
+    chestplate = Armor(56, 'Crystal Assassin Shirt', 14, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '10% chance to save ammo')
+    leggings = Armor(56, 'Crystal Assassin Pants', 10, 0, 0, 20, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(56, '', 0, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0,0 ,0, 0, 'Allows the ability to dash')
+    stage = 'Pre-Mech Bosses'
+
+class FrostSet:
+    helmet = Armor(57, 'Frost Helmet', 10, 0, 0, 0, 16, 0, 0, 16, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(57, 'Frost Breastplate', 20, 0, 0, 0, 0, 11, 0, 0, 11, 0, 0, 0, 0, 0, '')
+    leggings = Armor(57, 'Frost Leggings', 13, 0, 0, 8, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(57, '', 0, 0, 0, 0, 10, 0, 0, 10, 0, 0, 0, 0, 0, 0, 'Melee and ranged attacks cause frostburn')
+    stage = 'Pre-Mech Bosses'
+
+class ForbiddenSet:
+    helmet = Armor(58, 'Forbidden Mask', 6, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 15, 0, '')
+    chestplate = Armor(58, 'Forbidden Robes', 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 10, 1, '')
+    leggings = Armor(58, 'Forbidden Treads', 8, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 40, 0, 1, '')
+    set_bonus = Armor(58, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Double tap to call an ancient storm to cursor location')
+    stage = 'Pre-Mech Bosses'
+
 stage_tranlsation = {
     'Pre-Boss': 0,
     'Pre-Brain of Cthulhu/Eater of Worlds': 1,
