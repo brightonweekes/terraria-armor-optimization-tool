@@ -84,10 +84,9 @@ class AshWoodSet:
     stage = 'Pre-Boss'
 
 class RainSet:
-    helmet = Armor(9, 'Rain Hat', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
-    chestplate = Armor(9, 'Rain Coat', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
-    leggings = Armor(9, None, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
-    set_bonus = Armor(9, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    helmet = Armor(-9, 'Rain Hat', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(-9, 'Rain Coat', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(-9, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
     stage = 'Pre-Boss'
 
 class SnowSet:
@@ -433,6 +432,210 @@ class ForbiddenSet:
     set_bonus = Armor(58, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Double tap to call an ancient storm to cursor location')
     stage = 'Pre-Mech Bosses'
 
+class SquireSet:
+    helmet = Armor(59, "Squire's Great Helm", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Increases your life regeneration')
+    chestplate = Armor(59, "Squire's Plating", 27, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 15, 0, '')
+    leggings = Armor(59, "Squire's Greaves", 18, 0, 0, 15, 0, 15, 0, 0, 0, 0, 0, 0, 15, 0, '')
+    set_bonus = Armor(59, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Ballista pierces more targets and panics when you take damage')
+    stage = 'Pre-Plantera'
+
+class MonkSet:
+    helmet = Armor(60, "Monk's Bushy Brow Bald Cap", 8, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 1, '')
+    chestplate = Armor(60, "Monk's Shirt", 22, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 20, 0, '')
+    leggings = Armor(60, "Monk's Pants", 16, 0, 0, 20, 0, 15, 0, 0, 0, 0, 0, 0, 10, 0, '')
+    set_bonus = Armor(60, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Lightning Aura can now crit and strikes faster')
+    stage = 'Pre-Plantera'
+
+class HuntressSet:
+    helmet = Armor(61, "Huntress's Wig", 7, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 1, '')
+    chestplate = Armor(61, "Huntress's Jerkin", 17, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 20, 0, '10% chance to save ammo')
+    leggings = Armor(61, "Huntress's Pants", 12, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, '')
+    set_bonus = Armor(61, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Explosive Traps recharge faster and oil enemies\nSet oiled enemies on fire for extrs damage')
+    stage = 'Pre-Plantera'
+
+class ApprenticeSet:
+    helmet = Armor(62, "Apprentice's Hat", 7, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 1, '10% reduced mana cost')
+    chestplate = Armor(62, "Apprentice's Robe", 15, 0, 0, 0, 0, 0, 0, 0, 00, 10, 0, 0, 20, 0, '')
+    leggings = Armor(62, "Apprentice's Trousers", 10, 0, 0, 20, 0, 0, 0, 0, 0, 0, 20, 0, 10, 0, '')
+    set_bonus = Armor(62, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'FLameburst field of view and range are dramatically increased')
+    stage = 'Pre-Plantera'
+
+class HallowedSet_melee:
+    helmet = Armor(63, 'Hallowed Mask', 24, 0, 0, 0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(63, 'Hallowed Plate Mail', 15, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(63, 'Hallowed Greaves', 11, 7, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(63, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Become immune after striking an enemy')
+    stage = 'Pre-Plantera'
+
+class HallowedSet_ranged:
+    helmet = Armor(64, 'Hallowed Helmet', 9, 0, 0, 0, 0, 0, 0, 15, 8, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(64, 'Hallowed Plate Mail', 15, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(64, 'Hallowed Greaves', 11, 7, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(64, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Become immune after striking an enemy')
+    stage = 'Pre-Plantera'
+
+class HallowedSet_magic:
+    helmet = Armor(65, 'Hallowed Headgear', 5, 0, 0, 0, 0, 0, 0, 0, 0, 12, 12, 100, 0, 0, '')
+    chestplate = Armor(65, 'Hallowed Plate Mail', 15, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(65, 'Hallowed Greaves', 11, 7, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(65, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Become immune after striking an enemy')
+    stage = 'Pre-Plantera'
+
+class HallowedSet_summoner:
+    helmet = Armor(66, 'Hallowed Hood', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 1, '')
+    chestplate = Armor(66, 'Hallowed Plate Mail', 15, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(66, 'Hallowed Greaves', 11, 7, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(66, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 'Become immune after striking an enemy')
+    stage = 'Pre-Plantera'
+
+class ChlorophyteSet_melee:
+    helmet = Armor(67, 'Chlorophyte Mask', 20, 0, 0, 0, 16, 6, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(67, 'Chlorophyte Plate Mail', 18, 5, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(67, 'Chlorophyte Greaves', 13, 0, 8, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(67, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Summons a powerful leaf crystal to shoot at nearby enemies\nReduces damage taken by 5%')
+    stage = 'Pre-Plantera'
+
+class ChlorophyteSet_ranged:
+    helmet = Armor(68, 'Chlorophyte Helmet', 13, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 0, '20% chance to save ammo')
+    chestplate = Armor(68, 'Chlorophyte Plate Mail', 18, 5, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(68, 'Chlorophyte Greaves', 13, 0, 8, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(68, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Summons a powerful leaf crystal to shoot at nearby enemies')
+    stage = 'Pre-Plantera'
+    
+class ChlorophyteSet_magic:
+    helmet = Armor(69, 'Chlorophyte Headgear', 7, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 80, 0, 0, '17% reduced mana cost')
+    chestplate = Armor(69, 'Chlorophyte Plate Mail', 18, 5, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(69, 'Chlorophyte Greaves', 13, 0, 8, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(69, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Summons a powerful leaf crystal to shoot at nearby enemies')
+    stage = 'Pre-Plantera'
+
+class TurtleSet:
+    helmet = Armor(70, 'Turtle Helmet', 21, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you')
+    chestplate = Armor(70, 'Turtle Scale Mail', 27, 0, 0, 0, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you')
+    leggings = Armor(70, 'Turtle Leggings', 17, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you')
+    set_bonus = Armor(70, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Attackers also take double damage\nReduces damage taken by 15%')
+    stage = 'Pre-Plantera'
+
+class TikiSet:
+    helmet = Armor(71, 'Tiki Mask', 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 1, 'Increases whip range by 10%')
+    chestplate = Armor(71, 'Tiki Shirt', 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 1, '')
+    leggings = Armor(71, 'Tiki Pants', 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 1, '')
+    set_bonus = Armor(71, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Increases whip range by 20%')
+    stage = 'Pre-Golem'
+
+class BeetleSet_scale_mail:
+    helmet = Armor(72, 'Beetle Helmet', 23, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you')
+    chestplate = Armor(72, 'Beetle Scale Mail', 20, 0, 0, 6, 8, 8, 6, 0, 0, 0, 0, 0, 0, 0, '')
+    leggings = Armor(72, 'Beetle Leggings', 18, 0, 0, 6, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you')
+    set_bonus = Armor(72, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Beetles increase your melee damage and speed')
+    stage = 'Pre-Lunatic Cultist'
+
+class BeetleSet_shell:
+    helmet = Armor(72, 'Beetle Helmet', 23, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you')
+    chestplate = Armor(72, 'Beetle Shell', 32, 0, 0, 0, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you')
+    leggings = Armor(72, 'Beetle Leggings', 18, 0, 0, 6, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you')
+    set_bonus = Armor(72, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Beetles protect you from damage')
+    stage = 'Pre-Lunatic Cultist'
+
+class ShroomiteSet_headgear:
+    helmet = Armor(73, 'Shroomite Headgear', 11, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0,' Increases bow damage by 15%')
+    chestplate = Armor(73, 'Shroomite Breastplate', 24, 0, 0, 0, 0, 0, 0, 13, 13, 0, 0, 0, 0, 0, '20% chance to save ammo')
+    leggings = Armor(73, 'Shroomite Leggings', 16, 0, 0, 12, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(73, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Not moving puts you in stealth, increasing ranged ability and reducing chance to enemies to target you')
+    stage = 'Pre-Golem'
+
+class ShroomiteSet_mask:
+    helmet = Armor(74, 'Shroomite Mask', 11, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0,' Increases gun damage by 15%')
+    chestplate = Armor(74, 'Shroomite Breastplate', 24, 0, 0, 0, 0, 0, 0, 13, 13, 0, 0, 0, 0, 0, '20% chance to save ammo')
+    leggings = Armor(74, 'Shroomite Leggings', 16, 0, 0, 12, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(74, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Not moving puts you in stealth, increasing ranged ability and reducing chance to enemies to target you')
+    stage = 'Pre-Golem'
+
+class ShroomiteSet_helmet:
+    helmet = Armor(75, 'Shroomite Helmet', 11, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0,' Increases specialist ranged damage by 15%')
+    chestplate = Armor(75, 'Shroomite Breastplate', 24, 0, 0, 0, 0, 0, 0, 13, 13, 0, 0, 0, 0, 0, '20% chance to save ammo')
+    leggings = Armor(75, 'Shroomite Leggings', 16, 0, 0, 12, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(75, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Not moving puts you in stealth, increasing ranged ability and reducing chance to enemies to target you')
+    stage = 'Pre-Golem'
+
+class SpectreSet_mask:
+    helmet = Armor(76, 'Spectre Mask', 18, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 60, 0, 0, '13% reduced mana cost')
+    chestplate = Armor(76, 'Spectre Robe', 14, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 0, 0, 0, '')
+    leggings = Armor(76, 'Spectre Pants', 10, 0, 0, 8, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, '')
+    set_bonus = Armor(76, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Magic damage done will hurt extra nearby enemies')
+    stage = 'Pre-Golem'
+
+class SpectreSet_hood:
+    helmet = Armor(77, 'Spectre Hood', 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(77, 'Spectre Robe', 14, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 0, 0, 0, '')
+    leggings = Armor(77, 'Spectre Pants', 10, 0, 0, 8, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, '')
+    set_bonus = Armor(77, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Reduces Magic dmage done by 4% and converts it to healing force\nMagic damage done to enemies heals the player with the lowest health')
+    stage = 'Pre-Golem'
+
+class SpookySet:
+    helmet = Armor(78, 'Spooky Helmet', 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 1, '')
+    chestplate = Armor(78, 'Spooky Breastplate', 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2, '')
+    leggings = Armor(78, 'Spooky Leggings', 10, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 11, 1, '')
+    set_bonus = Armor(78, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 0, '')
+    stage = 'Pre-Golem'
+
+class ValhallaKnightSet:
+    helmet = Armor(79, "Valhalla Knight's Helm", 20, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 10, 2, '')
+    chestplate = Armor(79, "Valhalla Knight's Breastplate", 24, 0, 0, 0, 0, 0, 0,  0, 0, 0, 0, 0, 30, 0, 'Massively increased life regen')
+    leggings = Armor(79, "Valhalla Knight's Greaves", 24, 0, 0, 20, 0, 20, 0, 0, 0, 0, 0, 0, 20, 0, '')
+    set_bonus = Armor(79, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Greatly enhances Ballista effectiveness')
+    stage = 'Pre-Lunatic Cultist'
+
+class ShinobiInfiltratorSet:
+    helmet = Armor(80, "Shinobi Infiltrator's Helmet", 10, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0,  20, 2, '')
+    chestplate = Armor(80, "Shinobi Infiltrator's Torso", 26, 0, 0, 0, 0, 5, 20, 0, 0, 0, 0, 0, 20, 0, '')
+    leggings = Armor(80, "Shinobi Infiltrator's Pants", 18, 0, 0, 30, 0, 20, 0, 0, 0, 0, 0, 0, 20, 0, '')
+    set_bonus = Armor(80, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Greatly enhances Lightning Aura effectiveness')
+    stage = 'Pre-Lunatic Cultist'
+
+class RedRidingSet:
+    helmet = Armor(81, 'Red Riding Hood', 8, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 10, 2, '')
+    chestplate = Armor(81, 'Red Riding Dress', 24, 0, 0, 0, 0, 0, 0, 25, 0, 0, 0, 0, 25, 0, '20% chance to save ammo')
+    leggings = Armor(81, 'Red Riding Leggings', 16, 0, 0, 20, 0, 0, 0, 0, 10, 0, 0, 0, 25, 0, '')
+    set_bonus = Armor(81, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Greatly enhances Explosive Trap effectiveness')
+    stage = 'Pre-Lunatic Cultist'
+
+class DarkArtistSet:
+    helmet = Armor(82, "Dark Artist's Hat", 7, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 15, 2, '')
+    chestplate = Armor(82, "Dark Artist's Robes", 21, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 25, 0, '15% reduced mana cost')
+    leggings = Armor(82, "Dark Artist's Leggings", 14, 0, 0, 20, 0, 0, 0, 0, 0, 0, 25, 0, 20, 0, '')
+    set_bonus = Armor(82, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Greatly enhances Flameburst effectiveness')
+    stage = 'Pre-Lunatic Cultist'
+
+class SolarFlareSet:
+    helmet = Armor(83, 'Solar Flare Helmet', 24, 0, 0, 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants minor life regeneration\nEnemies are more likely to target you')
+    chestplate = Armor(83, 'Solar Flare Breastplate', 34, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants minor life regeneration\nEnemies are more likely to target you')
+    leggings = Armor(83, 'Solar Flare Leggings', 20, 0, 0, 15, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 'Grants minor life regeneration\nEnemies are more likely to target you')
+    set_bonus = Armor(83, '', 0, 0, 0, 0, 0,0 ,0 ,0 ,0 ,0 , 0, 0, 0, 0, 'Solar shields charge over time to protect you and let you dash\nA charge is used to damage enemies you touch\nConsumed carges explode and damage enemies')
+    stage = 'Post-Moon Lord'
+
+class VortexSet:
+    helmet = Armor(84, 'Vortex Helmet', 14, 0, 0, 0, 0, 0, 0, 16, 7, 0, 0, 0, 0, 0, '')
+    chestplate = Armor(84, 'Vortex Breastplate', 28, 0, 0, 0, 0, 0, 0, 12, 12, 0, 0, 0, 0, 0, '25% chance to save ammo')
+    leggings = Armor(84, 'Vortex Leggings', 20, 0, 0, 10, 0, 0, 0, 8, 8, 0, 0, 0, 0, 0, '')
+    set_bonus = Armor(84, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Double tap to toggle stealth, increasing ranged ability and reducing chance for enemies to target you but slowing movement speed')
+    stage = 'Post-Moon Lord'
+
+class NebulaSet:
+    helmet = Armor(85, 'Nebula Helmet', 14, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 60, 0, 0, '15% reduced mana cost')
+    chestplate = Armor(85, 'Nebula Breastplate', 18, 0, 0, 0, 0, 0, 0, 0, 0, 9, 9, 0, 0, 0, '')
+    leggings = Armor(85, 'Nebula Leggings', 14, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, '')
+    set_bonus = Armor(85, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Magic damage has a chance to spawn buff boosters, pick boosters up to get stacking buffs')
+    stage = 'Post-Moon Lord'
+    
+class StardustSet:
+    helmet = Armor(86, 'Stardust Helmet', 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 2, '')
+    chestplate = Armor(86, 'Startdust Plate', 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 2, 'Increases whip range by 15%')
+    leggings = Armor(86, 'Stardust Leggings', 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 2, 'Increases whip range by 15%')
+    set_bonus = Armor(86, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'A stardust guardian will protect you from nearby enemies')
+    stage = 'Post-Moon Lord'
+
+
 stage_tranlsation = {
     'Pre-Boss': 0,
     'Pre-Brain of Cthulhu/Eater of Worlds': 1,
@@ -507,13 +710,43 @@ titanium_magic = TitaniumSet_magic
 crystal_assassin = CrystalAssassinSet
 frost = FrostSet
 forbidden = ForbiddenSet
-
+squire = SquireSet
+monk = MonkSet
+huntress = HuntressSet
+apprentice = ApprenticeSet
+hallowed_melee = HallowedSet_melee
+hallowed_ranged = HallowedSet_ranged
+hallowed_magic = HallowedSet_magic
+hallowed_summoner = HallowedSet_summoner
+chlorophyte_melee = ChlorophyteSet_melee
+chlorophyte_ranged = ChlorophyteSet_ranged
+chlorophyte_magic = ChlorophyteSet_magic
+turtle = TurtleSet
+tiki = TikiSet
+beetle_scale_mail = BeetleSet_scale_mail
+beetle_shell = BeetleSet_shell
+shroomite_headgear = ShroomiteSet_headgear
+shroomite_mask = ShroomiteSet_mask
+shroomite_helmet = ShroomiteSet_helmet
+spectre_mask = SpectreSet_mask
+spectre_hood = SpectreSet_hood
+spooky = SpookySet
+valhalla = ValhallaKnightSet
+shinobi = ShinobiInfiltratorSet
+red_riding = RedRidingSet
+dark_artist = DarkArtistSet
+solar = SolarFlareSet
+vortex = VortexSet
+nebula = NebulaSet
+stardust = StardustSet
 
 armor_sets = [mining1, mining2, wood, rich_mahogany, boreal, palm, ebonwood, shadewood, ashwood, rain, snow, pink_snow, angler, cactus, copper, tin, pumpkin, 
               ninja, iron, lead, silver, tungsten, gold, platinum, fossil, bee, obsidian, gladiator, meteor, jungle, ancient_cobalt, necro, shadow, ancient_shadow,
               crimson, molten, pearlwood, spider, cobalt_melee, cobalt_ranged, cobalt_magic, palladium_melee, palladium_ranged, palladium_magic, mythril_melee,
               mythril_ranged, mythril_magic, orichalcum_melee, orichalcum_ranged, orichalcum_magic, adamantite_melee, adamantite_ranged, adamantite_magic,
-              titanium_melee, titanium_ranged, titanium_magic, crystal_assassin, frost, forbidden]
+              titanium_melee, titanium_ranged, titanium_magic, crystal_assassin, frost, forbidden, squire, monk, huntress, apprentice, hallowed_melee, hallowed_ranged,
+              hallowed_magic, hallowed_summoner, chlorophyte_melee, chlorophyte_ranged, chlorophyte_magic, turtle, tiki, beetle_scale_mail, beetle_shell, shroomite_headgear,
+              shroomite_mask, shroomite_helmet, spectre_mask, spectre_hood, valhalla, shinobi, red_riding, dark_artist, solar, vortex, nebula, stardust]
 
 helmets = []
 chestplates = []
@@ -525,4 +758,5 @@ for set in armor_sets:
     else:
         helmets.append(set.helmet)
         chestplates.append(set.chestplate)
-        leggings.append(set.leggings)
+        if set.helmet.set_identifier >= 0:
+            leggings.append(set.leggings)

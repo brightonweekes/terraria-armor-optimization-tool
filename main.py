@@ -1,12 +1,8 @@
 # Current Issues: due to set identifiers being higher than number of sets of armor availaiable at lower stages, an error is throuwn when mode is set to anything befoee pre wall of flesh
-# More efficient sorting algorithm needed
 # Better UI needed
-# Better input needed
-# Better output needed
-# Harmode Armor
 # Calamity armor
 # Rogue class
-# More presets for target stat
+# Sets with multiple headpieces show up multiple times in the end results (also hurts performance)
 
 
 # Import necessary armor pieces, depending on whether Calamity mod is enabled or disabled
@@ -42,12 +38,12 @@ if target_stat == 'balance':
 combo_scores = []
 
 # Loop through every combination and append to combo_scores along with weighted score
-x = 0
+print('\nCalculating... Please wait\n')
 for helm in helmets:
     for chest in chestplates:
         for leg in leggings:
             set_bonus_score = 0
-            if helm.set_identifier == chest.set_identifier == leg.set_identifier:   # if combo is a full set, calculate the set_bonus score
+            if helm.set_identifier == chest.set_identifier == leg.set_identifier or (helm.set_identifier < 0 and helm.set_identifier == chest.set_identifier):   # if combo is a full set, calculate the set_bonus score
                 set = armor_sets[helm.set_identifier]
                 set_bonus_score = (set.set_bonus.defense*defense_weight +
                     set.set_bonus.damage*damage_weight + set.set_bonus.crit*crit_weight + set.set_bonus.movement*movement_weight + 
@@ -64,7 +60,7 @@ for helm in helmets:
                 chest.minion_slots*minion_slots_weight + leg.defense*defense_weight + leg.damage*damage_weight + leg.crit*crit_weight + leg.movement*movement_weight + leg.melee_damage*melee_damage_weight + 
                 leg.melee_crit*melee_crit_weight + leg.melee_speed*melee_speed_weight + leg.ranged_damage*ranged_damage_weight + leg.ranged_crit*ranged_crit_weight + 
                 leg.magic_damage*magic_damage_weight + leg.magic_crit*magic_crit_weight + leg.mana*mana_weight + leg.summon_damage*summon_damage_weight + 
-                leg.minion_slots*minion_slots_weight + set_bonus_score, (copy(helm), copy(chest), copy(leg))))
+                leg.minion_slots*minion_slots_weight + set_bonus_score, (copy(helm), copy(chest), copy(leg)), set_bonus_score))
 
 
 # Sort the combo_scores list based on descending scores
@@ -72,6 +68,13 @@ combo_scores.sort(key=lambda x: x[0])
 
 # Output message
 for i in combo_scores:
-        print(i[0], i[1][0].name, i[1][1].name, i[1][2].name)
+        print(i[0], i[1][0].name, i[1][1].name, i[1][2].name, i[2])
 
-print(f'\n{combo_scores[0][1][0].name.capitalize()}, {combo_scores[0][1][1].name}, and {combo_scores[0][1][2].name} give the highest score of {combo_scores[0][0]}, given class is set to {target_class} and target stat is set to {target_stat}.\n')
+
+print(f'\n{combo_scores[-1][1][0].name}, {combo_scores[-1][1][1].name}, and {combo_scores[-1][1][2].name} give the highest score of {combo_scores[-1][0]}, given class is set to {target_class} and target stat is set to {target_stat}. This combination gives the following stats: \n')
+
+for piece in combo_scores[-1][1]:
+    print('\n', piece.name)
+    for attr in dir(piece):
+        if type(getattr(piece, attr)) == int and getattr(piece, attr) != 0 and attr != 'set_identifier':
+            print(getattr(piece, attr), attr)
