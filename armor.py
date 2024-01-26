@@ -83,12 +83,6 @@ class AshWoodSet:
     set_bonus = Armor(8, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
     stage = 'Pre-Boss'
 
-class RainSet:
-    helmet = Armor(-9, 'Rain Hat', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
-    chestplate = Armor(-9, 'Rain Coat', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
-    set_bonus = Armor(-9, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
-    stage = 'Pre-Boss'
-
 class SnowSet:
     helmet = Armor(10, 'Snow Hood', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
     chestplate = Armor(10, 'Snow Coat', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '')
@@ -648,9 +642,6 @@ stage_tranlsation = {
     'Post-Moon Lord': 8
 }
 
-
-game_stage = 'Post-Moon Lord'
-
 mining1 = MiningSet_mining
 mining2 = MiningSet_ultrabright
 wood = WoodSet
@@ -660,7 +651,6 @@ palm = PalmSet
 ebonwood = EbonwoodSet
 shadewood = ShadewoodSet
 ashwood = AshWoodSet
-rain = RainSet
 snow = SnowSet
 pink_snow = PinkSnowSet
 angler = AnglerSet
@@ -740,13 +730,15 @@ vortex = VortexSet
 nebula = NebulaSet
 stardust = StardustSet
 
-armor_sets = [mining1, mining2, wood, rich_mahogany, boreal, palm, ebonwood, shadewood, ashwood, rain, snow, pink_snow, angler, cactus, copper, tin, pumpkin, 
-              ninja, iron, lead, silver, tungsten, gold, platinum, fossil, bee, obsidian, gladiator, meteor, jungle, ancient_cobalt, necro, shadow, ancient_shadow,
+armor_sets = [mining1, mining2, wood, rich_mahogany, boreal, palm, ebonwood, shadewood, ashwood, snow, pink_snow, angler, cactus, copper, tin, pumpkin, 
+              ninja, iron, lead, silver, tungsten, gold, platinum, fossil, bee, obsidian, gladiator, meteor, jungle, necro, shadow,
               crimson, molten, pearlwood, spider, cobalt_melee, cobalt_ranged, cobalt_magic, palladium_melee, palladium_ranged, palladium_magic, mythril_melee,
               mythril_ranged, mythril_magic, orichalcum_melee, orichalcum_ranged, orichalcum_magic, adamantite_melee, adamantite_ranged, adamantite_magic,
               titanium_melee, titanium_ranged, titanium_magic, crystal_assassin, frost, forbidden, squire, monk, huntress, apprentice, hallowed_melee, hallowed_ranged,
               hallowed_magic, hallowed_summoner, chlorophyte_melee, chlorophyte_ranged, chlorophyte_magic, turtle, tiki, beetle_scale_mail, beetle_shell, shroomite_headgear,
               shroomite_mask, shroomite_helmet, spectre_mask, spectre_hood, valhalla, shinobi, red_riding, dark_artist, solar, vortex, nebula, stardust]
+
+game_stage = 'Pre-Boss'
 
 helmets = []
 chestplates = []
@@ -758,5 +750,4 @@ for set in armor_sets:
     else:
         helmets.append(set.helmet)
         chestplates.append(set.chestplate)
-        if set.helmet.set_identifier >= 0:
-            leggings.append(set.leggings)
+        leggings.append(set.leggings)

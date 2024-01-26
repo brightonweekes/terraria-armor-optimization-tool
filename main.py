@@ -3,6 +3,8 @@
 # Calamity armor
 # Rogue class
 # Sets with multiple headpieces show up multiple times in the end results (also hurts performance)
+# Need support for armors with fewer than 3 pieces
+#if the set identifier does not equal its list index, wrong set bonus is returned
 
 
 # Import necessary armor pieces, depending on whether Calamity mod is enabled or disabled
@@ -45,6 +47,7 @@ for helm in helmets:
             set_bonus_score = 0
             if helm.set_identifier == chest.set_identifier == leg.set_identifier or (helm.set_identifier < 0 and helm.set_identifier == chest.set_identifier):   # if combo is a full set, calculate the set_bonus score
                 set = armor_sets[helm.set_identifier]
+                print(armor_sets[helm.set_identifier])
                 set_bonus_score = (set.set_bonus.defense*defense_weight +
                     set.set_bonus.damage*damage_weight + set.set_bonus.crit*crit_weight + set.set_bonus.movement*movement_weight + 
                     set.set_bonus.melee_damage*melee_damage_weight + set.set_bonus.melee_crit*melee_crit_weight + set.set_bonus.melee_speed*melee_speed_weight + 
@@ -67,8 +70,8 @@ for helm in helmets:
 combo_scores.sort(key=lambda x: x[0])
 
 # Output message
-for i in combo_scores:
-        print(i[0], i[1][0].name, i[1][1].name, i[1][2].name, i[2])
+#for i in combo_scores:
+#        print(i[0], i[1][0].name, i[1][1].name, i[1][2].name, i[2])
 
 
 print(f'\n{combo_scores[-1][1][0].name}, {combo_scores[-1][1][1].name}, and {combo_scores[-1][1][2].name} give the highest score of {combo_scores[-1][0]}, given class is set to {target_class} and target stat is set to {target_stat}. This combination gives the following stats: \n')
