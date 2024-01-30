@@ -1,10 +1,9 @@
-# Current Issues: due to set identifiers being higher than number of sets of armor availaiable at lower stages, an error is throuwn when mode is set to anything befoee pre wall of flesh
 # Better UI needed
 # Calamity armor
 # Rogue class
-# Sets with multiple headpieces show up multiple times in the end results (also hurts performance)
-# Need support for armors with fewer than 3 pieces
-#if the set identifier does not equal its list index, wrong set bonus is returned
+# Fix full set bonus output needed
+# Code cleanup and better comments needed
+# Full text based version with inputs needed
 
 
 # Import necessary armor pieces, depending on whether Calamity mod is enabled or disabled
@@ -16,7 +15,7 @@ else:
 
 # Set the target class and stats to maximize
 target_stat = 'balance'
-target_class = 'melee'
+target_class = input('Input target class [melee, ranged, magic, summoner]: ')
 
 # Assign weight values to each stat based on target stat and target class
 if target_stat == 'balance':

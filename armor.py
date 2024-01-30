@@ -459,28 +459,28 @@ class SolarFlareSet:
     chestplates = [Armor(83, 'Solar Flare Breastplate', 34, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants minor life regeneration\nEnemies are more likely to target you', None)]
     leggings = Armor(83, 'Solar Flare Leggings', 20, 0, 0, 15, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 'Grants minor life regeneration\nEnemies are more likely to target you', None)
     set_bonus = Armor(83, '', 0, 0, 0, 0, 0,0 ,0 ,0 ,0 ,0 , 0, 0, 0, 0, 'Solar shields charge over time to protect you and let you dash\nA charge is used to damage enemies you touch\nConsumed carges explode and damage enemies', None)
-    stage = 'Post-Moon Lord'
+    stage = 'Endgame'
 
 class VortexSet:
     helmets = [Armor(84, 'Vortex Helmet', 14, 0, 0, 0, 0, 0, 0, 16, 7, 0, 0, 0, 0, 0, '', None)]
     chestplates = [Armor(84, 'Vortex Breastplate', 28, 0, 0, 0, 0, 0, 0, 12, 12, 0, 0, 0, 0, 0, '25% chance to save ammo', None)]
     leggings = Armor(84, 'Vortex Leggings', 20, 0, 0, 10, 0, 0, 0, 8, 8, 0, 0, 0, 0, 0, '', None)
     set_bonus = Armor(84, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Double tap to toggle stealth, increasing ranged ability and reducing chance for enemies to target you but slowing movement speed', None)
-    stage = 'Post-Moon Lord'
+    stage = 'Endgame'
 
 class NebulaSet:
     helmets = [Armor(85, 'Nebula Helmet', 14, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 60, 0, 0, '15% reduced mana cost', None)]
     chestplates = [Armor(85, 'Nebula Breastplate', 18, 0, 0, 0, 0, 0, 0, 0, 0, 9, 9, 0, 0, 0, '', None)]
     leggings = Armor(85, 'Nebula Leggings', 14, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, '', None)
     set_bonus = Armor(85, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Magic damage has a chance to spawn buff boosters, pick boosters up to get stacking buffs', None)
-    stage = 'Post-Moon Lord'
+    stage = 'Endgame'
     
 class StardustSet:
     helmets = [Armor(86, 'Stardust Helmet', 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 2, '', None)]
     chestplates = [Armor(86, 'Startdust Plate', 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 2, 'Increases whip range by 15%', None)]
     leggings = Armor(86, 'Stardust Leggings', 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 2, 'Increases whip range by 15%', None)
     set_bonus = Armor(86, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'A stardust guardian will protect you from nearby enemies', None)
-    stage = 'Post-Moon Lord'
+    stage = 'Endgame'
 
 class WizardSet:
     helmets = [Armor(87, 'Magic Hat', 2, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 0, '', Armor(87, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 0, 0, '', None)), Armor(87, 'Wizard Hat', 4, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, '', Armor(87, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, '', None))]
@@ -497,7 +497,7 @@ stage_tranlsation = {
     'Pre-Plantera': 5,
     'Pre-Golem': 6,
     'Pre-Lunatic Cultist': 7,
-    'Post-Moon Lord': 8
+    'Endgame': 8
 }
 
 mining = MiningSet
@@ -585,7 +585,7 @@ else:
     PumpkinSet.stage = 'Pre-Brain of Cthulhu/Eater of Worlds'
     HallowedSet.stage = 'Pre-Plantera'
 
-game_stage = 'Pre-Mech Bosses'       # Filter out armors that are unattainable at the current stage of game
+game_stage = input('Input your current stage of game [Pre-Boss, Pre-Brain of Cthulhu/Eater of Worlds, Pre-Skeletron, Pre-Wall of Flesh, Pre-Mech Bosses, Pre-Plantera, Pre-Golem, Pre-Lunatic Cultist, Endgame]: ')
 
 armor_sets_remove = []
 
