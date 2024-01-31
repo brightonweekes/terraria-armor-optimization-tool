@@ -5,9 +5,21 @@
 # Code cleanup and better comments needed
 # Full text based version with inputs needed
 
+import tkinter
+
+calamity = False
+
+def toggle_calamity():
+    global calamity
+    calamity = not calamity
+
+
+m=tkinter.Tk(className='Armor Optimization Tool')
+w=tkinter.Button(m, option=toggle_calamity())
+m.mainloop()
 
 # Import necessary armor pieces, depending on whether Calamity mod is enabled or disabled
-calamity = False
+
 if calamity:
     from calamity_armor import armor_sets
 else:
@@ -15,7 +27,7 @@ else:
 
 # Set the target class and stats to maximize
 target_stat = 'balance'
-target_class = input('Input target class [melee, ranged, magic, summoner]: ')
+target_class = 'summoner' # input('Input target class [melee, ranged, magic, summoner]: ')
 
 # Assign weight values to each stat based on target stat and target class
 if target_stat == 'balance':
@@ -92,10 +104,6 @@ for set in armor_sets:
 combo_scores.sort(key=lambda x: x[0])
 
 # Output message
-for i in combo_scores:
-        print(i[0], i[1][0].name, i[1][1].name, i[1][2].name, i[2])
-
-
 print(f'\n{combo_scores[-1][1][0].name}, {combo_scores[-1][1][1].name}, and {combo_scores[-1][1][2].name} give the highest score of {combo_scores[-1][0]}, given class is set to {target_class} and target stat is set to {target_stat}. This combination gives the following stats: \n')
 
 for piece in combo_scores[-1][1]:
@@ -115,3 +123,4 @@ if type(combo_scores[-1][2]) == float:
                 print(getattr(piece.set_bonus, attr), attr)
 
     # Add full set bonus, not just armor set bonus
+                

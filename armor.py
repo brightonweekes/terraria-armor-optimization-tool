@@ -585,7 +585,7 @@ else:
     PumpkinSet.stage = 'Pre-Brain of Cthulhu/Eater of Worlds'
     HallowedSet.stage = 'Pre-Plantera'
 
-game_stage = input('Input your current stage of game [Pre-Boss, Pre-Brain of Cthulhu/Eater of Worlds, Pre-Skeletron, Pre-Wall of Flesh, Pre-Mech Bosses, Pre-Plantera, Pre-Golem, Pre-Lunatic Cultist, Endgame]: ')
+game_stage = 'Pre-Boss' # input('Input your current stage of game [Pre-Boss, Pre-Brain of Cthulhu/Eater of Worlds, Pre-Skeletron, Pre-Wall of Flesh, Pre-Mech Bosses, Pre-Plantera, Pre-Golem, Pre-Lunatic Cultist, Endgame]: ')
 
 armor_sets_remove = []
 
