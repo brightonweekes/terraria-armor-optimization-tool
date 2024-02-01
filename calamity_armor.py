@@ -493,21 +493,45 @@ class WizardSet:
 
 class WulfrumSet:
     helmets = [Armor(88, 'Wulfrum Hat & Goggles', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, '', None)]
-    chestplates = [Armor(88, 'Wulfrum Jacket', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '%5 increased damage reduction', None)]
+    chestplates = [Armor(88, 'Wulfrum Jacket', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '5% increased damage reduction', None)]
     leggings = Armor(88, 'Wulfrum Overalls', 1, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
     set_bonus = Armor(88, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 'Wulfrum Bastion - Double tap DOWN while dismounted to equip wulfrum power armor', None)
+    stage = 'Pre-Boss'
+
+class SnowRuffianSet:
+    helmets = [Armor(89, 'Snow Ruffian Mask', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, '', None)]
+    chestplates = [Armor(89, 'Snow Ruffian Chestplate', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, '', None)]
+    leggings = Armor(89, 'Snow Ruffian Greaves', 3, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(89, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 50, 'You can glide to negate fall damage', None)
+    stage = 'Pre-Boss'
+
+class DesertProwlerSet:
+    helmets = [Armor(90, 'Desert Prowler Hat', 1, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, '20% chance to not consume ammo', None)]
+    chestplates = [Armor(90, 'Desert Prowler Shirt', 3, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    leggings = Armor(90, 'Desert Prowler Pants', 2, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Immunity to the Mighty Wind debuff', None)
+    set_bonus = Armor(90, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Ranged attacks deal an extra 1 flat damage\nSandsmoke Bomb - Double tap DOWN to shroud yourself in a small cloud of sand\nWhile the sand cloud is active, gain increased mobility but heavily reduced defense\nUsing a ranged weapon instantly dispels the sand cloak, but guarantees a supercrit for 200% damage\nThe super crit applies only as long as the resulting hit would not exceed 100 damage\nLanding the killing blow on an enemy with this shot shortens the ability cooldown to 1.5 seconds', None)
     stage = 'Pre-Boss'
 
 stage_tranlsation = {
     'Pre-Boss': 0,
     'Pre-Brain of Cthulhu/Eater of Worlds': 1,
-    'Pre-Skeletron': 2,
-    'Pre-Wall of Flesh': 3,
-    'Pre-Mech Bosses': 4,
-    'Pre-Plantera': 5,
-    'Pre-Golem': 6,
-    'Pre-Lunatic Cultist': 7,
-    'Endgame': 8
+    'Pre-Perforators/Hive Mind': 2,
+    'Pre-Skeletron': 3,
+    'Pre-Wall of Flesh': 4,
+    'Pre-Mech Bosses': 5,
+    'Post-Mech Boss 1': 6,
+    'Post-Mech Boss 2': 7,
+    'Pre-Calamitas Clone/Plantera': 8,
+    'Pre-Golem': 9,
+    'Pre-Lunar Events': 10,
+    'Pre-Moon Lord': 11,
+    'Pre-Providence': 12,
+    'Pre-Polterghast': 13, 
+    'Pre-Devourer of Gods': 14, 
+    'Pre-Yharon': 15,
+    'Pre-Exo Mechs/Supreme Witch': 16, 
+    'Calamitas': 17,
+    'Endgame': 18
 }
 
 mining = MiningSet
@@ -577,13 +601,16 @@ vortex = VortexSet
 nebula = NebulaSet
 stardust = StardustSet
 wizard = WizardSet
+wulfrum = WulfrumSet
+snow_ruffian = SnowRuffianSet
+desert_prowler = DesertProwlerSet
 
 
 armor_sets = {mining, wood, rich_mahogany, boreal, palm, ebonwood, shadewood, ashwood, rain, snow, angler, cactus, copper, tin, pumpkin, 
               ninja, iron, lead, silver, tungsten, gold, platinum, fossil, bee, obsidian, gladiator, meteor, jungle, necro, 
               shadow, crimson, molten, pearlwood, spider, cobalt, palladium, mythril, orichalcum, adamantite,
               titanium, crystal_assassin, frost, forbidden, squire, monk, huntress, apprentice, hallowed, chlorophyte, turtle, tiki, beetle, shroomite,
-              spectre, valhalla, shinobi, red_riding, dark_artist, solar, vortex, nebula, stardust, wizard}
+              spectre, valhalla, shinobi, red_riding, dark_artist, solar, vortex, nebula, stardust, wizard, wulfrum, snow_ruffian, desert_prowler}
 
 redundant_armor_sets = {pink_snow, ancient_cobalt, ancient_shadow}
 
@@ -595,7 +622,9 @@ else:
     PumpkinSet.stage = 'Pre-Brain of Cthulhu/Eater of Worlds'
     HallowedSet.stage = 'Pre-Plantera'
 
-game_stage = input('Input your current stage of game [Pre-Boss, Pre-Brain of Cthulhu/Eater of Worlds, Pre-Skeletron, Pre-Wall of Flesh, Pre-Mech Bosses, Pre-Plantera, Pre-Golem, Pre-Lunatic Cultist, Endgame]: ')
+game_stage = input('Input your current stage of game [Pre-Boss, Pre-Brain of Cthulhu/Eater of Worlds, Pre-Perforators/Hive Mind, Pre-Skeletron, Pre-Wall of Flesh, ' +
+                   'Pre-Mech Bosses, Post-Mech Boss 1, Post-Mech Boss 2, Pre-Calamitas Clone/Plantera, Pre-Golem, Post-Golem, Pre-Lunar Events, Pre-Moon Lord, ' +
+                   'Pre-Providence, Pre-Polterghast, Pre-Devourer of Gods, Pre-Yharon, Pre-Exo Mechs/Supreme Witch, Calamitas, Endgame]: ')
 
 armor_sets_remove = []
 

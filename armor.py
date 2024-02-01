@@ -571,9 +571,9 @@ wizard = WizardSet
 
 armor_sets = {mining, wood, rich_mahogany, boreal, palm, ebonwood, shadewood, ashwood, rain, snow, angler, cactus, copper, tin, pumpkin, 
               ninja, iron, lead, silver, tungsten, gold, platinum, fossil, bee, obsidian, gladiator, meteor, jungle, necro, 
-              shadow, crimson, molten, pearlwood, spider, cobalt, palladium, mythril, orichalcum, adamantite,
-              titanium, crystal_assassin, frost, forbidden, squire, monk, huntress, apprentice, hallowed, chlorophyte, turtle, tiki, beetle, shroomite,
-              spectre, valhalla, shinobi, red_riding, dark_artist, solar, vortex, nebula, stardust, wizard}
+              shadow, crimson, molten, pearlwood, spider, cobalt, palladium, mythril, orichalcum, adamantite, titanium, crystal_assassin, 
+              frost, forbidden, squire, monk, huntress, apprentice, hallowed, chlorophyte, turtle, tiki, beetle, shroomite,
+              spectre, spooky, valhalla, shinobi, red_riding, dark_artist, solar, vortex, nebula, stardust, wizard}
 
 redundant_armor_sets = {pink_snow, ancient_cobalt, ancient_shadow}
 
@@ -585,7 +585,7 @@ else:
     PumpkinSet.stage = 'Pre-Brain of Cthulhu/Eater of Worlds'
     HallowedSet.stage = 'Pre-Plantera'
 
-game_stage = 'Pre-Boss' # input('Input your current stage of game [Pre-Boss, Pre-Brain of Cthulhu/Eater of Worlds, Pre-Skeletron, Pre-Wall of Flesh, Pre-Mech Bosses, Pre-Plantera, Pre-Golem, Pre-Lunatic Cultist, Endgame]: ')
+game_stage = input('Input your current stage of game [Pre-Boss, Pre-Brain of Cthulhu/Eater of Worlds, Pre-Skeletron, Pre-Wall of Flesh, Pre-Mech Bosses, Pre-Plantera, Pre-Golem, Pre-Lunatic Cultist, Endgame]: ')
 
 armor_sets_remove = []
 
