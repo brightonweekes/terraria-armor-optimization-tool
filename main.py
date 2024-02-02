@@ -1,4 +1,4 @@
-import tkinter
+import customtkinter as tk
 
 # Import necessary armor pieces, depending on whether Calamity mod is enabled or disabled
 
@@ -38,6 +38,10 @@ if target_stat == 'balance':
 combo_scores = []
 
 # Loop through every combination and append to combo_scores along with weighted score
+def main():
+    pass
+
+
 print('\nCalculating... Please wait\n')
 for set in armor_sets:
     for set2 in armor_sets:
