@@ -512,27 +512,6 @@ class DesertProwlerSet:
     set_bonus = Armor(90, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Ranged attacks deal an extra 1 flat damage\nSandsmoke Bomb - Double tap DOWN to shroud yourself in a small cloud of sand\nWhile the sand cloud is active, gain increased mobility but heavily reduced defense\nUsing a ranged weapon instantly dispels the sand cloak, but guarantees a supercrit for 200% damage\nThe super crit applies only as long as the resulting hit would not exceed 100 damage\nLanding the killing blow on an enemy with this shot shortens the ability cooldown to 1.5 seconds', None)
     stage = 'Pre-Boss'
 
-stage_tranlsation = {
-    'Pre-Boss': 0,
-    'Pre-Brain of Cthulhu/Eater of Worlds': 1,
-    'Pre-Perforators/Hive Mind': 2,
-    'Pre-Skeletron': 3,
-    'Pre-Wall of Flesh': 4,
-    'Pre-Mech Bosses': 5,
-    'Post-Mech Boss 1': 6,
-    'Post-Mech Boss 2': 7,
-    'Pre-Calamitas Clone/Plantera': 8,
-    'Pre-Golem': 9,
-    'Pre-Lunar Events': 10,
-    'Pre-Moon Lord': 11,
-    'Pre-Providence': 12,
-    'Pre-Polterghast': 13, 
-    'Pre-Devourer of Gods': 14, 
-    'Pre-Yharon': 15,
-    'Pre-Exo Mechs/Supreme Witch': 16, 
-    'Calamitas': 17,
-    'Endgame': 18
-}
 
 mining = MiningSet
 wood = WoodSet
@@ -605,7 +584,6 @@ wulfrum = WulfrumSet
 snow_ruffian = SnowRuffianSet
 desert_prowler = DesertProwlerSet
 
-
 armor_sets = {mining, wood, rich_mahogany, boreal, palm, ebonwood, shadewood, ashwood, rain, snow, angler, cactus, copper, tin, pumpkin, 
               ninja, iron, lead, silver, tungsten, gold, platinum, fossil, bee, obsidian, gladiator, meteor, jungle, necro, 
               shadow, crimson, molten, pearlwood, spider, cobalt, palladium, mythril, orichalcum, adamantite,
@@ -613,24 +591,3 @@ armor_sets = {mining, wood, rich_mahogany, boreal, palm, ebonwood, shadewood, as
               spectre, valhalla, shinobi, red_riding, dark_artist, solar, vortex, nebula, stardust, wizard, wulfrum, snow_ruffian, desert_prowler}
 
 redundant_armor_sets = {pink_snow, ancient_cobalt, ancient_shadow}
-
-redundant_armor = False     # Setting this to True will include armor that is redundant or difficult to obtain
-
-if redundant_armor:
-    armor_sets = armor_sets.union(redundant_armor_sets)
-else:
-    PumpkinSet.stage = 'Pre-Brain of Cthulhu/Eater of Worlds'
-    HallowedSet.stage = 'Pre-Plantera'
-
-game_stage = input('Input your current stage of game [Pre-Boss, Pre-Brain of Cthulhu/Eater of Worlds, Pre-Perforators/Hive Mind, Pre-Skeletron, Pre-Wall of Flesh, ' +
-                   'Pre-Mech Bosses, Post-Mech Boss 1, Post-Mech Boss 2, Pre-Calamitas Clone/Plantera, Pre-Golem, Post-Golem, Pre-Lunar Events, Pre-Moon Lord, ' +
-                   'Pre-Providence, Pre-Polterghast, Pre-Devourer of Gods, Pre-Yharon, Pre-Exo Mechs/Supreme Witch, Calamitas, Endgame]: ')
-
-armor_sets_remove = []
-
-for set in armor_sets:
-    if stage_tranlsation[set.stage] > stage_tranlsation[game_stage]:
-        armor_sets_remove.append(set)
-
-for set in armor_sets_remove:
-    armor_sets.remove(set)

@@ -488,18 +488,6 @@ class WizardSet:
     set_bonus = None
     stage = 'Pre-Boss'
 
-stage_tranlsation = {
-    'Pre-Boss': 0,
-    'Pre-Brain of Cthulhu/Eater of Worlds': 1,
-    'Pre-Skeletron': 2,
-    'Pre-Wall of Flesh': 3,
-    'Pre-Mech Bosses': 4,
-    'Pre-Plantera': 5,
-    'Pre-Golem': 6,
-    'Pre-Lunatic Cultist': 7,
-    'Endgame': 8
-}
-
 mining = MiningSet
 wood = WoodSet
 rich_mahogany = MahoganySet
@@ -576,22 +564,3 @@ armor_sets = {mining, wood, rich_mahogany, boreal, palm, ebonwood, shadewood, as
               spectre, spooky, valhalla, shinobi, red_riding, dark_artist, solar, vortex, nebula, stardust, wizard}
 
 redundant_armor_sets = {pink_snow, ancient_cobalt, ancient_shadow}
-
-redundant_armor = False     # Setting this to True will include armor that is redundant or difficult to obtain
-
-if redundant_armor:
-    armor_sets = armor_sets.union(redundant_armor_sets)
-else:
-    PumpkinSet.stage = 'Pre-Brain of Cthulhu/Eater of Worlds'
-    HallowedSet.stage = 'Pre-Plantera'
-
-game_stage = input('Input your current stage of game [Pre-Boss, Pre-Brain of Cthulhu/Eater of Worlds, Pre-Skeletron, Pre-Wall of Flesh, Pre-Mech Bosses, Pre-Plantera, Pre-Golem, Pre-Lunatic Cultist, Endgame]: ')
-
-armor_sets_remove = []
-
-for set in armor_sets:
-    if stage_tranlsation[set.stage] > stage_tranlsation[game_stage]:
-        armor_sets_remove.append(set)
-
-for set in armor_sets_remove:
-    armor_sets.remove(set)
