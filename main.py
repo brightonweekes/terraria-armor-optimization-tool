@@ -55,7 +55,8 @@ class MyGUI:
 
     def __init__(self):
 
-        self.root = tk.CTk(className='armorOptimizationTool')
+        self.root = tk.CTk()
+        self.root.title("What are you lookin' at!")
         self.root_width, self.root_height = (1920, 1080)
         self.root.geometry(f'{self.root_width}x{self.root_height}')
         tk.set_appearance_mode("dark")
