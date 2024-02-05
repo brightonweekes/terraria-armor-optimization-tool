@@ -8,4 +8,4 @@ Click the green code button and download the zip file. Extract the folder. To in
 
 pip install customtkinter
 
-To use, open the folder in a text editor or code editor and run it. Usage instructions can be found from within the program.
+To use, open the folder in a code editor like VS Code or PyCharm and run main.py. Usage instructions can be found from within the program.

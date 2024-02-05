@@ -512,82 +512,45 @@ class DesertProwlerSet:
     set_bonus = Armor(90, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Ranged attacks deal an extra 1 flat damage\nSandsmoke Bomb - Double tap DOWN to shroud yourself in a small cloud of sand\nWhile the sand cloud is active, gain increased mobility but heavily reduced defense\nUsing a ranged weapon instantly dispels the sand cloak, but guarantees a supercrit for 200% damage\nThe super crit applies only as long as the resulting hit would not exceed 100 damage\nLanding the killing blow on an enemy with this shot shortens the ability cooldown to 1.5 seconds', None)
     stage = 'Pre-Boss'
 
+class MarniteArchitectSet:
+    helmets = [Armor(91, 'Marnite Architect Headgear', 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Increases block placement range by 5', None)]
+    chestplates = [Armor(91, 'Marnite Architect Toga', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Increases placement speed by 50%', None)]
+    set_bonus = Armor(91, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Marnite Lift - You can summon a lift under your feet to reach higher up\nThe lift gets summoned when the mount hotkey gets pressed without any mounts equipped\nUsing the ▲ Up and ▼ Down keys can change the lift's height", None)
+    stage = 'Pre-Boss'
 
-mining = MiningSet
-wood = WoodSet
-rich_mahogany = MahoganySet
-boreal = BorealSet
-palm = PalmSet
-ebonwood = EbonwoodSet
-shadewood = ShadewoodSet
-ashwood = AshWoodSet
-rain = RainSet
-snow = SnowSet
-pink_snow = PinkSnowSet
-angler = AnglerSet
-cactus = CactusSet
-copper = CopperSet
-tin = TinSet
-pumpkin = PumpkinSet
-ninja = NinjaSet
-iron = IronSet
-lead = LeadSet
-silver = SilverSet
-tungsten = TungstenSet
-gold = GoldSet
-platinum = PlatinumSet
-fossil = FossilSet
-bee = BeeSet
-obsidian = ObsidianSet
-gladiator = GladiatorSet
-meteor = MeteorSet
-jungle = JungleSet
-ancient_cobalt = AncientCobaltSet
-necro = NecroSet
-shadow = ShadowSet
-ancient_shadow = AncientShadowSet
-crimson = CrimsonSet
-molten = MoltenSet
-pearlwood = PearlwoodSet
-spider = SpiderSet
-cobalt = CobaltSet
-palladium = PalladiumSet
-mythril = MythrilSet
-orichalcum = OrichalcumSet
-adamantite = AdamantiteSet
-titanium = TitaniumSet
-crystal_assassin = CrystalAssassinSet
-frost = FrostSet
-forbidden = ForbiddenSet
-squire = SquireSet
-monk = MonkSet
-huntress = HuntressSet
-apprentice = ApprenticeSet
-hallowed = HallowedSet
-chlorophyte = ChlorophyteSet
-turtle = TurtleSet
-tiki = TikiSet
-beetle = BeetleSet
-shroomite = ShroomiteSet
-spectre = SpectreSet
-spooky = SpookySet
-valhalla = ValhallaKnightSet
-shinobi = ShinobiInfiltratorSet
-red_riding = RedRidingSet
-dark_artist = DarkArtistSet
-solar = SolarFlareSet
-vortex = VortexSet
-nebula = NebulaSet
-stardust = StardustSet
-wizard = WizardSet
-wulfrum = WulfrumSet
-snow_ruffian = SnowRuffianSet
-desert_prowler = DesertProwlerSet
+class VictideSet:
+    helmets = [Armor(92, 'Victide Shellmet', 4, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(92, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you\n+1.5% life regen and 10% increased melee damage while submerged in liquid', None)), Armor(92, 'Victide Coral Turban', 3, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(92, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+1.5 HP/s life regen and 10% increased ranged damage while submerged in liquid', None)), Armor(92, 'Victide Hermit Helmet', 2, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(92, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+1.5 HP/s life regen and 10% increased magic damage while submerged in liquid', None)), Armor(92, 'Victide Mask', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, '', set_bonus=Armor(92, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, '+1.5 HP/s life regen and 10% increased summon damage while submerged in liquid\nSummons a sea snail to protect you', None)), Armor(92, 'Victide Headcrab', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, '', set_bonus=Armor(92, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, '+1.5 HP/s life regen and 10% increased rogue damage while submerged in liquid', None))]
+    chestplates = [Armor(92, 'Victide Breastplate', 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '5% increased damage reduction\n+5 defense and 10% increased damage reduction while submerged in liquid', None)]
+    leggins = Armor(92, 'Victide Greaves', 4, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Movement speed increased by 30% while submerged in liquid', None)
+    set_bonus = Armor(92, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'When using any weapon you have a 10% chance to throw a returning seashell projectile\This seashell does true damage and does not benefit from any damage class\nProvides increased underwater mobility and slightly reduces breath loss in the abyss', None)
+    stage = 'Pre-Brain of Cthulhu/Eater of Worlds'
 
-armor_sets = {mining, wood, rich_mahogany, boreal, palm, ebonwood, shadewood, ashwood, rain, snow, angler, cactus, copper, tin, pumpkin, 
-              ninja, iron, lead, silver, tungsten, gold, platinum, fossil, bee, obsidian, gladiator, meteor, jungle, necro, 
-              shadow, crimson, molten, pearlwood, spider, cobalt, palladium, mythril, orichalcum, adamantite,
-              titanium, crystal_assassin, frost, forbidden, squire, monk, huntress, apprentice, hallowed, chlorophyte, turtle, tiki, beetle, shroomite,
-              spectre, valhalla, shinobi, red_riding, dark_artist, solar, vortex, nebula, stardust, wizard, wulfrum, snow_ruffian, desert_prowler}
+class SulphurousSet:
+    helmets = [Armor(93, 'Sulphurous Helmet', 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2, 0, 'Grants underwater breathing', None)]
+    chestplates = [Armor(93, 'Sulphurous Breastplate', 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 5, 0, '', None)]
+    leggings = Armor(93, 'Sulphurour Leggings', 5, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Movement speed increased by 35% while submerged in liquid', None)
+    set_bonus = Armor(93, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 70, 'Attacking and being attacked by enemies inflicts poison\nGrants an additional jump that summons a sulphurous bubble\nProvides increased underwater mobility and reduces the severity of the sulphuric waters', None)
+    stage = 'Pre-Brain of Cthulhu/Eater of Worlds'
+    
+class AerospecSet:
+    helmets = [Armor(94, 'Aerospec Helm', 7, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(94, '', 0, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you', None)), Armor(94, 'Aerospec Hood', 5, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus= Armor(94, '', 0, 0, 0, 5, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, '', None)), Armor(94, 'Aerospec Hat', 3, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 20, 0, 0, 0, 0, 0, '', set_bonus= Armor(94, '', 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, '', None)), Armor(94, 'Aerospec Helmet', 2, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, '', set_bonus=Armor(94, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 1, 0, 0, 0, 'Summons a valkyrie to protect you', None)), Armor(94, 'Aerospec headgear', 4, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, '', set_bonus=Armor(94, '', 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 80, '', None))]
+    chestplates = [Armor(94, 'Aerospec Breastplate', 7, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    leggings = Armor(94, 'Aerospec Leggings', 6, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(94, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Taking over 25 damage in one hit will cause a spread of homing feathers to fall\nAllows you to fall more quickly and disables fall damage', None)
+    stage = 'Pre-Skeletron'
 
-redundant_armor_sets = {pink_snow, ancient_cobalt, ancient_shadow}
+class StatigelSet:
+    helmets = [Armor(95, 'Statigel Helm', 9, 0, 0, 0, 10, 7, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(95, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you', None)), Armor(95, 'Statigel Headgear', 7, 0, 0, 0, 0, 0, 0, 10, 7, 0, 0, 0, 0, 0, 0, 0, 0, '', None), Armor(95, 'Statigel Cap', 5, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 30, 0, 0, 0, 0, 0, '10% decreased mana cost', None), Armor(95, 'Statigel Hood', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 'Increased minion knockback', set_bonus=Armor(95, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 1, 0, 0, 0, 'Summons a mini Slime God to fight for you, the type depends on what world evil you have', None)), Armor(95, 'Statigel Mask', 6, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 0, '34% chance to not consume thrown items', set_bonus=Armor(95, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 90, '', None))]
+    chestplates = [Armor(95, 'Statigel Armor', 10, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    leggings = Armor(95, 'Statigel Greaves', 8, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(95, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'When you take over 100 damage in one hit you become immune to damage for an extended period of time\nGrants an extra jump and increased jump height\n12% increased jump speed', None)
+    stage = 'Pre-Wall of Flesh'
+
+
+armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, ShadewoodSet, AshWoodSet, RainSet, SnowSet, PinkSnowSet, AnglerSet, CactusSet, CopperSet, TinSet, PumpkinSet, 
+              NinjaSet, IronSet, LeadSet, SilverSet, TungstenSet, GoldSet, PlatinumSet, FossilSet, BeeSet, ObsidianSet, GladiatorSet, MeteorSet, JungleSet, AncientCobaltSet, NecroSet, 
+              ShadowSet, AncientShadowSet, CrimsonSet, MoltenSet, PearlwoodSet, SpiderSet, CobaltSet, PalladiumSet, MythrilSet, OrichalcumSet, AdamantiteSet,
+              TitaniumSet, CrystalAssassinSet, FrostSet, ForbiddenSet, SquireSet, MonkSet, HuntressSet, ApprenticeSet, HallowedSet, ChlorophyteSet, TurtleSet, TikiSet, BeetleSet, ShroomiteSet,
+              SpectreSet, ValhallaKnightSet, ShinobiInfiltratorSet, RedRidingSet, DarkArtistSet, SolarFlareSet, VortexSet, NebulaSet, StardustSet, WizardSet, WulfrumSet, SnowRuffianSet, DesertProwlerSet, MarniteArchitectSet, VictideSet,
+              SulphurousSet, AerospecSet, StatigelSet}
+

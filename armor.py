@@ -488,79 +488,9 @@ class WizardSet:
     set_bonus = None
     stage = 'Pre-Boss'
 
-mining = MiningSet
-wood = WoodSet
-rich_mahogany = MahoganySet
-boreal = BorealSet
-palm = PalmSet
-ebonwood = EbonwoodSet
-shadewood = ShadewoodSet
-ashwood = AshWoodSet
-rain = RainSet
-snow = SnowSet
-pink_snow = PinkSnowSet
-angler = AnglerSet
-cactus = CactusSet
-copper = CopperSet
-tin = TinSet
-pumpkin = PumpkinSet
-ninja = NinjaSet
-iron = IronSet
-lead = LeadSet
-silver = SilverSet
-tungsten = TungstenSet
-gold = GoldSet
-platinum = PlatinumSet
-fossil = FossilSet
-bee = BeeSet
-obsidian = ObsidianSet
-gladiator = GladiatorSet
-meteor = MeteorSet
-jungle = JungleSet
-ancient_cobalt = AncientCobaltSet
-necro = NecroSet
-shadow = ShadowSet
-ancient_shadow = AncientShadowSet
-crimson = CrimsonSet
-molten = MoltenSet
-pearlwood = PearlwoodSet
-spider = SpiderSet
-cobalt = CobaltSet
-palladium = PalladiumSet
-mythril = MythrilSet
-orichalcum = OrichalcumSet
-adamantite = AdamantiteSet
-titanium = TitaniumSet
-crystal_assassin = CrystalAssassinSet
-frost = FrostSet
-forbidden = ForbiddenSet
-squire = SquireSet
-monk = MonkSet
-huntress = HuntressSet
-apprentice = ApprenticeSet
-hallowed = HallowedSet
-chlorophyte = ChlorophyteSet
-turtle = TurtleSet
-tiki = TikiSet
-beetle = BeetleSet
-shroomite = ShroomiteSet
-spectre = SpectreSet
-spooky = SpookySet
-valhalla = ValhallaKnightSet
-shinobi = ShinobiInfiltratorSet
-red_riding = RedRidingSet
-dark_artist = DarkArtistSet
-solar = SolarFlareSet
-vortex = VortexSet
-nebula = NebulaSet
-stardust = StardustSet
-wizard = WizardSet
 
-
-armor_sets = {mining, wood, rich_mahogany, boreal, palm, ebonwood, shadewood, ashwood, rain, snow, angler, cactus, copper, tin, pumpkin, 
-              ninja, iron, lead, silver, tungsten, gold, platinum, fossil, bee, obsidian, gladiator, meteor, jungle, necro, 
-              shadow, crimson, molten, pearlwood, spider, cobalt, palladium, mythril, orichalcum, adamantite, titanium, crystal_assassin, 
-              frost, forbidden, squire, monk, huntress, apprentice, hallowed, chlorophyte, turtle, tiki, beetle, shroomite,
-              spectre, spooky, valhalla, shinobi, red_riding, dark_artist, solar, vortex, nebula, stardust, wizard}
-
-redundant_armor_sets = {pink_snow, ancient_cobalt, ancient_shadow}
+armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, ShadewoodSet, AshWoodSet, RainSet, SnowSet, PinkSnowSet, AnglerSet, CactusSet, CopperSet, TinSet, PumpkinSet, 
+              NinjaSet, IronSet, LeadSet, SilverSet, TungstenSet, GoldSet, PlatinumSet, FossilSet, BeeSet, ObsidianSet, GladiatorSet, MeteorSet, JungleSet, AncientCobaltSet, NecroSet, 
+              ShadowSet, AncientShadowSet, CrimsonSet, MoltenSet, PearlwoodSet, SpiderSet, CobaltSet, PalladiumSet, MythrilSet, OrichalcumSet, AdamantiteSet,
+              TitaniumSet, CrystalAssassinSet, FrostSet, ForbiddenSet, SquireSet, MonkSet, HuntressSet, ApprenticeSet, HallowedSet, ChlorophyteSet, TurtleSet, TikiSet, BeetleSet, ShroomiteSet,
+              SpectreSet, ValhallaKnightSet, ShinobiInfiltratorSet, RedRidingSet, DarkArtistSet, SolarFlareSet, VortexSet, NebulaSet, StardustSet, WizardSet}
