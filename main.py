@@ -18,17 +18,17 @@ vanilla_stage_tranlsation = {
     'Pre-Skeletron': 2,
     'Pre-Wall of Flesh': 3,
     'Pre-Mech Bosses': 4,
-    'Pre-Plantera': 5,
-    'Pre-Golem': 6,
-    'Pre-Lunatic Cultist': 7,
-    'Endgame': 8
+    'Post-First Mech Boss': 5,
+    'Pre-Plantera': 6,
+    'Pre-Golem': 7,
+    'Pre-Lunatic Cultist': 8,
+    'Endgame': 9
 }
 
 
 calamity_stage_tranlsation = {
     'Pre-Boss': 0,
     'Pre-Brain of Cthulhu/Eater of Worlds': 1,
-    'Pre-World Evil Boss': 1,
     'Pre-Perforators/Hive Mind': 2,
     'Pre-Skeletron': 3,
     'Pre-Wall of Flesh': 4,
@@ -45,9 +45,8 @@ calamity_stage_tranlsation = {
     'Pre-Polterghast': 13, 
     'Pre-Devourer of Gods': 14, 
     'Pre-Yharon': 15,
-    'Pre-Exo Mechs/Supreme Witch': 16, 
-    'Calamitas': 17,
-    'Endgame': 18
+    'Pre-Exo Mechs/Supreme Witch, Calamitas': 16, 
+    'Endgame': 17
 }
 
 
@@ -67,13 +66,13 @@ class MyGUI:
         self.mainFrame = tk.CTkFrame(self.root, width=700, height=500, fg_color='#37515f')
         self.mainFrame.pack()
 
-        self.stageOptionMenu = tk.CTkOptionMenu(self.mainFrame, values=['Pre-Boss', 'Pre-World Evil Boss', 'Pre-Skeletron', 'Pre-Wall of Flesh', 
-                                                                   'Pre-Mech Bosses', 'Pre-Plantera', 'Pre-Golem', 'Pre-Lunatic Cultist', 'Endgame'
-                                                                   ], fg_color='#0093E9', dropdown_fg_color='#0093E9', command=self.change_stage)
+        stages = ['Pre-Boss', 'Pre-World Evil Boss', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 'Post-First Mech Boss', 'Pre-Plantera', 'Pre-Golem', 
+                      'Pre-Lunatic Cultist', 'Endgame']
+        self.stageOptionMenu = tk.CTkOptionMenu(self.mainFrame, values=stages, fg_color='#0093E9', dropdown_fg_color='#0093E9', command=self.change_stage)
         self.stageOptionMenu.grid(row=0, column=0, padx=10, pady=10)
 
-        self.classOptionMenu = tk.CTkOptionMenu(self.mainFrame, values=['Melee', 'Ranged', 'Magic', 'Summoner'], fg_color='#0093E9', 
-                                                dropdown_fg_color='#0093E9', command=self.change_class)
+        classes = ['Melee', 'Ranged', 'Magic', 'Summoner']
+        self.classOptionMenu = tk.CTkOptionMenu(self.mainFrame, values=classes, fg_color='#0093E9', dropdown_fg_color='#0093E9', command=self.change_class)
         self.classOptionMenu.grid(row=1, column=0, padx=10, pady=10)
 
         self.redarmButton = tk.CTkButton(self.mainFrame, width=140, height=28, corner_radius=50, fg_color='#C850C0', hover_color='#4158D0', text='Exclude Redundant Armors', command=self.toggle_redundant_armor)
@@ -112,8 +111,19 @@ class MyGUI:
         calamity = not calamity
         if calamity:
             self.calamityButton.configure(text='Calamity')
+            stages = ['Pre-Boss', 'Pre-Brain of Cthulhu/Eater of Worlds', 'Pre-Perforators/Hive Mind', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 
+                      'Post-Mech Boss 1', 'Post-Mech Boss 2', 'Pre-Calamitas Clone/Plantera', 'Pre-Golem', 'Pre-Lunar Events', 'Pre-Moon Lord', 'Pre-Providence',
+                      'Pre-Polterghast', 'Pre-Devourer of Gods', 'Pre-Yharon', 'Pre-Exo-Mechs/Supreme Witch', 'Pre-Calamitas', 'Endgame']
+            classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Rogue']
+
         else:
             self.calamityButton.configure(text='Vanilla')
+            stages = ['Pre-Boss', 'Pre-World Evil Boss', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 'Post-First Mech Boss', 'Pre-Plantera', 'Pre-Golem', 
+                      'Pre-Lunatic Cultist', 'Endgame']
+            classes = ['Melee', 'Ranged', 'Magic', 'Summoner']
+        self.stageOptionMenu.configure(values=stages)
+        self.classOptionMenu.configure(values=classes)
+
 
     def update_output(self, text):
         self.outputTextbox.configure(text=text)
@@ -125,7 +135,7 @@ class MyGUI:
             filtered_sets = calamity_armor.armor_sets.copy()
 
             if not redundant_armor:
-                sets_to_remove = {calamity_armor.PinkSnowSet, calamity_armor.AncientCobaltSet}
+                sets_to_remove = {calamity_armor.PinkSnowSet, calamity_armor.AncientHallowedSet}
             filtered_sets.difference_update(sets_to_remove)
 
             for set in filtered_sets.copy():
@@ -135,7 +145,7 @@ class MyGUI:
             filtered_sets = armor.armor_sets.copy()
 
             if not redundant_armor:
-                sets_to_remove = {armor.PinkSnowSet, armor.AncientCobaltSet}
+                sets_to_remove = {armor.PinkSnowSet, armor.AncientCobaltSet, armor.AncientHallowedSet}
             filtered_sets.difference_update(sets_to_remove)
 
             for set in filtered_sets.copy():
@@ -267,4 +277,4 @@ class MyGUI:
         self.update_output(output)
 
 
-MyGUI()
+main = MyGUI()

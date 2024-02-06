@@ -343,7 +343,7 @@ class ForbiddenSet:
     stage = 'Pre-Mech Bosses'
 
 class SquireSet:
-    helmets = [Armor(59, "Squire's Great Helm", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Increases your life regeneration', None)]
+    helmets = [Armor(59, "Squire's Great Helm", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Increases your life regeneration by 2hp/ second', None)]
     chestplates = [Armor(59, "Squire's Plating", 27, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 15, 0, '', None)]
     leggings = Armor(59, "Squire's Greaves", 18, 0, 0, 15, 0, 15, 0, 0, 0, 0, 0, 0, 15, 0, '', None)
     set_bonus = Armor(59, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Ballista pierces more targets and panics when you take damage', None)
@@ -375,7 +375,14 @@ class HallowedSet:
     chestplates = [Armor(63, 'Hallowed Plate Mail', 15, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
     leggings = Armor(63, 'Hallowed Greaves', 11, 7, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
     set_bonus = Armor(63, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Become immune after striking an enemy', None)
-    stage = 'Pre-Mech Bosses'
+    stage = 'Post-First Mech Boss'
+
+class AncientHallowedSet:
+    helmets = [Armor(63, 'Ancient Hallowed Mask', 24, 0, 0, 0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, '', None), Armor(63, 'Ancient Hallowed Helmet', 9, 0, 0, 0, 0, 0, 0, 15, 8, 0, 0, 0, 0, 0, '', None), Armor(63, 'Ancient Hallowed Headgear', 5, 0, 0, 0, 0, 0, 0, 0, 0, 12, 12, 100, 0, 0, '', None), Armor(63, 'Ancient Hallowed Hood', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 1, '', set_bonus = Armor(66, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, '',  None))]
+    chestplates = [Armor(63, 'Ancient Hallowed Plate Mail', 15, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    leggings = Armor(63, 'Ancient Hallowed Greaves', 11, 7, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(63, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Become immune after striking an enemy', None)
+    stage = 'Post-First Mech Boss'
 
 class ChlorophyteSet:
     helmets = [Armor(67, 'Chlorophyte Mask', 20, 0, 0, 0, 16, 6, 0, 0, 0, 0, 0, 0, 0, 0, '', None), Armor(67, 'Chlorophyte Helmet', 13, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 0, '20% chance to save ammo', None), Armor(67, 'Chlorophyte Headgear', 7, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 80, 0, 0, '17% reduced mana cost', None)]
@@ -413,7 +420,7 @@ class ShroomiteSet:
     stage = 'Pre-Golem'
 
 class SpectreSet:
-    helmets = [Armor(76, 'Spectre Mask', 18, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 60, 0, 0, '13% reduced mana cost', set_bonus = Armor(76, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Magic damage done will hurt extra nearby enemies', None)), Armor(76, 'Spectre Hood', 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus = Armor(77, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Reduces Magic dmage done by 4% and converts it to healing force\nMagic damage done to enemies heals the player with the lowest health', None))]
+    helmets = [Armor(76, 'Spectre Mask', 18, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 60, 0, 0, '13% reduced mana cost', set_bonus = Armor(76, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Magic damage done will hurt extra nearby enemies', None)), Armor(76, 'Spectre Hood', 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus = Armor(77, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Reduces magic dmage done by 40% and converts it to healing force\nMagic damage done to enemies heals the player with the lowest health', None))]
     chestplates = [Armor(76, 'Spectre Robe', 14, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 0, 0, 0, '', None)]
     leggings = Armor(76, 'Spectre Pants', 10, 0, 0, 8, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, '', None)
     set_bonus = None
@@ -488,9 +495,59 @@ class WizardSet:
     set_bonus = None
     stage = 'Pre-Boss'
 
+class EmptyBucketSet:
+    helmets = [Armor(88, 'Empty Bucket', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
+
+class GogglesSet:
+    helmets = [Armor(89, 'Goggles', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
+
+class GreenCapSet:
+    helmets = [Armor(90, 'Green Cap', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
+
+class DivingHelmetSet:
+    helmets = [Armor(91, 'Diving Helmet', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Greatly extends underwater breathing', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
+
+class NightVisionSet:
+    helmets = [Armor(92, 'Night Vision Helmet', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Improves vision', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
+
+class VikingSet:
+    helmets = [Armor(93, 'Viking Helmet', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
+
+class FlinxSet:
+    chestplates = [Armor(94, 'Flinx Fur Coat', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 1, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
+
+class GiSet:
+    chestplates = [Armor(95, 'Gi', 4, 5, 5, 10, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
+
+class DjinnSet:
+    leggings = Armor(96, "Djinn's Curse", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants slow falling in exchange for your feet', None)
+    set_bonus = None
+    stage = 'Pre-Mech Bosses'
+
+class MoonLordSet:
+    leggings = Armor(97, 'Moon Lord Legs', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Slightly increases mobility', None)
+    set_bonus = None
+    stage = 'Pre-Boss'
 
 armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, ShadewoodSet, AshWoodSet, RainSet, SnowSet, PinkSnowSet, AnglerSet, CactusSet, CopperSet, TinSet, PumpkinSet, 
               NinjaSet, IronSet, LeadSet, SilverSet, TungstenSet, GoldSet, PlatinumSet, FossilSet, BeeSet, ObsidianSet, GladiatorSet, MeteorSet, JungleSet, AncientCobaltSet, NecroSet, 
               ShadowSet, AncientShadowSet, CrimsonSet, MoltenSet, PearlwoodSet, SpiderSet, CobaltSet, PalladiumSet, MythrilSet, OrichalcumSet, AdamantiteSet,
-              TitaniumSet, CrystalAssassinSet, FrostSet, ForbiddenSet, SquireSet, MonkSet, HuntressSet, ApprenticeSet, HallowedSet, ChlorophyteSet, TurtleSet, TikiSet, BeetleSet, ShroomiteSet,
-              SpectreSet, ValhallaKnightSet, ShinobiInfiltratorSet, RedRidingSet, DarkArtistSet, SolarFlareSet, VortexSet, NebulaSet, StardustSet, WizardSet}
+              TitaniumSet, CrystalAssassinSet, FrostSet, ForbiddenSet, SquireSet, MonkSet, HuntressSet, ApprenticeSet, HallowedSet, AncientHallowedSet, ChlorophyteSet, TurtleSet, TikiSet, BeetleSet, ShroomiteSet,
+              SpectreSet, ValhallaKnightSet, ShinobiInfiltratorSet, RedRidingSet, DarkArtistSet, SolarFlareSet, VortexSet, NebulaSet, StardustSet, WizardSet, EmptyBucketSet,
+              GogglesSet, GreenCapSet, DivingHelmetSet, NightVisionSet, VikingSet, FlinxSet, GiSet, DjinnSet, MoonLordSet}
