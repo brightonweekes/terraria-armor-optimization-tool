@@ -124,7 +124,6 @@ class MyGUI:
         self.stageOptionMenu.configure(values=stages)
         self.classOptionMenu.configure(values=classes)
 
-
     def update_output(self, text):
         self.outputTextbox.configure(text=text)
 

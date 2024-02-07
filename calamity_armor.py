@@ -554,7 +554,103 @@ class StatigelSet:
     stage = 'Pre-Wall of Flesh'
 
 class MolluskSet:
-    pass
+    helmets = [Armor(96, 'Mollusk Shellmet', 18, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'You can move freely through liquids', None)]
+    chestplates = [Armor(96, 'Mollusk Shellplate', 22, 10, 6, -15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    leggings = Armor(96, 'Mollusk Shelleggings', 15, 12, 4, -7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(96, '', 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Two shellfishes aid you in combat\nYour horizontal movement is slowed', None)
+    stage = 'Pre-Mech Bosses'
+
+class TitanHeartSet:
+    helmets = [Armor(97, 'Titan Heart Mask', 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, '5% increased rogue knockback\nRogue weapons inflict the Astral Inflection debuff', None)]
+    chestplates = [Armor(97, 'Titan Heart Mantle', 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '45% chance to not consume rogue items\n5% boosted rogue knockback but 15% lowered rogue attack speed', None)]
+    leggings = Armor(97, 'Titan Heart Boots', 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, '10% increased rogue velocity\n5% increased rogue knockback', None)
+    set_bonus = Armor(97, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 100, '15% increased rogue knockback\nStealth strikes deal double knockback and cause an astral explosion\nGrants immunity to knockback', None)
+    stage = 'Pre-Mech Bosses'
+
+class DaedaliusSet:
+    helmets = [Armor(98, 'Daedalus Helm', 23, 0, 0, 0, 15, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(98, '', 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you\nYou reflect projectiles back at enemies\nReflected projectiles deal 50% less damage to you\nThis reflect has a 90 second cooldown which is shared with all other dodges and reflects', None)), Armor(98, 'Daedalus Headgear', 9, 0, 0, 0, 0, 0, 0, 13, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Reduces ammo usage by 20%', set_bonus=Armor(98, '', 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Getting hit causes you to emit a blast of crystal shards', None)), Armor(98, 'Daedalus Hood', 5, 0, 0, 0, 0, 0, 0, 0, 0, 13, 7, 60, 0, 0, 0, 0, 0, '10% reduced mana usage', set_bonus=Armor(98, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, "You have a 10% chance absorb physical attacks and projectiles when hit\nIf you absorb an attack you are healed for 1/2 of that attack's damage", None)), Armor(98, 'Daedalus Mask', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, '', set_bonus=Armor(98, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 2, 0, 0, 0, 'A daedalus crystal floats above you to protect you', None)), Armor(98, 'Daedalus Facemask', 7, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 7, 0, '15% increased rogue velocity', set_bonus=Armor(98, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 105, 'Rogue projectiles throw out crystal shards as they travel', None))]
+    chestplates = [Armor(98, 'Daedalus Breastplate', 19, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    leggings = Armor(98, 'Daedalus Leggings', 15, 0, 3, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = None
+    stage = 'Pre-Calamitas Clone/Plantera'
+
+class BrimeflameSet:
+    helmets = [Armor(99, 'Brimflame Cowl', 11, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 70, 0, 0, 0, 0, 0, 'Reduces mana usage by 10%\nImmunity to On Fire!, Brimstone Flames, and Frostburn', None)]
+    chestplates = [Armor(99, 'Brimflame Robes', 15, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 0, 0, 0, 0, 0, 0, '', None)]
+    leggings = Armor(99, 'Brimflame Boots', 15, 0, 0, 5, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(99, '', 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 'Press Armor Set Bonus to trigger a brimflame frenzy effect\nWhile under this effect, you get an additional 40% increase to magic damage\nHowever, this comes at the cost of rapid life loss and no mana regeneration\nThis can be toggled off, however, a brimflame frenzy has a 30 second cooldown', None)
+    stage = 'Pre-Golem'
+
+class FathomSwarmerSet:
+    helmets = [Armor(100, 'Fathom Swarmer Visage',10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 'Provides breathing and light underwater', None)]
+    chestplates = [Armor(100, 'Fathom Swarmer Breastplate', 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, '6% damage reduction\nIncreases defense by 10 and grants +2.5 HP/s regen while submerged in liquid\nReduces defense lost within the Abyss', None)]
+    leggings = Armor(100, 'Fathom Swarmer Greaves', 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 'Grants the abiliy to swim\n<ovement speed increased by 40% while submerged in liguid', None)
+    set_bonus = Armor(100, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2, 0, 0, 0, 'Grants the ability to climb walls\n30% increased summon damage while submerged in liquid\nProvides a moderate amount of light and moderately reduces breath loss in the abyss', None)
+    stage = 'Pre-Golem'
+
+class UmbraphileSet:
+    helmets = [Armor(101, 'Unbraphile Hood', 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, '10% increased rogue velocity', None)]
+    chestplates = [Armor(101, 'Umbraphile Regalia', 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 0, '', None)]
+    leggings = Armor(101, 'Umbraphile Boots', 12, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 6, 0, '', None)
+    set_bonus = Armor(101, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 110, 'Rogue weapons have a chance to create explosions on hit\nStealth strikes always creat an explosion', None)
+    stage = 'Pre-Golem'
+
+class ReaverSet:
+    helmets = [Armor(102, 'Reaver Helm', 30, -30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, '15% increased damage reduction\n+50 max life\nRestores 1 HP/s, this applis separately from life regen', set_bonus=Armor(102, '', 10, 0, 0, -20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+1.5 HP/s life regen\nEnemies are more lkely to target you\nReduces life regen lost from damage over time debuffs by 20%\n20% reduced flight time\nEnemy damage is reflected and summons a thorn spike\nReaver Rage has a 25% chance to activate when you are damaged', None)), Armor(102, 'Reaver Visage', 13, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '10% increased jump speed', set_bonus=Armor(102, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants immunity to fall damage and allows constant jumping\n10% increased flight time and horizontal wing speed\nHooks fly out and retract 10% faster\nReduces the cooldown of dashes', None)), Armor(102, 'Reaver Headgear', 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '20% increased mining speed and block/wall placement speed\nGrants immunity to lava and can move freely through liquids', set_bonus=Armor(102, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ' Highlights all treasure nearby\nIncreased item grab range and block placement range\nMining tiles restores breath while underwater\nSummons a reaver orb to light up the area around you\nReduces enemy aggression, even in the abyss\nProvides a small amount of light in the abyss', None))]
+    chestplates = [Armor(102, 'Reaver Scale Mail', 19, 9, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+20 max life', None)]
+    leggings = Armor(102, 'Reaver Cuisses', 14, 0, 5, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = None
+    stage = 'Pre-Golem'
+
+class HydrothermicSet:
+    helmets = [Armor(103, 'Hydrothermic Helm', 33, 0, 0, 0, 17, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Melee attacks and melee projectiles inflict On Fire!\n Grants immunity to fire and lava', set_bonus=Armor(103,'', 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you\nMelee attacks and projectiles cause chaos flames to erupt on enemy hits', None)), Armor(103, 'Hydrothermic Headgear', 15, 0, 0, 0, 0, 0, 0, 12, 10, 0, 0, 0, 0, 0, 0, 0, 0, 'Reduces ammo usage by 25%/Granys immunity to fire and lava', set_bonus=Armor(103, '', 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'You fire a homing chaos flare when using ranged weapons every 0.33 seconds', None)), Armor(103, 'Hydrothermic Mask', 9, 0, 0, 0, 0, 0, 0, 0, 0, 12, 10, 100, 0, 0, 0, 0, 0, 'Grants immunity to fire and lava', set_bonus=Armor(103, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, '15% reduced mana usage\nMagic attacks summon damaging and healing flare orbs on hit', None)), Armor(103, 'Hydrothermic Helmet', 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 5, 0, 0, 0, 0, '%5 increased minion knockback\nGrants immunity to fire and lava', set_bonus=Armor(103, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 2, 0, 0, 0, 'Summons a hydrothermic vent to protect you', None)), Armor(103, 'Hydrothermic Hood', 12, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 10, 0, '50% chance not to consume rogue items\nGrants immunity to fire and lava', set_bonus=Armor(103, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 110, 'Rogue weapons unleash a volley of himing flames around the player every 2 seconds', None))]
+    chestplates = [Armor(103, 'Hydrothermic Armor', 20, 8, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+20 max life', None)]
+    leggings = Armor(103, 'Hydrothermic Subligar', 14, 0, 5,10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(103, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Inferno effect when below 50% life\nYou emit a blazing explosion when you are hit', None)
+    stage = 'Pre-Golem'
+
+class PlagueReaperSet:
+    helmets = [Armor(104, 'Plague Reaper Mask', 9, 0, 0, 0, 0, 0, 0, 10, 8, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    chestplate = [Armor(104, 'Plague Reaper Vest', 14, 0, 0, 0, 0, 0, 0, 15, 5, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants immunity to Plague', None)]
+    leggings = Armor(104, 'Plague Reaper Striders', 11, 0, 3, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(104, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '25% reduced ammo usage and 5% increased flight time\nEnemies receive 10% more damage from ranged projectiles when afflicted by the Plague\nGetting hit causes the plague cinders to rain from above\nPress Armor Set Bonus to blind yourself for 5 seconds but massively boost your ranged damage\nThis has a 25 second cooldown.', None)
+    stage = 'Pre-Lunar Events'
+    
+class PlaguebringerSet:
+    helmets = [Armor(105, 'Plaguebringer Visor', 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, '+20 max life', None)]
+    chestplates = [Armor(105, 'Plaguebringer Carapace', 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 'Grants immunity to the Plague\nFriendly bees inflict the plague', None)]
+    leggings = Armor(105, 'Plaguebringer Pistons', 8, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 'Ypu grow flowers on the grass beneath you with a chance to grow very random dye plants on grassless dirt', None)
+    set_bonus = Armor(105, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 'Grants a plague dash which can slam through enemies without taking damage\nSummons a lil plaguebringer to protect you and empower nearby minions', None)
+    stage = 'Pre-Lunar Events'
+
+class AstralSet:
+    helmets = [Armor(106, 'Astral Helm', 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants danger detection', None)]
+    chestplates = [Armor(106, 'Astral Breastplate', 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 0, 0, '+20 max life\nGrantes creatre detection', None)]
+    leggings = Armor(106, 'Astral Leggings', 21, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants ore detection', None)
+    set_bonus = Armor(106,'', 0, 35, 35, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 'WHenever you crit an enemy, a barrage of stars will rain down\nThis effect has a 1 second cooldown before it will trigger again', None)
+    stage = 'Pre-Lunar Events'
+
+class LunicCorpsSet:
+    helmets = [Armor(107, 'Lunic Corps Helmet', 14, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants night vision and creature detection', None)]
+    chestplates = [Armor(107, 'Lunic Corps Vest', 20, 0, 0, 0, 0, 0, 0, 3, 11, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    leggings = Armor(107, 'Lunic Corps Boots', 18, 0, 0, 15, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, '10% increased max movement speed and acceleration', None)
+    set_bonus = Armor(107, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0, 'Projects a bubble shield that absorbs up to 50 damage\nThe shield starts recharging 5 seconds after being hit\nRecharging from zero to full charge takes 2 seconds\nBeing hit again while recharging restarts the charge timer\n10% increased bullet damage\n10% increased specialist ranged damage\nThese are launchers, dartguns, or anything else that does not shoot arrows/bullets\n20% increased jump speed', None)
+    stage = 'Pre-Lunar Events'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, ShadewoodSet, AshWoodSet, RainSet, SnowSet, PinkSnowSet, AnglerSet, CactusSet, CopperSet, TinSet, PumpkinSet, 
@@ -562,5 +658,5 @@ armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, 
               ShadowSet, AncientShadowSet, CrimsonSet, MoltenSet, PearlwoodSet, SpiderSet, CobaltSet, PalladiumSet, MythrilSet, OrichalcumSet, AdamantiteSet,
               TitaniumSet, CrystalAssassinSet, FrostSet, ForbiddenSet, SquireSet, MonkSet, HuntressSet, ApprenticeSet, HallowedSet, ChlorophyteSet, TurtleSet, TikiSet, BeetleSet, ShroomiteSet,
               SpectreSet, ValhallaKnightSet, ShinobiInfiltratorSet, RedRidingSet, DarkArtistSet, SolarFlareSet, VortexSet, NebulaSet, StardustSet, WizardSet, WulfrumSet, SnowRuffianSet, DesertProwlerSet, MarniteArchitectSet, VictideSet,
-              SulphurousSet, AerospecSet, StatigelSet}
+              SulphurousSet, AerospecSet, StatigelSet, MolluskSet, TitanHeartSet}
 
