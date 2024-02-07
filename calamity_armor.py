@@ -567,14 +567,14 @@ class TitanHeartSet:
     set_bonus = Armor(97, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 100, '15% increased rogue knockback\nStealth strikes deal double knockback and cause an astral explosion\nGrants immunity to knockback', None)
     stage = 'Pre-Mech Bosses'
 
-class DaedaliusSet:
+class DaedalusSet:
     helmets = [Armor(98, 'Daedalus Helm', 23, 0, 0, 0, 15, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(98, '', 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you\nYou reflect projectiles back at enemies\nReflected projectiles deal 50% less damage to you\nThis reflect has a 90 second cooldown which is shared with all other dodges and reflects', None)), Armor(98, 'Daedalus Headgear', 9, 0, 0, 0, 0, 0, 0, 13, 7, 0, 0, 0, 0, 0, 0, 0, 0, 'Reduces ammo usage by 20%', set_bonus=Armor(98, '', 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Getting hit causes you to emit a blast of crystal shards', None)), Armor(98, 'Daedalus Hood', 5, 0, 0, 0, 0, 0, 0, 0, 0, 13, 7, 60, 0, 0, 0, 0, 0, '10% reduced mana usage', set_bonus=Armor(98, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, "You have a 10% chance absorb physical attacks and projectiles when hit\nIf you absorb an attack you are healed for 1/2 of that attack's damage", None)), Armor(98, 'Daedalus Mask', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, '', set_bonus=Armor(98, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 2, 0, 0, 0, 'A daedalus crystal floats above you to protect you', None)), Armor(98, 'Daedalus Facemask', 7, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 7, 0, '15% increased rogue velocity', set_bonus=Armor(98, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 105, 'Rogue projectiles throw out crystal shards as they travel', None))]
     chestplates = [Armor(98, 'Daedalus Breastplate', 19, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
     leggings = Armor(98, 'Daedalus Leggings', 15, 0, 3, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
     set_bonus = None
     stage = 'Pre-Calamitas Clone/Plantera'
 
-class BrimeflameSet:
+class BrimflameSet:
     helmets = [Armor(99, 'Brimflame Cowl', 11, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 70, 0, 0, 0, 0, 0, 'Reduces mana usage by 10%\nImmunity to On Fire!, Brimstone Flames, and Frostburn', None)]
     chestplates = [Armor(99, 'Brimflame Robes', 15, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 0, 0, 0, 0, 0, 0, '', None)]
     leggings = Armor(99, 'Brimflame Boots', 15, 0, 0, 5, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, '', None)
@@ -658,5 +658,6 @@ armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, 
               ShadowSet, AncientShadowSet, CrimsonSet, MoltenSet, PearlwoodSet, SpiderSet, CobaltSet, PalladiumSet, MythrilSet, OrichalcumSet, AdamantiteSet,
               TitaniumSet, CrystalAssassinSet, FrostSet, ForbiddenSet, SquireSet, MonkSet, HuntressSet, ApprenticeSet, HallowedSet, ChlorophyteSet, TurtleSet, TikiSet, BeetleSet, ShroomiteSet,
               SpectreSet, ValhallaKnightSet, ShinobiInfiltratorSet, RedRidingSet, DarkArtistSet, SolarFlareSet, VortexSet, NebulaSet, StardustSet, WizardSet, WulfrumSet, SnowRuffianSet, DesertProwlerSet, MarniteArchitectSet, VictideSet,
-              SulphurousSet, AerospecSet, StatigelSet, MolluskSet, TitanHeartSet}
+              SulphurousSet, AerospecSet, StatigelSet, MolluskSet, TitanHeartSet, DaedalusSet, BrimflameSet, FathomSwarmerSet, UmbraphileSet, ReaverSet, HydrothermicSet, 
+              PlagueReaperSet, PlaguebringerSet, AstralSet, LunicCorpsSet}
 
