@@ -625,9 +625,9 @@ class PlaguebringerSet:
 
 class AstralSet:
     helmets = [Armor(106, 'Astral Helm', 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants danger detection', None)]
-    chestplates = [Armor(106, 'Astral Breastplate', 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 0, 0, '+20 max life\nGrantes creatre detection', None)]
+    chestplates = [Armor(106, 'Astral Breastplate', 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 0, 0, '+20 max life\nGrants creature detection', None)]
     leggings = Armor(106, 'Astral Leggings', 21, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants ore detection', None)
-    set_bonus = Armor(106,'', 0, 35, 35, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 'WHenever you crit an enemy, a barrage of stars will rain down\nThis effect has a 1 second cooldown before it will trigger again', None)
+    set_bonus = Armor(106,'', 0, 35, 35, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 'Whenever you crit an enemy, a barrage of stars will rain down\nThis effect has a 1 second cooldown before it will trigger again', None)
     stage = 'Pre-Lunar Events'
 
 class LunicCorpsSet:
