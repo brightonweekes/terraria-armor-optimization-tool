@@ -628,25 +628,28 @@ class AstralSet:
     chestplates = [Armor(106, 'Astral Breastplate', 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 0, 0, '+20 max life\nGrants creature detection', None)]
     leggings = Armor(106, 'Astral Leggings', 21, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants ore detection', None)
     set_bonus = Armor(106,'', 0, 35, 35, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 'Whenever you crit an enemy, a barrage of stars will rain down\nThis effect has a 1 second cooldown before it will trigger again', None)
-    stage = 'Pre-Lunar Events'
+    stage = 'Pre-Moon Lord'
 
 class LunicCorpsSet:
     helmets = [Armor(107, 'Lunic Corps Helmet', 14, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants night vision and creature detection', None)]
     chestplates = [Armor(107, 'Lunic Corps Vest', 20, 0, 0, 0, 0, 0, 0, 3, 11, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
     leggings = Armor(107, 'Lunic Corps Boots', 18, 0, 0, 15, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, '10% increased max movement speed and acceleration', None)
     set_bonus = Armor(107, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0, 'Projects a bubble shield that absorbs up to 50 damage\nThe shield starts recharging 5 seconds after being hit\nRecharging from zero to full charge takes 2 seconds\nBeing hit again while recharging restarts the charge timer\n10% increased bullet damage\n10% increased specialist ranged damage\nThese are launchers, dartguns, or anything else that does not shoot arrows/bullets\n20% increased jump speed', None)
-    stage = 'Pre-Lunar Events'
+    stage = 'Pre-Moon Lord'
 
+class EmpyreanSet:
+    helmets = [Armor(108, 'Empyrean Mask', 20, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 11, 0, 'Temporary immunity to lava', None)]
+    chestplates = [Armor(108, 'Empyrean Cloak', 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 0, '+20 max life\nArmor of the cosmos', None)]
+    leggings = Armor(108, 'Empyrean Cuisses', 24, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 0, '', None)
+    set_bonus = Armor(108, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 115, '9% increased rogue velocity\nRogue projectiles have special effects on enemy hits/nImbued with cosmic wrath and rage when you are damaged')
+    stage = 'Pre-Providence'
 
-
-
-
-
-
-
-
-
-
+class TarragonSet:
+    helmets = [Armor(109, 'Tarragon Helm', 33, 0, 0, 0, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '5% increased damage reduction', set_bonus=Armor(109, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you\nYou have a 25% chance to regen health quickly when you take damage\nPress Armor Set Bonus to cloak yourself in life energy that heavily reduces contact damage for 10 seconds\nThis has a 30 second cooldown', None)), Armor(109, 'Tarragon Visage', 21, 0, 0, 0, 0, 0, 0, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, '5% increased damage reduction', set_bonus=Armor(109, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Reduces enemy spawn rates\nRanged projectiles split into homing life energy and leaves on death', None)), Armor(109, 'Tarragon Mask', 10, 0, 0, 0, 0, 0, 0, 0, 0, 20, 10, 100, 0, 0, 0, 0, 0, '5% increased damage reduction\n15% reduced mana usage', set_bonus=Armor(109, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 00, 0, 0, 0, 0, 'Reduces enemy spawn rates\nOn every 5th critical strike you will fire a leaf storm\nMagic projectiles heal you on enemy hits\nAmount healed is based on projectile damage', None)), Armor(109, 'Tarragon Horned Helm', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, '5% increased damage reduction', set_bonus=Armor(109, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 3, 0, 0, 0, 'Reduces enemy spawn rates\nSummons a life aura around you that damages nearby enemies', None)), Armor(109, 'Tarragon Helmet', 15, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 0, '5% increased damage reduction', set_bonus=Armor(109, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 115, 'Reduces enemy spawn rates\nAfter every 50 rogue critical hits you will gain 2.5 seconds of damage immunity\nThis effect has a cooldown of 25 seconds\nWhile under effects of a debuff you gain 10% increased rogue damage', None))]
+    chestplates = [Armor(109, 'Tarragon Breastplate', 37, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+1 HP/s life regen and +40 max life', None)]
+    leggings = Armor(109, 'Tarragon Leggings', 32, 8, 8, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(109, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Increased heart pickup range\nEnemies have a chance to drop extra hearts on death', None)
+    stage = 'Pre-Polterghast'
 
 
 
@@ -659,5 +662,5 @@ armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, 
               TitaniumSet, CrystalAssassinSet, FrostSet, ForbiddenSet, SquireSet, MonkSet, HuntressSet, ApprenticeSet, HallowedSet, ChlorophyteSet, TurtleSet, TikiSet, BeetleSet, ShroomiteSet,
               SpectreSet, ValhallaKnightSet, ShinobiInfiltratorSet, RedRidingSet, DarkArtistSet, SolarFlareSet, VortexSet, NebulaSet, StardustSet, WizardSet, WulfrumSet, SnowRuffianSet, DesertProwlerSet, MarniteArchitectSet, VictideSet,
               SulphurousSet, AerospecSet, StatigelSet, MolluskSet, TitanHeartSet, DaedalusSet, BrimflameSet, FathomSwarmerSet, UmbraphileSet, ReaverSet, HydrothermicSet, 
-              PlagueReaperSet, PlaguebringerSet, AstralSet, LunicCorpsSet}
+              PlagueReaperSet, PlaguebringerSet, AstralSet, LunicCorpsSet, EmpyreanSet, TarragonSet}
 
