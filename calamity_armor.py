@@ -641,7 +641,7 @@ class EmpyreanSet:
     helmets = [Armor(108, 'Empyrean Mask', 20, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 11, 0, 'Temporary immunity to lava', None)]
     chestplates = [Armor(108, 'Empyrean Cloak', 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 0, '+20 max life\nArmor of the cosmos', None)]
     leggings = Armor(108, 'Empyrean Cuisses', 24, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 0, '', None)
-    set_bonus = Armor(108, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 115, '9% increased rogue velocity\nRogue projectiles have special effects on enemy hits/nImbued with cosmic wrath and rage when you are damaged')
+    set_bonus = Armor(108, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 115, '9% increased rogue velocity\nRogue projectiles have special effects on enemy hits/nImbued with cosmic wrath and rage when you are damaged', None)
     stage = 'Pre-Providence'
 
 class TarragonSet:
