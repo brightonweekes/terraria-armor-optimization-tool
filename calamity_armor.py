@@ -469,28 +469,28 @@ class SolarFlareSet:
     chestplates = [Armor(83, 'Solar Flare Breastplate', 34, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants minor life regeneration\nEnemies are more likely to target you', None)]
     leggings = Armor(83, 'Solar Flare Leggings', 20, 0, 0, 15, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants minor life regeneration\nEnemies are more likely to target you', None)
     set_bonus = Armor(83, '', 0, 0, 0, 0, 0,0 ,0 ,0 ,0 ,0 , 0, 0, 0, 0, 0, 0, 0, 'Solar shields charge over time to protect you and let you dash\nA charge is used to damage enemies you touch\nConsumed carges explode and damage enemies', None)
-    stage = 'Endgame'
+    stage = 'Pre-Providence'
 
 class VortexSet:
     helmets = [Armor(84, 'Vortex Helmet', 14, 0, 0, 0, 0, 0, 0, 16, 7, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
     chestplates = [Armor(84, 'Vortex Breastplate', 28, 0, 0, 0, 0, 0, 0, 12, 12, 0, 0, 0, 0, 0, 0, 0, 0, '25% chance to save ammo', None)]
     leggings = Armor(84, 'Vortex Leggings', 20, 0, 0, 10, 0, 0, 0, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
     set_bonus = Armor(84, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Double tap to toggle stealth, increasing ranged ability and reducing chance for enemies to target you but slowing movement speed', None)
-    stage = 'Endgame'
+    stage = 'Pre-Providence'
 
 class NebulaSet:
     helmets = [Armor(85, 'Nebula Helmet', 14, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 60, 0, 0, 0, 0, 0, '15% reduced mana cost', None)]
     chestplates = [Armor(85, 'Nebula Breastplate', 18, 0, 0, 0, 0, 0, 0, 0, 0, 9, 9, 0, 0, 0, 0, 0, 0, '', None)]
     leggings = Armor(85, 'Nebula Leggings', 14, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, '', None)
     set_bonus = Armor(85, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Magic damage has a chance to spawn buff boosters, pick boosters up to get stacking buffs', None)
-    stage = 'Endgame'
+    stage = 'Pre-Providence'
     
 class StardustSet:
     helmets = [Armor(86, 'Stardust Helmet', 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 2, 0, 0, 0, '', None)]
     chestplates = [Armor(86, 'Startdust Plate', 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 2, 0, 0, 0, 'Increases whip range by 15%', None)]
     leggings = Armor(86, 'Stardust Leggings', 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 2, 0, 0, 0, 'Increases whip range by 15%', None)
     set_bonus = Armor(86, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'A stardust guardian will protect you from nearby enemies', None)
-    stage = 'Endgame'
+    stage = 'Pre-Providence'
 
 class WizardSet:
     helmets = [Armor(87, 'Magic Hat', 2, 0, 0, 0, 0, 0, 0, 0, 0, 6, 6, 0, 0, 0, 0, 0, 0, '', Armor(87, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 0, 0, 0, 0, 0, '', None)), Armor(87, 'Wizard Hat', 4, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, '', Armor(87, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, '', None))]
@@ -650,6 +650,36 @@ class TarragonSet:
     leggings = Armor(109, 'Tarragon Leggings', 32, 8, 8, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
     set_bonus = Armor(109, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Increased heart pickup range\nEnemies have a chance to drop extra hearts on death', None)
     stage = 'Pre-Polterghast'
+
+class PrismaticSet:
+    helmets = [Armor(110, 'Prismatic Helmet', 18, 0, 0, 0, -20, 0, 0, -20, 0, 18, 12, 0, -20, 0, -20, 0, 0, 'Enemies with less than 500 health deal no damage\nThis does not occur while a boss is alive', None)]
+    chestplates = [Armor(110, 'Prismatic Regalia', 33, 0, 0, 0, -20, 0, 0, -20, 0, 12, 15, 40, -20, 0, -20, 0, 0, '+20 max life\nMagic attacks occasionally fire a pair of homing rockets', None)]
+    leggings = Armor(110, 'Prismatic Greaves', 21, 0, 0, 00, -20, 0, 0, -20, 0, 10, 12, 0, -20, 0, -20, 0, 0, '10% increased flight time\n2% increased jump speed', None)
+    set_bonus = Armor(110, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, '15% reduced mana cost\nIncreased mana regeneration rate\nPress Armor Set Bonus to unleash a barrage of death lasers at the cursor for the next 5 seconds\nThis has a 30 second cooldown', None)
+    stage = ''
+
+class BloodflareSet:
+    helmets = [Armor(111, 'Bloodflare Ram Mask', 49, 0, 0, 0, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(111, '', 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you\nTrue melee strikes will heal you\nAfter striking an enemy 15 times with true melee you will enter a blood frenzy for 5 seconds\nDuring this you will gain 25% increased melee damage, critical strike chance, and contact damage is halved\nThis effect has a 30 second cooldown', None)), Armor(111, 'Bloodflare Horned Helm', 34, 0, 0, 0, 0, 0, 0, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(111, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Press Armor Set Bonus to unleash the lost souls of polterghast to destroy your enemies\nThis effect has a 30 second cooldown\nRanged weapons fire bloodsplosion orbs every 2.5 seconds', None)), Armor(111, 'Bloodflare Hydra Hood', 22, 0, 0, 0, 0, 0, 0, 0, 0, 20, 10, 100, 0, 0, 0, 0, 0, '17% reduced mana usage', set_bonus=Armor(111, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0 ,' Magic weapons fire ghostly bolts every 1.67 seconds\nMagic critical strikes cause flame explosions every 2 seconds', None)), Armor(111, 'Bloodflare Wyvern Helm', 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0, 5, 0, 0, 0, 0, '', set_bonus=Armor(111, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 3, 0, 0, 0, 'Summons polterghast mines to circle you\nAt 90% life and above you gain 10% increased summon damage\nAt 50% life and below you gain 20 defense and +1 HP/s life regen', None)), Armor(111, 'Bloodflare Imp Mask', 28, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 0, '', set_bonus=Armor(111, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 'Being over 80% life boosts your defense by 30 and rogue crit by 5%\nBeing below 80% life boosts your rogue damage by 10%\nRogue critical strikes have a 50% chance to heal you', None))]
+    chestplates = [Armor(111, 'Bloodflare Body Armor', 35, 12, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+40 ma life', None)]
+    leggings = Armor(111, 'Bloodflare Cuisses', 29, 10, 7, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(111, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Greatly increased life regen, equivalent to Crimson armor\nEnemies below 50% life drop a heart when struck\nThis effect has a 5 second cooldown', None)
+    stage = ''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
