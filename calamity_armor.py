@@ -339,10 +339,10 @@ class FrostSet:
     stage = 'Pre-Mech Bosses'
 
 class ForbiddenSet:
-    helmets = [Armor(58, 'Forbidden Mask', 6, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 15, 0, 0, 0, 0, '', None)]
+    helmets = [Armor(58, 'Forbidden Mask', 6, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 15, 0, 0, 0, 0, '', set_bonus=Armor(58, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Double tap to call an ancient storm to cursor location', None)), Armor(58, 'Forbidden Circlet', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, '15% increased rogue velocity', set_bonus=Armor(58, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 'Press Armor Set Bonus to call an ancient storm to the cursor location\nThe ancient storm costs 60 mana and benefits from both summon and rogue bonuses\nRogue stealth strikes spawn homing eaters on enemy hits\nRogue and summon attacks will scale off of the stat with a higher boost', None))]
     chestplates = [Armor(58, 'Forbidden Robes', 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 10, 1, 0, 0, 0, '', None)]
     leggings = Armor(58, 'Forbidden Treads', 8, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 40, 0, 1, 0, 0, 0, '', None)
-    set_bonus = Armor(58, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Double tap to call an ancient storm to cursor location', None)
+    set_bonus = None
     stage = 'Pre-Mech Bosses'
 
 class SquireSet:
@@ -656,35 +656,118 @@ class PrismaticSet:
     chestplates = [Armor(110, 'Prismatic Regalia', 33, 0, 0, 0, -20, 0, 0, -20, 0, 12, 15, 40, -20, 0, -20, 0, 0, '+20 max life\nMagic attacks occasionally fire a pair of homing rockets', None)]
     leggings = Armor(110, 'Prismatic Greaves', 21, 0, 0, 00, -20, 0, 0, -20, 0, 10, 12, 0, -20, 0, -20, 0, 0, '10% increased flight time\n2% increased jump speed', None)
     set_bonus = Armor(110, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, '15% reduced mana cost\nIncreased mana regeneration rate\nPress Armor Set Bonus to unleash a barrage of death lasers at the cursor for the next 5 seconds\nThis has a 30 second cooldown', None)
-    stage = ''
+    stage = 'Pre-Polterghast'
 
 class BloodflareSet:
     helmets = [Armor(111, 'Bloodflare Ram Mask', 49, 0, 0, 0, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(111, '', 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you\nTrue melee strikes will heal you\nAfter striking an enemy 15 times with true melee you will enter a blood frenzy for 5 seconds\nDuring this you will gain 25% increased melee damage, critical strike chance, and contact damage is halved\nThis effect has a 30 second cooldown', None)), Armor(111, 'Bloodflare Horned Helm', 34, 0, 0, 0, 0, 0, 0, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(111, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Press Armor Set Bonus to unleash the lost souls of polterghast to destroy your enemies\nThis effect has a 30 second cooldown\nRanged weapons fire bloodsplosion orbs every 2.5 seconds', None)), Armor(111, 'Bloodflare Hydra Hood', 22, 0, 0, 0, 0, 0, 0, 0, 0, 20, 10, 100, 0, 0, 0, 0, 0, '17% reduced mana usage', set_bonus=Armor(111, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0 ,' Magic weapons fire ghostly bolts every 1.67 seconds\nMagic critical strikes cause flame explosions every 2 seconds', None)), Armor(111, 'Bloodflare Wyvern Helm', 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 , 0, 5, 0, 0, 0, 0, '', set_bonus=Armor(111, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 3, 0, 0, 0, 'Summons polterghast mines to circle you\nAt 90% life and above you gain 10% increased summon damage\nAt 50% life and below you gain 20 defense and +1 HP/s life regen', None)), Armor(111, 'Bloodflare Imp Mask', 28, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 0, '', set_bonus=Armor(111, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 'Being over 80% life boosts your defense by 30 and rogue crit by 5%\nBeing below 80% life boosts your rogue damage by 10%\nRogue critical strikes have a 50% chance to heal you', None))]
     chestplates = [Armor(111, 'Bloodflare Body Armor', 35, 12, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+40 ma life', None)]
     leggings = Armor(111, 'Bloodflare Cuisses', 29, 10, 7, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
     set_bonus = Armor(111, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Greatly increased life regen, equivalent to Crimson armor\nEnemies below 50% life drop a heart when struck\nThis effect has a 5 second cooldown', None)
-    stage = ''
+    stage = 'Pre-Devourer of Gods'
 
+class OmegaBlueSet:
+    helmets = [Armor(112, 'Omega Blue Helmet', 19, 12, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'You can move freely through liquids', None)]
+    chestplates = [Armor(112, 'Omega Blue Chestplate', 28, 12, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Your attacks inflict Crush Depth\nNo positive life regen', None)]
+    leggings = Armor(112, 'Omega Blue Tentacles', 22, 12, 12, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(112, '', 0, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 'Increases armor penetration by 15\nShort-ranged tentacles heal you by sucking enemy life\nPress Armor Set Bonus to activate abyssal madness for 5 seconds\nAbyssal madness increases damage, critical stike chance, and tentacle agression/range\nThis effect has a 25 second cooldown', None)
+    stage = 'Pre-Devourer of Gods'
 
+class GodSlayerSet:
+    helmets = [Armor(113, 'God Slayer Horned Greathelm', 48, 0, 0, 0, 14, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(113, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you\nTaking over 80 damage in one hit will cause you to release a swarm of high-damage god killer darts\nEnemies take a lot of damage when they hit you', None)), Armor(113, 'God Slayer Helmet', 35, 0, 0, 0, 0, 0, 0, 14, 14, 0, 0, 0, 0, 0, 0, 0, 0, '', set_bonus=Armor(113, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'You fire a god killer shrapnel round while firing ranged weapons every 2.5 seconds', None)), Armor(113, 'God Slayer Mask', 29, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 14, 0, '', set_bonus=Armor(113, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 'While at full HP all of your rogue stats are boosted by 10%\nIf you take over 80 damage in one hit you will be given extra immunity frames', None))]
+    chestplates = [Armor(113, 'God SLayer Chestplate', 41, 11, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+60 max life\nEnemies take damage when they hit you', None)]
+    leggings = Armor(113, 'God SLayer Leggings', 35, 10, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(113, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Allows you to dash for an immense distance in 8 directions\nPress God Slayer Dash while holding down the movement keys in the direction you want to dash\nEnemies you dash through take massive damage\nDuring the dash you are immune to most debuffs\nThe dash has a 45 second cooldown', None)
+    stage = 'Pre-Yharon'
 
+class FearmongerSet:
+    helmets = [Armor(114, 'Fearmonger Greathelm', 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 10, 0, 0, 0, 0, 'Pure terror radiates from your eyes\n10% decreased mana usage', None)]
+    chestplates = [Armor(114, 'Fearmonger Plate Mail', 50, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+100 max life\n8% increased damage reduction', None)]
+    leggings = Armor(114, 'Fearmonger Greaves', 44, 6, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '50% increased minion knockback\nTaking damage makes you move very fast for a short time', None)
+    set_bonus = Armor(114, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 2, 0, 0, 0, 'Minions no longer deal less damage while wielding non-summoner weapons\nImmunity to all forms of frost and flame\nMinion attacks grant +3.5 HP/s life regen and massively accelerate life regen\n15% increased damage reduction during the Pumpkin and Frost Moons\nThis extra damage reduction ignores the soft cap', None)
+    stage = 'Pre-Yharon'
 
+class SilvaSet:
+    helmets = [Armor(115, 'Silva Masked Cap', 21, 0, 0, 0, 0, 0, 0, 0, 0, 23, 13, 100, 0, 0, 0, 0, 0, '19% reeuced mana usage', set_bonus=Armor(115, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Magic projectiles which cannot pierce will occasionally set off potent blasts of nature energy', None)), Armor(115, 'Silva Horned Hood', 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, '', set_bonus=Armor(115, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 65, 5, 0, 0, 0, 'Summons an ancient leaf prism to blast your enemies with life energy', None))]
+    chestplates = [Armor(115, 'Silva Armor', 44, 12, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+80 max life', None)]
+    leggings = Armor(115, 'Silva Leggings', 39, 12, 12, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(115, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'All projectiles spawn healing leaf orbs on enemy hits\nMax run speed and acceleration boosted by 5%\nIf you are reduced to 1 HP you will not die from any further damage for 8 seconds\nThis effect has a 5 minute cooldown. The cooldown does not decrement if any bosses or events are active.', None)
+    stage = 'Pre-Yharon'
 
+class AuricTeslaSet:
+    helmets = [Armor(116, 'Auric Tesla Royal Helm', 54, 0, 0, 0, 20, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, set_bonus=Armor(116, '', 0, 0, 0, 0, 0, 0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies are more likely to target you', None)), Armor(116, 'Auric Tesla Hooded Facemask', 40, 0, 0, 0, 0, 0, 0, 30, 30, 0, 0, 0, 0, 0, 0, 0, 0, '', None), Armor(116, 'Auric Tesla Wire-Hemmed Visage', 24, 0, 0, 0, 0, 0, 0, 0, 0, 30, 20, 100, 0, 0, 0, 0, 0, '20% reduced mana usage', None), Armor(116, 'Auric Tesla Space Helmet', 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, '', set_bonus=Armor(116, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 75, 6, 0, 0, 0, '', None)), Armor(116, 'Auric Tesla Plumbed Helm', 34, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 20, 0, '', set_bonus=Armor(116, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 130, '', None))]
+    chestplates = [Armor(116, 'Auric Tesla Body Armor', 48, 8, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '+100 max life', None)]
+    leggings = Armor(116, 'Auric Tesla Cuisses', 44, 12, 5, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Magic carpet effect', None)
+    set_bonus = Armor(116, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tarragon, Bloodflare, God Slayer, and Silva armor effects', None)
+    stage = 'Pre-Exo Mechs/Supreme Witch, Calamitas'
 
+class GemTechSet:
+    helmets = [Armor(117, 'Gem Tech Headgear', 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    chestplates = [Armor(117, 'Gem Tech Body Armor', 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    leggings = Armor(117, 'Gem Tech Schynbaulds', 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
+    set_bonus = Armor(117, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Six gem fragments idly orbit you; one for each class, and a base gem\nA gem is lost when you take more than 100 damage in a single hit. The type of gem lost is the same as the class of the previous when you used\nIf said gem has already been lost, the base gem is lost instead\nWhen a gem is lost, it breaks off and homes towards the nearest enemy or boss, if one is present, dealing a base of 40000 damage\nGems have a 30 second delay before they appear again\nThe red gem grants 130 maximum stealth, increased rogue stats, and makes stealth only consumable by rogue weapons\nThe yellow gem provides increased melee stats and makes melee attacks release shards on hit with a cooldown. This cooldown is shorter for true melee attacks\nThe green gem provides increased ranged stats and causes flechettes to fly swiftly towards targets when they are damaged by a ranged projectile\nThe blue gem grants 4 extra maximum minions, increased summon damage, and negates the summon damage penalty while wielding non-summoner weapons\nThe violet gem grants 100 extra maximum mana, increased magic stats, and makes mana rapidly regenerate when holding a non-magic weapon\nThe pink base gem grants 75 extra defense, extra damage reduction, increased movement speed, jump speed, and +1 HP/s life regen\nWhen all gems exist simultaneously, hitting a target with any weapon grants you +1 HP/s life regen for 8 seconds\nThis is increased to +1.5 HP/s life regen if a weapon of another class is used during that 8 second period for 2.5 seconds', None)
+    stage = 'Endgame'
 
+class DemonshadeSet:
+    helmets = [Armor(118, 'Demonshade Helm', 50, 30, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    chestplates = [Armor(118, 'Demonshade Breastplate', 50, 15, 15, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Enemies take ungodly damage when they touch you\nIncreased max life and mana by 200\nStanding still absorbs shadows to grant exponentially accelerating life regen', None)]
+    leggings = Armor(118,'Demonshade Greaves', 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Shadow speed', None)
+    set_bonus = Armor(118, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 10, 0, 0, 0, 'Shadowbeams and demon scythes will fire down when you are hit\nA friendly red devil follows you around\nPress Armor Set Bonus to enrage nearby enemies with a dark magic spell for 10 seconds\nThis makes them do 25% more damage but they also take 125% more damage', None)
+    stage = 'Endgame'
 
+class CirrusSet:
+    chestplates = [Armor(119, "Cirrus' Dress", 8, 0, 0, -20, 0, 0, 0, 0, 0, 5, 5, 0, 0, 0, 0, 0, 0, 'Increases maximum fall speed to 61 mph', None)]
+    set_bonus = None
+    stage = 'Pre-Mech Bosses'
 
+class EmptyBucketSet:
+    helmets = [Armor(120, 'Empty Bucket', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
 
+class GogglesSet:
+    helmets = [Armor(121, 'Goggles', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
 
+class GreenCapSet:
+    helmets = [Armor(122, 'Green Cap', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
 
+class DivingHelmetSet:
+    helmets = [Armor(123, 'Diving Helmet', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Greatly extends underwater breathing', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
 
+class NightVisionSet:
+    helmets = [Armor(124, 'Night Vision Helmet', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Improves vision', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
 
+class VikingSet:
+    helmets = [Armor(125, 'Viking Helmet', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
 
+class FlinxSet:
+    chestplates = [Armor(126, 'Flinx Fur Coat', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 1, 0, 0, 0, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
 
+class GiSet:
+    chestplates = [Armor(127, 'Gi', 4, 5, 5, 10, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
+    set_bonus = None
+    stage = 'Pre-Boss'
 
+class DjinnSet:
+    leggings = Armor(128, "Djinn's Curse", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants slow falling in exchange for your feet', None)
+    set_bonus = None
+    stage = 'Pre-Mech Bosses'
 
-
-
-
+class MoonLordSet:
+    leggings = Armor(129, 'Moon Lord Legs', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Slightly increases mobility', None)
+    set_bonus = None
+    stage = 'Pre-Boss'
 
 armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, ShadewoodSet, AshWoodSet, RainSet, SnowSet, PinkSnowSet, AnglerSet, CactusSet, CopperSet, TinSet, PumpkinSet, 
               NinjaSet, IronSet, LeadSet, SilverSet, TungstenSet, GoldSet, PlatinumSet, FossilSet, BeeSet, ObsidianSet, GladiatorSet, MeteorSet, JungleSet, AncientCobaltSet, NecroSet, 
@@ -692,5 +775,7 @@ armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, 
               TitaniumSet, CrystalAssassinSet, FrostSet, ForbiddenSet, SquireSet, MonkSet, HuntressSet, ApprenticeSet, HallowedSet, ChlorophyteSet, TurtleSet, TikiSet, BeetleSet, ShroomiteSet,
               SpectreSet, ValhallaKnightSet, ShinobiInfiltratorSet, RedRidingSet, DarkArtistSet, SolarFlareSet, VortexSet, NebulaSet, StardustSet, WizardSet, WulfrumSet, SnowRuffianSet, DesertProwlerSet, MarniteArchitectSet, VictideSet,
               SulphurousSet, AerospecSet, StatigelSet, MolluskSet, TitanHeartSet, DaedalusSet, BrimflameSet, FathomSwarmerSet, UmbraphileSet, ReaverSet, HydrothermicSet, 
-              PlagueReaperSet, PlaguebringerSet, AstralSet, LunicCorpsSet, EmpyreanSet, TarragonSet}
+              PlagueReaperSet, PlaguebringerSet, AstralSet, LunicCorpsSet, EmpyreanSet, TarragonSet, PrismaticSet, BloodflareSet, OmegaBlueSet, 
+              GodSlayerSet, FearmongerSet, SilvaSet, AuricTeslaSet, GemTechSet, DemonshadeSet, EmptyBucketSet, GogglesSet, GreenCapSet, DivingHelmetSet, 
+              NightVisionSet, VikingSet, FlinxSet, GiSet, DjinnSet, MoonLordSet}
 
