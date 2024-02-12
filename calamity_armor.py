@@ -778,4 +778,3 @@ armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, 
               PlagueReaperSet, PlaguebringerSet, AstralSet, LunicCorpsSet, EmpyreanSet, TarragonSet, PrismaticSet, BloodflareSet, OmegaBlueSet, 
               GodSlayerSet, FearmongerSet, SilvaSet, AuricTeslaSet, GemTechSet, DemonshadeSet, EmptyBucketSet, GogglesSet, GreenCapSet, DivingHelmetSet, 
               NightVisionSet, VikingSet, FlinxSet, GiSet, DjinnSet, MoonLordSet}
-
