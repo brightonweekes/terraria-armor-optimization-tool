@@ -241,9 +241,9 @@ class NecroSet:
     stage = 'Pre-Wall of Flesh'
 
 class ShadowSet:
-    helmets = [Armor(32, 'Shadow Helmet', 6, 5, 5, 0, 0, 0, -7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '7% increased jump speed', None)]
-    chestplates = [Armor(32, 'Shadow Scalemail', 7, 5, 5, 0, 0, 0, -7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '7% increased jump speed', None)]
-    leggings = Armor(32, 'Shadow Greaves', 6, 5, 5, 0, 0, 0, -7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '7% increased jump speed', None)
+    helmets = [Armor(32, 'Shadow Helmet', 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '7% increased jump speed', None)]
+    chestplates = [Armor(32, 'Shadow Scalemail', 7, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '7% increased jump speed', None)]
+    leggings = Armor(32, 'Shadow Greaves', 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '7% increased jump speed', None)
     set_bonus = Armor(32, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '15% increased max movement speed and acceleration', None)
     stage = 'Pre-Skeletron'
 
