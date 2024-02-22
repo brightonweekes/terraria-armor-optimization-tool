@@ -6,7 +6,7 @@ calamity = False
 redundant_armor = False
 
 # Set the target class and stats to maximize
-target_stat = 'balance'
+target_stat = 'Balanced'
 target_class = 'Melee'
 game_stage = 'Pre-Boss'
 
@@ -29,6 +29,7 @@ vanilla_stage_tranlsation = {
 calamity_stage_tranlsation = {
     'Pre-Boss': 0,
     'Pre-Brain of Cthulhu/Eater of Worlds': 1,
+    'Pre-World Evil Boss': 1,
     'Pre-Perforators/Hive Mind': 2,
     'Pre-Skeletron': 3,
     'Pre-Wall of Flesh': 4,
@@ -60,7 +61,7 @@ class MyGUI:
         self.root.geometry(f'{self.root_width}x{self.root_height}')
         tk.set_appearance_mode("dark")
 
-        self.titleLabel = tk.CTkLabel(self.root, width=500, height=70, corner_radius=20, text='Armor Optimization Tool', font=('Garamond', 28), text_color='#006699')
+        self.titleLabel = tk.CTkLabel(self.root, width=500, height=70, corner_radius=20, text='Armor Optimization Tool', font=('Georgia', 28), text_color='#006699')
         self.titleLabel.pack()
 
         self.mainFrame = tk.CTkFrame(self.root, width=700, height=500, fg_color='#37515f')
@@ -71,7 +72,7 @@ class MyGUI:
         self.stageOptionMenu = tk.CTkOptionMenu(self.mainFrame, values=stages, fg_color='#0093E9', dropdown_fg_color='#0093E9', command=self.change_stage)
         self.stageOptionMenu.grid(row=0, column=0, padx=10, pady=10)
 
-        classes = ['Melee', 'Ranged', 'Magic', 'Summoner']
+        classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Mixed']
         self.classOptionMenu = tk.CTkOptionMenu(self.mainFrame, values=classes, fg_color='#0093E9', dropdown_fg_color='#0093E9', command=self.change_class)
         self.classOptionMenu.grid(row=1, column=0, padx=10, pady=10)
 
@@ -114,13 +115,13 @@ class MyGUI:
             stages = ['Pre-Boss', 'Pre-Brain of Cthulhu/Eater of Worlds', 'Pre-Perforators/Hive Mind', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 
                       'Post-Mech Boss 1', 'Post-Mech Boss 2', 'Pre-Calamitas Clone/Plantera', 'Pre-Golem', 'Pre-Lunar Events', 'Pre-Moon Lord', 'Pre-Providence',
                       'Pre-Polterghast', 'Pre-Devourer of Gods', 'Pre-Yharon', 'Pre-Exo-Mechs/Supreme Witch', 'Pre-Calamitas', 'Endgame']
-            classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Rogue']
+            classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Rogue', 'Mixed']
 
         else:
             self.calamityButton.configure(text='Vanilla')
             stages = ['Pre-Boss', 'Pre-World Evil Boss', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 'Post-First Mech Boss', 'Pre-Plantera', 'Pre-Golem', 
                       'Pre-Lunatic Cultist', 'Endgame']
-            classes = ['Melee', 'Ranged', 'Magic', 'Summoner']
+            classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Mixed']
         self.stageOptionMenu.configure(values=stages)
         self.classOptionMenu.configure(values=classes)
 
@@ -153,8 +154,8 @@ class MyGUI:
 
         combo_scores = []
         # Assign weight values to each stat based on target stat and target class
-        if target_stat == 'balance':
-            defense_weight, damage_weight, crit_weight, movement_weight = 1, 1, 1, .1
+        if target_stat == 'Balanced':
+            defense_weight, damage_weight, crit_weight, movement_weight = .5, 1, 1, .2
             if target_class == 'Melee':
                 melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
                     mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
@@ -166,11 +167,13 @@ class MyGUI:
                     mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 0, 0, 0, 0, 0, 1, 1, .05, 0, 0, 0, 0, 0
             elif target_class == 'Summoner':
                 melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
-                    mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 0, 0, 0, 0, 0, 0, 0, 0, 1, 30, 0, 0, 0
+                    mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 0, 0, .33, 0, 0, 0, 0, 0, 1, 25, 0, 0, 0
             elif target_class == 'Rogue':
                 melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
                     mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, .1
-
+            elif target_class == 'Mixed':
+                melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
+                    mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 1, 1, 1, 1, 1, 1, 1, .05, 1, 25, 1, 1, .1
 
         for set in filtered_sets:
             for set2 in filtered_sets:
@@ -270,8 +273,8 @@ class MyGUI:
                     if len(combo_scores[-1][2].set_bonus.ability) > 0:      # Full set bonus abilities
                         output += f'\n{combo_scores[-1][2].set_bonus.ability}'
 
-        # for score in combo_scores:
-        #     output += f'\n{score[0]}, {score[1][0].name}, {score[1][1].name}, {score[1][2].name}'
+        for score in combo_scores:
+            print(f'\n{score[0]}, {score[1][0].name}, {score[1][1].name}, {score[1][2].name}')
 
         self.update_output(output)
 
