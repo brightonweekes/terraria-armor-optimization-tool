@@ -6,7 +6,9 @@ This tool helps you find the best possible armor for YOU and condenses hours of 
 # Installation and Usage Instructions
 Click the green code button and download the zip file. Extract the folder. To install the necessary dependencies, press Ctrl-Alt-T to open up the terminal and copy the following into it, then press enter:
 
-'''bash
+```bash
+# Install dependencies
 pip install -r requirements.txt
+```
 
 To use, open the folder in a code editor like VS Code or PyCharm and run main.py. Usage instructions can be found from within the program.
