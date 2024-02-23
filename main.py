@@ -273,8 +273,8 @@ class MyGUI:
                     if len(combo_scores[-1][2].set_bonus.ability) > 0:      # Full set bonus abilities
                         output += f'\n{combo_scores[-1][2].set_bonus.ability}'
 
-        for score in combo_scores:
-            print(f'\n{score[0]}, {score[1][0].name}, {score[1][1].name}, {score[1][2].name}')
+        # for score in combo_scores:
+        #     print(f'\n{score[0]}, {score[1][0].name}, {score[1][1].name}, {score[1][2].name}')
 
         self.update_output(output)
 
