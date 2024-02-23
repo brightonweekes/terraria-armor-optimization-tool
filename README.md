@@ -1,4 +1,4 @@
-# Armot Optimization Tool
+# Armor Optimization Tool
 Have you ever played Terraria and wondered if you were losing out on damage by simply picking the latest full set of armor. Do you actuallty have a life and don't feel like spending hours figuring out which armor is the best for you? Have you ever tried to become the next Dwayne the Rock Johnson and reach 100 defense before hardmode, but don't know how to do so? Never fear, the Optimized Armor Tool is here!
 
 This tool helps you find the best possible armor for YOU and condenses hours of researching, caculating, and writing down various armor combinations into  fractions of a second by suggesting multiple viable options with their pros and cons.
