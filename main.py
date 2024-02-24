@@ -1,4 +1,5 @@
 import customtkinter as tk
+from PIL import Image
 import armor
 import calamity_armor
 
@@ -51,82 +52,52 @@ calamity_stage_tranlsation = {
 }
 
 
-class MyGUI:
+class Main:
 
     def __init__(self):
 
         self.root = tk.CTk()
         self.root.title("What are you lookin' at!")
-        self.root_width, self.root_height = (1920, 1080)
+        self.root_width, self.root_height = (1440, 810)
         self.root.geometry(f'{self.root_width}x{self.root_height}')
         tk.set_appearance_mode("dark")
+        tk.set_default_color_theme("./color_themes/DaynNight.json")
 
-        self.titleLabel = tk.CTkLabel(self.root, width=500, height=70, corner_radius=20, text='Armor Optimization Tool', font=('Georgia', 28), text_color='#006699')
-        self.titleLabel.pack()
+        self.title = tk.CTkLabel(self.root, text='Armor Optimization Tool', font=('Andy Bold', 60))
+        self.title.place(relx=.1, rely=.02)
+        
+        frame1_width, frame1_height = self.root_width*.6, self.root_height*.32
+        self.frame1 = tk.CTkFrame(self.root, width=frame1_width, height=frame1_height, corner_radius=20)
+        self.frame1.place(relx=.02, rely=.12)
 
-        self.mainFrame = tk.CTkFrame(self.root, width=700, height=500, fg_color='#37515f')
-        self.mainFrame.pack()
+        self.calamity_toggle = tk.CTkButton(self.frame1, width=frame1_width*.9, height=frame1_height*.30, corner_radius=50)
+        self.calamity_toggle.place(relx=.05, rely=.05)
+        
+        self.class_selection_label = tk.CTkLabel(self.frame1, text='Class', font=('Andy Bold', 40))
+        self.class_selection_label.place(relx=.02, rely=.4)
+
+        classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Mixed']
+        self.class_selection = tk.CTkOptionMenu(self.frame1, values=classes, width=frame1_width*.4)
+        self.class_selection.place(relx=.5, rely=.45)
+
+        self.stage_selection_label = tk.CTkLabel(self.frame1, text='Stage', font=('Andy Bold', 40))
+        self.stage_selection_label.place(relx=.02, rely=.7)
 
         stages = ['Pre-Boss', 'Pre-World Evil Boss', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 'Post-First Mech Boss', 'Pre-Plantera', 'Pre-Golem', 
                       'Pre-Lunatic Cultist', 'Endgame']
-        self.stageOptionMenu = tk.CTkOptionMenu(self.mainFrame, values=stages, fg_color='#0093E9', dropdown_fg_color='#0093E9', command=self.change_stage)
-        self.stageOptionMenu.grid(row=0, column=0, padx=10, pady=10)
+        self.stage_selection = tk.CTkOptionMenu(self.frame1, values=stages, width=frame1_width*.4)
+        self.stage_selection.place(relx=.5, rely= .75)
 
-        classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Mixed']
-        self.classOptionMenu = tk.CTkOptionMenu(self.mainFrame, values=classes, fg_color='#0093E9', dropdown_fg_color='#0093E9', command=self.change_class)
-        self.classOptionMenu.grid(row=1, column=0, padx=10, pady=10)
+        frame2_width, frame2_height = self.root_width*.6, self.root_height*.485
+        self.frame2 = tk.CTkFrame(self.root, width=frame2_width, height=frame2_height, corner_radius=20)
+        self.frame2.place(relx=.02, rely=.48)
 
-        self.redarmButton = tk.CTkButton(self.mainFrame, width=140, height=28, corner_radius=50, fg_color='#C850C0', hover_color='#4158D0', text='Exclude Redundant Armors', command=self.toggle_redundant_armor)
-        self.redarmButton.grid(row=2, column=0, padx=10, pady=10)
-
-        self.calamityButton = tk.CTkButton(self.mainFrame, width=140, height=28, corner_radius=50, fg_color='#C850C0', hover_color='#4158D0', text='Vanilla', command=self.toggle_calamity)
-        self.calamityButton.grid(row=3, column=0, padx=10, pady=10)
-
-        self.calculateButton = tk.CTkButton(self.mainFrame,  width=140, height=28, corner_radius=50, fg_color='#C850C0', hover_color='#4158D0', text='Calculate', command=self.main)
-        self.calculateButton.grid(row=4, column=0, padx=100, pady=10)
-
-        self.output = 'Usage instructions: Select your current class and stage of the game from the dropdowns above. Then, you may also choose to include redundant armor or Calamity mod armor. \nPress Calculate. Enjoy! Please note that depending on your hardware, the program may take a few seconds to calculate.'
-        self.outputTextbox = tk.CTkLabel(self.root, width=800, height=100, text=self.output)
-        self.outputTextbox.pack()
+        frame3_width, frame3_height = self.root_width*.33, self.root_height*.94
+        self.frame3 = tk.CTkFrame(self.root, width=frame3_width, height=frame3_height, corner_radius=20)
+        self.frame3.place(relx=.65, rely=.03)
 
         self.root.mainloop()
-    
-    def change_class(self, val):
-        global target_class
-        target_class = val
 
-    def change_stage(self, val):
-        global game_stage
-        game_stage = val
-
-    def toggle_redundant_armor(self):
-        global redundant_armor
-        redundant_armor = not redundant_armor
-        if redundant_armor:
-            self.redarmButton.configure(text='Include Redundant Armor')
-        else:
-            self.redarmButton.configure(text='Exclude Redundant Armor')
-
-    def toggle_calamity(self):
-        global calamity
-        calamity = not calamity
-        if calamity:
-            self.calamityButton.configure(text='Calamity')
-            stages = ['Pre-Boss', 'Pre-Brain of Cthulhu/Eater of Worlds', 'Pre-Perforators/Hive Mind', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 
-                      'Post-Mech Boss 1', 'Post-Mech Boss 2', 'Pre-Calamitas Clone/Plantera', 'Pre-Golem', 'Pre-Lunar Events', 'Pre-Moon Lord', 'Pre-Providence',
-                      'Pre-Polterghast', 'Pre-Devourer of Gods', 'Pre-Yharon', 'Pre-Exo-Mechs/Supreme Witch', 'Pre-Calamitas', 'Endgame']
-            classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Rogue', 'Mixed']
-
-        else:
-            self.calamityButton.configure(text='Vanilla')
-            stages = ['Pre-Boss', 'Pre-World Evil Boss', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 'Post-First Mech Boss', 'Pre-Plantera', 'Pre-Golem', 
-                      'Pre-Lunatic Cultist', 'Endgame']
-            classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Mixed']
-        self.stageOptionMenu.configure(values=stages)
-        self.classOptionMenu.configure(values=classes)
-
-    def update_output(self, text):
-        self.outputTextbox.configure(text=text)
 
     # Loop through every combination and append to combo_scores along with weighted score
     def main(self):
@@ -279,4 +250,4 @@ class MyGUI:
         self.update_output(output)
 
 
-main = MyGUI()
+main = Main()
