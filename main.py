@@ -52,58 +52,14 @@ calamity_stage_tranlsation = {
 }
 
 
-root = tk.CTk()
-root.title("What are you lookin' at!")
-root_width, root_height = (1440, 810)
-root.geometry(f'{root_width}x{root_height}')
-tk.set_appearance_mode("dark")
-tk.set_default_color_theme("./color_themes/DaynNight.json")
 
-title = tk.CTkLabel(root, text='Armor Optimization Tool', font=('Andy Bold', 60))
-title.place(relx=.1, rely=.02)
 
-frame1_width, frame1_height = root_width*.6, root_height*.32
-frame1 = tk.CTkFrame(root, width=frame1_width, height=frame1_height, corner_radius=20)
-frame1.place(relx=.02, rely=.12)
 
-calamity_toggle = tk.CTkButton(frame1, width=frame1_width*.9, height=frame1_height*.30, corner_radius=50)
-calamity_toggle.place(relx=.05, rely=.05)
 
-class_label = tk.CTkLabel(frame1, text='Class', font=('Andy Bold', 40))
-class_label.place(relx=.02, rely=.4)
-
-classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Mixed']
-class_selection = tk.CTkOptionMenu(frame1, values=classes, width=frame1_width*.4, font=('Andy Bold', 20))
-class_selection.place(relx=.5, rely=.45)
-
-stage_label = tk.CTkLabel(frame1, text='Stage', font=('Andy Bold', 40))
-stage_label.place(relx=.02, rely=.7)
-
-stages = ['Pre-Boss', 'Pre-World Evil Boss', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 'Post-First Mech Boss', 'Pre-Plantera', 'Pre-Golem', 
-                'Pre-Lunatic Cultist', 'Endgame']
-stage_selection = tk.CTkOptionMenu(frame1, values=stages, width=frame1_width*.4, font=('Andy Bold', 20))
-stage_selection.place(relx=.5, rely= .75)
-
-frame2_width, frame2_height = root_width*.6, root_height*.485
-frame2 = tk.CTkFrame(root, width=frame2_width, height=frame2_height, corner_radius=20)
-frame2.place(relx=.02, rely=.48)
-
-balance_label = tk.CTkLabel(frame2, text='Stat Weighting', font=('Andy Bold', 40))
-balance_label.place(relx=.02, rely=.05)
-
-weight_presets = ['Balanced', 'Damage-focused', 'Defense-focused']
-balance_selection = tk.CTkOptionMenu(frame2, values=weight_presets, width=frame2_width*.4, font=('Andy Bold', 20))
-balance_selection.place(relx = .5, rely=.08)
-
-frame3_width, frame3_height = root_width*.33, root_height*.94
-frame3 = tk.CTkFrame(root, width=frame3_width, height=frame3_height, corner_radius=20)
-frame3.place(relx=.65, rely=.03)
-
-root.mainloop()
 
 
 # Loop through every combination and append to combo_scores along with weighted score
-def main(self):
+def main():
     sets_to_remove = {}
     if calamity:
         filtered_sets = calamity_armor.armor_sets.copy()
@@ -247,7 +203,73 @@ def main(self):
                 if len(combo_scores[-1][2].set_bonus.ability) > 0:      # Full set bonus abilities
                     output += f'\n{combo_scores[-1][2].set_bonus.ability}'
 
-    # for score in combo_scores:
-    #     print(f'\n{score[0]}, {score[1][0].name}, {score[1][1].name}, {score[1][2].name}')
+    print(output)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+root = tk.CTk()
+root.title("What are you lookin' at!")
+root_width, root_height = (1440, 810)
+root.geometry(f'{root_width}x{root_height}')
+tk.set_appearance_mode("dark")
+tk.set_default_color_theme("./color_themes/DaynNight.json")
+
+title = tk.CTkLabel(root, text='Armor Optimization Tool', font=('Andy Bold', 60))
+title.grid(row=0, column=0)
+
+frame1_width, frame1_height = root_width*.3, root_height*.32
+frame1 = tk.CTkFrame(root, width=frame1_width, height=frame1_height, corner_radius=20)
+frame1.grid(row=1, column=0)
+
+calamity_toggle = tk.CTkButton(frame1, width=frame1_width*.9, height=frame1_height*.30, corner_radius=50)
+calamity_toggle.place(relx=.05, rely=.05)
+
+class_label = tk.CTkLabel(frame1, text='Class', font=('Andy Bold', 40))
+class_label.place(relx=.02, rely=.4)
+
+classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Mixed']
+class_selection = tk.CTkOptionMenu(frame1, values=classes, width=frame1_width*.4, font=('Andy Bold', 20))
+class_selection.place(relx=.5, rely=.45)
+
+stage_label = tk.CTkLabel(frame1, text='Stage', font=('Andy Bold', 40))
+stage_label.place(relx=.02, rely=.7)
+
+stages = ['Pre-Boss', 'Pre-World Evil Boss', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 'Post-First Mech Boss', 'Pre-Plantera', 'Pre-Golem', 
+                'Pre-Lunatic Cultist', 'Endgame']
+stage_selection = tk.CTkOptionMenu(frame1, values=stages, width=frame1_width*.4, font=('Andy Bold', 20))
+stage_selection.place(relx=.5, rely= .75)
+
+frame2_width, frame2_height = root_width*.3, root_height*.38
+frame2 = tk.CTkFrame(root, width=frame2_width, height=frame2_height, corner_radius=20)
+frame2.grid(row=2 ,column=0)
+
+balance_label = tk.CTkLabel(frame2, text='Stat Weighting', font=('Andy Bold', 40))
+balance_label.place(relx=.02, rely=.05)
+
+weight_presets = ['Balanced', 'Damage-focused', 'Defense-focused']
+balance_selection = tk.CTkOptionMenu(frame2, values=weight_presets, width=frame2_width*.4, font=('Andy Bold', 20))
+balance_selection.place(relx = .5, rely=.08)
+
+frame3_width, frame3_height = root_width*.33, root_height*.83
+frame3 = tk.CTkFrame(root, width=frame3_width, height=frame3_height, corner_radius=20)
+frame3.grid(row=0, column=1)
+
+
+calculate_button = tk.CTkButton(root, width=root_width*.96, height=root_height*.1, corner_radius=20, text='Calculate', border_color="#586b78", border_width=1, font=('Andy Bold', 40), command=main)
+calculate_button.grid(row=3, column=0)
+
+root.mainloop()
 
