@@ -206,6 +206,7 @@ def main():
     print(output)
 
 
+# Other Menu Functions
 
 
 
@@ -218,58 +219,155 @@ def main():
 
 
 
-
-
+# Menu Setup
 root = tk.CTk()
 root.title("What are you lookin' at!")
-root_width, root_height = (1440, 810)
-root.geometry(f'{root_width}x{root_height}')
 tk.set_appearance_mode("dark")
-tk.set_default_color_theme("./color_themes/DaynNight.json")
+tk.set_default_color_theme("./color_themes/DaynNight(custom).json")
+root_size = root_width, root_height = 1440, 810
+root.geometry(f'{root_width}x{root_height}')
+root.columnconfigure(0, weight=2)
+root.columnconfigure(1, weight=1)
+root.rowconfigure((0, 1, 3), weight=1)
+root.rowconfigure(2, weight=10)
 
-title = tk.CTkLabel(root, text='Armor Optimization Tool', font=('Andy Bold', 60))
+dropdown_caret = Image.open("./guiAssets/down_caret.png")
+
+
+andy_title = tk.CTkFont(family='Andy Bold', size=60)
+andy_header1 = tk.CTkFont(family='Andy Bold', size=40)
+andy_header2 = tk.CTkFont(family='Andy Bold', size=30)
+andy_header3 = tk.CTkFont(family='Andy Bold', size=20)
+andy_subtitle = tk.CTkFont(family='Andy Bold', size=15)
+
+title = tk.CTkLabel(root, text='Armor Optimization Tool', font=andy_title)
 title.grid(row=0, column=0)
 
-frame1_width, frame1_height = root_width*.3, root_height*.32
-frame1 = tk.CTkFrame(root, width=frame1_width, height=frame1_height, corner_radius=20)
-frame1.grid(row=1, column=0)
 
-calamity_toggle = tk.CTkButton(frame1, width=frame1_width*.9, height=frame1_height*.30, corner_radius=50)
-calamity_toggle.place(relx=.05, rely=.05)
+frame1 = tk.CTkFrame(root, corner_radius=20)
+frame1.grid(row=1, column=0, padx=10, sticky='nesw')
+frame1.columnconfigure(0, weight=5)
+frame1.columnconfigure(1, weight=1)
+frame1.rowconfigure((0, 1, 2), weight=1)
 
-class_label = tk.CTkLabel(frame1, text='Class', font=('Andy Bold', 40))
-class_label.place(relx=.02, rely=.4)
+calamity_label = tk.CTkLabel(frame1, text='Calamity Mod', font=andy_header1)
+calamity_label.grid(column=0, row=0, padx=10, pady=10, sticky='w')
+
+calamity_button = tk.CTkButton(frame1, text='Disabled', font=andy_header1)
+calamity_button.grid(column=1, row=0, padx=50, pady=10, sticky='e')
+
+class_label = tk.CTkLabel(frame1, text='Class', font=andy_header1)
+class_label.grid(column=0, row=1, padx=10, pady=10, sticky='w')
 
 classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Mixed']
-class_selection = tk.CTkOptionMenu(frame1, values=classes, width=frame1_width*.4, font=('Andy Bold', 20))
-class_selection.place(relx=.5, rely=.45)
+class_selection = tk.CTkOptionMenu(frame1, width=270, anchor='center', dynamic_resizing=False, values=classes, font=andy_header2, dropdown_font=andy_header3)
+class_selection.grid(column=1, row=1, padx=50, pady=10, sticky='ew')
 
-stage_label = tk.CTkLabel(frame1, text='Stage', font=('Andy Bold', 40))
-stage_label.place(relx=.02, rely=.7)
+stage_label = tk.CTkLabel(frame1, text='Stage', font=andy_header1)
+stage_label.grid(column=0, row=2, padx=10, pady=10, sticky='w')
 
 stages = ['Pre-Boss', 'Pre-World Evil Boss', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 'Post-First Mech Boss', 'Pre-Plantera', 'Pre-Golem', 
                 'Pre-Lunatic Cultist', 'Endgame']
-stage_selection = tk.CTkOptionMenu(frame1, values=stages, width=frame1_width*.4, font=('Andy Bold', 20))
-stage_selection.place(relx=.5, rely= .75)
+stage_selection = tk.CTkOptionMenu(frame1, width=270, anchor='center', dynamic_resizing=False, values=stages, font=andy_header2, dropdown_font=andy_header3)
+stage_selection.grid(column=1, row=2, padx=50, pady=10, sticky='ew')
 
-frame2_width, frame2_height = root_width*.3, root_height*.38
-frame2 = tk.CTkFrame(root, width=frame2_width, height=frame2_height, corner_radius=20)
-frame2.grid(row=2 ,column=0)
 
-balance_label = tk.CTkLabel(frame2, text='Stat Weighting', font=('Andy Bold', 40))
-balance_label.place(relx=.02, rely=.05)
+frame2 = tk.CTkFrame(root, corner_radius=20)
+frame2.grid(row=2, column=0, padx=10, pady=10, sticky='nesw')
+frame2.columnconfigure(0, weight=1)
+frame2.columnconfigure(1, weight=5)
+frame2.columnconfigure(2, weight=1)
+frame2.rowconfigure((0, 1, 2, 3, 4, 5), weight=1)
+
+balance_label = tk.CTkLabel(frame2, text='Stat Weighting', font=andy_header1)
+balance_label.grid(row=0, column=1, pady=10, sticky='w')
 
 weight_presets = ['Balanced', 'Damage-focused', 'Defense-focused']
-balance_selection = tk.CTkOptionMenu(frame2, values=weight_presets, width=frame2_width*.4, font=('Andy Bold', 20))
-balance_selection.place(relx = .5, rely=.08)
+balance_selection = tk.CTkOptionMenu(frame2, width=270, anchor='center', dynamic_resizing=False, values=weight_presets, font=andy_header2, dropdown_font=andy_header3)
+balance_selection.grid(row=0, column=2, padx=50, pady=10, sticky='ew')
 
-frame3_width, frame3_height = root_width*.33, root_height*.83
-frame3 = tk.CTkFrame(root, width=frame3_width, height=frame3_height, corner_radius=20)
-frame3.grid(row=0, column=1)
+damage_label = tk.CTkLabel(frame2, text='Damage', font=andy_header1,)
+damage_label.grid(row=1, column=1, pady=10, sticky='w')
+
+damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=100, height=20, command=None)
+damage_slider.grid(row=1, column=2, padx=10, pady=10, sticky='ew')
+
+damage_number = tk.CTkLabel(frame2, text='1.00', font=andy_subtitle)
+damage_number.grid(row=1, column=1, sticky='e')
+
+dropdown_damage = tk.CTkButton(frame2, text='', width=0, height=0, fg_color='transparent', image=tk.CTkImage(dropdown_caret))
+dropdown_damage.grid(row=1, column=0)
+
+defense_label = tk.CTkLabel(frame2, text='Defense', font=andy_header1,)
+defense_label.grid(row=2, column=1, pady=10, sticky='w')
+
+defense_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=100, height=20, command=None)
+defense_slider.grid(row=2, column=2, padx=10, pady=10, sticky='ew')
+
+defense_number = tk.CTkLabel(frame2, text='1.00', font=andy_subtitle)
+defense_number.grid(row=2, column=1, sticky='e')
+
+movement_label = tk.CTkLabel(frame2, text='Movement', font=andy_header1,)
+movement_label.grid(row=3, column=1, pady=10, sticky='w')
+
+movement_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=100, height=20, command=None)
+movement_slider.grid(row=3, column=2, padx=10, pady=10, sticky='ew')
+
+movement_number = tk.CTkLabel(frame2, text='1.00', font=andy_subtitle)
+movement_number.grid(row=3, column=1, sticky='e')
+
+class_specific_slider_label = tk.CTkLabel(frame2, text='Melee Speed', font=andy_header1)
+class_specific_slider_label.grid(row=4, column=1, pady=10, sticky='w')
+
+class_specific_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=100, height=20, command=None)
+class_specific_slider.grid(row=4, column=2, padx=10, pady=10, sticky='ew')
+
+class_specific_number = tk.CTkLabel(frame2, text='1.00', font=andy_subtitle)
+class_specific_number.grid(row=4, column=1, sticky='e')
+
+dropdown_class_specific = tk.CTkButton(frame2, text='', width=0, height=0, fg_color='transparent', image=tk.CTkImage(dropdown_caret))
+dropdown_class_specific.grid(row=4, column=0)
+
+create_preset = tk.CTkButton(frame2, height= 40, border_width=0, text='Set Current As Preset', font=andy_header2, corner_radius=0)
+create_preset.grid(row=5, column=1, pady=10, sticky='e')
+
+preset_name = tk.CTkEntry(frame2, width=300, height=40, border_width=0, placeholder_text='Input your preset name here', font=andy_subtitle, corner_radius=0)
+preset_name.grid(row=5, column=2, pady=10, sticky='w')
 
 
-calculate_button = tk.CTkButton(root, width=root_width*.96, height=root_height*.1, corner_radius=20, text='Calculate', border_color="#586b78", border_width=1, font=('Andy Bold', 40), command=main)
-calculate_button.grid(row=3, column=0)
+frame3 = tk.CTkFrame(root, corner_radius=20)
+frame3.grid(row=0, column=1, padx=10, pady=10, rowspan=3, sticky='nesw')
+frame3.columnconfigure(0, weight=5)
+frame3.columnconfigure(1, weight=1)
+frame3.rowconfigure((0, 1, 2), weight=1)
+
+world_evil_label = tk.CTkLabel(frame3, text='World Evil', font=andy_header2)
+world_evil_label.grid(row=0, column=0, padx=10, pady=10, sticky='w')
+
+world_evil_button = tk.CTkButton(frame3, text='Corruption and Crimson', font=andy_header3)
+world_evil_button.grid(column=1, row=0, padx=50, pady=10, sticky='e')
+
+redundant_armor_label = tk.CTkLabel(frame3, text='Redundant Armor', font=andy_header2)
+redundant_armor_label.grid(row=1, column=0, padx=10, pady=10, sticky='w')
+
+redundant_armor_button = tk.CTkButton(frame3, text='Excluded', font=andy_header3)
+redundant_armor_button.grid(row=1, column=1, padx=50, pady=10, sticky='e')
+
+excluded_armor_label = tk.CTkLabel(frame3, text='Excluded Armor', font=andy_header2)
+excluded_armor_label.grid(row=2, column=0, columnspan=2, sticky='s')
+
+excluded_armor_output = tk.CTkTextbox(frame3, corner_radius=0, state='disabled')
+excluded_armor_output.grid(row=3, column=0, columnspan=2, padx=5, pady=10, sticky='nesw')
+
+excluded_armor_input = tk.CTkEntry(frame3, placeholder_text='Add more sets to exclude here', font=andy_subtitle)
+excluded_armor_input.grid(row=4, column=0, columnspan=2)
+
+
+
+
+
+calculate_button = tk.CTkButton(root, corner_radius=20, text='Calculate', border_color="#586b78", border_width=1, font=andy_header1, command=main)
+calculate_button.grid(row=3, column=0, padx=50, pady=5, columnspan=2, sticky='nesw')
 
 root.mainloop()
 
