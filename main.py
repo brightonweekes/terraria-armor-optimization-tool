@@ -3,13 +3,13 @@ from PIL import Image
 import armor
 import calamity_armor
 
+# Define global variables
 calamity = False
-redundant_armor = False
-
-# Set the target class and stats to maximize
-target_stat = 'Balanced'
 target_class = 'Melee'
 game_stage = 'Pre-Boss'
+# manage weights
+world_evil = 'Corruption and Crimson'
+exclude_redundant = True
 
 
 vanilla_stage_tranlsation = {
@@ -52,59 +52,9 @@ calamity_stage_tranlsation = {
 }
 
 
-
-
-
-
-
-
-# Loop through every combination and append to combo_scores along with weighted score
+# Main Calculation
 def main():
-    sets_to_remove = {}
-    if calamity:
-        filtered_sets = calamity_armor.armor_sets.copy()
-
-        if not redundant_armor:
-            sets_to_remove = {calamity_armor.PinkSnowSet, calamity_armor.AncientHallowedSet}
-        filtered_sets.difference_update(sets_to_remove)
-
-        for set in filtered_sets.copy():
-            if calamity_stage_tranlsation[set.stage] > calamity_stage_tranlsation[game_stage]:
-                filtered_sets.remove(set)
-    else:
-        filtered_sets = armor.armor_sets.copy()
-
-        if not redundant_armor:
-            sets_to_remove = {armor.PinkSnowSet, armor.AncientCobaltSet, armor.AncientHallowedSet}
-        filtered_sets.difference_update(sets_to_remove)
-
-        for set in filtered_sets.copy():
-            if vanilla_stage_tranlsation[set.stage] > vanilla_stage_tranlsation[game_stage]:
-                filtered_sets.remove(set)
-
     combo_scores = []
-    # Assign weight values to each stat based on target stat and target class
-    if target_stat == 'Balanced':
-        defense_weight, damage_weight, crit_weight, movement_weight = .5, 1, 1, .2
-        if target_class == 'Melee':
-            melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
-                mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-        elif target_class == 'Ranged':
-            melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
-                mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0
-        elif target_class == 'Magic':
-            melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
-                mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 0, 0, 0, 0, 0, 1, 1, .05, 0, 0, 0, 0, 0
-        elif target_class == 'Summoner':
-            melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
-                mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 0, 0, .33, 0, 0, 0, 0, 0, 1, 25, 0, 0, 0
-        elif target_class == 'Rogue':
-            melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
-                mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, .1
-        elif target_class == 'Mixed':
-            melee_damage_weight, melee_crit_weight, melee_speed_weight, ranged_damage_weight, ranged_crit_weight, magic_damage_weight, magic_crit_weight, \
-                mana_weight, summon_damage_weight, minion_slots_weight, rogue_damage_weight, rogue_crit_weight, stealth_weight = 1, 1, 1, 1, 1, 1, 1, .05, 1, 25, 1, 1, .1
-
     for set in filtered_sets:
         for set2 in filtered_sets:
             for set3 in filtered_sets:
@@ -208,14 +158,41 @@ def main():
 
 # Other Menu Functions
 
+def toggle_calamity():
+    global calamity
+    calamity = not calamity
+    if calamity:
+        calamity_button.configure(text='Enabled')
+    else:
+        calamity_button.configure(text='Disabled')
 
 
+def update_class(updated_class):
+    global target_class
+    target_class = updated_class
 
 
+def update_stage(updated_stage):
+    global game_stage
+    game_stage = updated_stage
 
+def update_world_evil():
+    global world_evil
+    if world_evil == 'Corruption and Crimson':
+        world_evil = 'Corruption Only'
+    elif world_evil == 'Corruption Only':
+        world_evil = 'Crimson Only'
+    elif world_evil == 'Crimson Only':
+        world_evil = 'Corruption and Crimson'
+    world_evil_button.configure(text=world_evil)
 
-
-
+def update_redundant_armor():
+    global exclude_redundant
+    exclude_redundant = not exclude_redundant
+    if exclude_redundant:
+        redundant_armor_button.configure(text='Excluded')
+    else:
+        redundant_armor_button.configure(text='Included')
 
 
 
@@ -232,7 +209,7 @@ root.rowconfigure((0, 1, 3), weight=1)
 root.rowconfigure(2, weight=10)
 
 dropdown_caret = Image.open("./guiAssets/down_caret.png")
-
+add_icon = Image.open("./guiAssets/plus_icon.png")
 
 andy_title = tk.CTkFont(family='Andy Bold', size=60)
 andy_header1 = tk.CTkFont(family='Andy Bold', size=40)
@@ -253,14 +230,14 @@ frame1.rowconfigure((0, 1, 2), weight=1)
 calamity_label = tk.CTkLabel(frame1, text='Calamity Mod', font=andy_header1)
 calamity_label.grid(column=0, row=0, padx=10, pady=10, sticky='w')
 
-calamity_button = tk.CTkButton(frame1, text='Disabled', font=andy_header1)
+calamity_button = tk.CTkButton(frame1, text='Disabled', font=andy_header2, command=toggle_calamity)
 calamity_button.grid(column=1, row=0, padx=50, pady=10, sticky='e')
 
 class_label = tk.CTkLabel(frame1, text='Class', font=andy_header1)
 class_label.grid(column=0, row=1, padx=10, pady=10, sticky='w')
 
 classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Mixed']
-class_selection = tk.CTkOptionMenu(frame1, width=270, anchor='center', dynamic_resizing=False, values=classes, font=andy_header2, dropdown_font=andy_header3)
+class_selection = tk.CTkOptionMenu(frame1, width=270, anchor='center', dynamic_resizing=False, values=classes, font=andy_header2, dropdown_font=andy_header3, command=update_class)
 class_selection.grid(column=1, row=1, padx=50, pady=10, sticky='ew')
 
 stage_label = tk.CTkLabel(frame1, text='Stage', font=andy_header1)
@@ -340,30 +317,31 @@ frame3.grid(row=0, column=1, padx=10, pady=10, rowspan=3, sticky='nesw')
 frame3.columnconfigure(0, weight=5)
 frame3.columnconfigure(1, weight=1)
 frame3.rowconfigure((0, 1, 2), weight=1)
+frame3.rowconfigure(3, weight=10)
 
 world_evil_label = tk.CTkLabel(frame3, text='World Evil', font=andy_header2)
 world_evil_label.grid(row=0, column=0, padx=10, pady=10, sticky='w')
 
-world_evil_button = tk.CTkButton(frame3, text='Corruption and Crimson', font=andy_header3)
+world_evil_button = tk.CTkButton(frame3, width=200, text='Corruption and Crimson', font=andy_header3, command=update_world_evil)
 world_evil_button.grid(column=1, row=0, padx=50, pady=10, sticky='e')
 
 redundant_armor_label = tk.CTkLabel(frame3, text='Redundant Armor', font=andy_header2)
 redundant_armor_label.grid(row=1, column=0, padx=10, pady=10, sticky='w')
 
-redundant_armor_button = tk.CTkButton(frame3, text='Excluded', font=andy_header3)
+redundant_armor_button = tk.CTkButton(frame3, text='Excluded', font=andy_header3, command=update_redundant_armor)
 redundant_armor_button.grid(row=1, column=1, padx=50, pady=10, sticky='e')
 
 excluded_armor_label = tk.CTkLabel(frame3, text='Excluded Armor', font=andy_header2)
 excluded_armor_label.grid(row=2, column=0, columnspan=2, sticky='s')
 
 excluded_armor_output = tk.CTkTextbox(frame3, corner_radius=0, state='disabled')
-excluded_armor_output.grid(row=3, column=0, columnspan=2, padx=5, pady=10, sticky='nesw')
+excluded_armor_output.grid(row=3, column=0, columnspan=2, padx=5, sticky='nesw')
 
 excluded_armor_input = tk.CTkEntry(frame3, placeholder_text='Add more sets to exclude here', font=andy_subtitle)
-excluded_armor_input.grid(row=4, column=0, columnspan=2)
+excluded_armor_input.grid(row=4, column=0, padx=50, pady=10, columnspan=2, sticky='new')
 
-
-
+exclude_armor_add = tk.CTkButton(frame3, width=0, height=0, fg_color='#a9b8c4', bg_color='#a9b8c4', text='', image=tk.CTkImage(add_icon, size=(16, 16)))
+exclude_armor_add.grid(row=4, column=1, padx=60, sticky='e')
 
 
 calculate_button = tk.CTkButton(root, corner_radius=20, text='Calculate', border_color="#586b78", border_width=1, font=andy_header1, command=main)
