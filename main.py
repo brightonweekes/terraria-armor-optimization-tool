@@ -7,10 +7,70 @@ import calamity_armor
 calamity = False
 target_class = 'Melee'
 game_stage = 'Pre-Boss'
-# manage weights
+stat_weights = 'Balanced'
+show_detailed_stats = False
+class_specific_expanded = False
 world_evil = 'Corruption and Crimson'
 exclude_redundant = True
 
+
+class_specific_traits = {
+    'Melee': 'Melee Speed',
+    'Ranged': None,
+    'Magic': 'Mana',
+    'Summoner': 'Minion Slots'
+}
+
+stat_weight_presets = {
+    'Balanced': {
+        'defense_weight': .5,
+        'damage_weight': 1,
+        'crit_weight': 1,
+        'movement_weight': .2,
+        'melee_damage_weight': 1,
+        'melee_crit_weight': 1,
+        'melee_speed_weight': 1,
+        'ranged_damage_weight': 0, 
+        'ranged_crit_weight': 0,
+        'magic_damage_weight': 0,
+        'magic_crit_weight': 0,
+        'mana_weight': 0,
+        'summoner_damage_weight': 0,
+        'minion_slots_weight': 0
+    },
+    'Damage-focused': {
+        'defense_weight': 0,
+        'damage_weight': 1,
+        'crit_weight': 1,
+        'movement_weight': .2,
+        'melee_damage_weight': 1,
+        'melee_crit_weight': 1,
+        'melee_speed_weight': 1,
+        'ranged_damage_weight': 0, 
+        'ranged_crit_weight': 0,
+        'magic_damage_weight': 0,
+        'magic_crit_weight': 0,
+        'mana_weight': 0,
+        'summoner_damage_weight': 0,
+        'minion_slots_weight': 0
+    },
+    'Defense-focused': {
+        'defense_weight': 1,
+        'damage_weight': .5,
+        'crit_weight': .5,
+        'movement_weight': .1,
+        'melee_damage_weight': .5,
+        'melee_crit_weight': .5,
+        'melee_speed_weight': .5,
+        'ranged_damage_weight': 0, 
+        'ranged_crit_weight': 0,
+        'magic_damage_weight': 0,
+        'magic_crit_weight': 0,
+        'mana_weight': 0,
+        'summoner_damage_weight': 0,
+        'minion_slots_weight': 0
+    },
+}
 
 vanilla_stage_tranlsation = {
     'Pre-Boss': 0,
@@ -25,7 +85,6 @@ vanilla_stage_tranlsation = {
     'Pre-Lunatic Cultist': 8,
     'Endgame': 9
 }
-
 
 calamity_stage_tranlsation = {
     'Pre-Boss': 0,
@@ -170,11 +229,64 @@ def toggle_calamity():
 def update_class(updated_class):
     global target_class
     target_class = updated_class
-
+    if type(class_specific_traits[updated_class]) == str:
+        class_specific_slider_label.configure(text=class_specific_traits[updated_class])
+        class_specific_slider_label.grid(row=4, column=1, pady=10, sticky='w')
+        class_specific_slider.grid(row=4, column=2, padx=10, pady=10, sticky='ew')
+        class_specific_number.grid(row=4, column=1, sticky='e')
+    else:
+        class_specific_slider_label.grid_forget()
+        class_specific_slider.grid_forget()
+        class_specific_number.grid_forget()
 
 def update_stage(updated_stage):
     global game_stage
     game_stage = updated_stage
+
+def update_stat_weight_preset(updated_weight_preset):
+    global stat_weights
+    stat_weights = updated_weight_preset
+
+def damage_slider_update(damage_weight):
+    damage_number.configure(text=round(damage_weight, 1))
+
+def dropdown_all_toggle():
+    global show_detailed_stats
+    show_detailed_stats = not show_detailed_stats
+
+def defense_slider_update(defense_weight):
+    defense_number.configure(text=round(defense_weight, 1))
+
+def movement_slider_update(movement_weight):
+    movement_number.configure(text=round(movement_weight, 1))
+
+def class_specific_slider_update(class_specific_weight):
+    class_specific_number.configure(text=round(class_specific_weight, 1))
+
+def create_preset():
+    global stat_weights, stat_weight_presets
+    if len(preset_name.get()) == 0:
+        weight_presets.append(f'Custom Preset {len(weight_presets) - 2}')
+    else:
+        if preset_name.get() not in weight_presets:
+            weight_presets.append(preset_name.get())
+        else:
+            modifier = 2
+            altered_name = preset_name.get() + f' ({modifier})'
+            while altered_name in weight_presets:
+                altered_name = preset_name.get() + f' ({modifier})'
+                modifier += 1
+            weight_presets.append(altered_name)
+    balance_selection.configure(values=weight_presets)
+    stat_weights = weight_presets[-1]
+    stat_weight_presets.update({weight_presets[-1]: {
+        'damage_weight': damage_slider.get(),
+        'defense_weight': defense_slider.get(),
+        'movement_weight': movement_slider.get()
+    }})
+
+def update_weights():
+    pass
 
 def update_world_evil():
     global world_evil
@@ -236,7 +348,7 @@ calamity_button.grid(column=1, row=0, padx=50, pady=10, sticky='e')
 class_label = tk.CTkLabel(frame1, text='Class', font=andy_header1)
 class_label.grid(column=0, row=1, padx=10, pady=10, sticky='w')
 
-classes = ['Melee', 'Ranged', 'Magic', 'Summoner', 'Mixed']
+classes = ['Melee', 'Ranged', 'Magic', 'Summoner']
 class_selection = tk.CTkOptionMenu(frame1, width=270, anchor='center', dynamic_resizing=False, values=classes, font=andy_header2, dropdown_font=andy_header3, command=update_class)
 class_selection.grid(column=1, row=1, padx=50, pady=10, sticky='ew')
 
@@ -260,56 +372,53 @@ balance_label = tk.CTkLabel(frame2, text='Stat Weighting', font=andy_header1)
 balance_label.grid(row=0, column=1, pady=10, sticky='w')
 
 weight_presets = ['Balanced', 'Damage-focused', 'Defense-focused']
-balance_selection = tk.CTkOptionMenu(frame2, width=270, anchor='center', dynamic_resizing=False, values=weight_presets, font=andy_header2, dropdown_font=andy_header3)
+balance_selection = tk.CTkOptionMenu(frame2, width=270, anchor='center', dynamic_resizing=False, values=weight_presets, font=andy_header2, dropdown_font=andy_header3, command=update_stat_weight_preset)
 balance_selection.grid(row=0, column=2, padx=50, pady=10, sticky='ew')
 
 damage_label = tk.CTkLabel(frame2, text='Damage', font=andy_header1,)
 damage_label.grid(row=1, column=1, pady=10, sticky='w')
 
-damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=100, height=20, command=None)
+damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=damage_slider_update)
 damage_slider.grid(row=1, column=2, padx=10, pady=10, sticky='ew')
 
-damage_number = tk.CTkLabel(frame2, text='1.00', font=andy_subtitle)
+damage_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 damage_number.grid(row=1, column=1, sticky='e')
 
-dropdown_damage = tk.CTkButton(frame2, text='', width=0, height=0, fg_color='transparent', image=tk.CTkImage(dropdown_caret))
-dropdown_damage.grid(row=1, column=0)
-
-defense_label = tk.CTkLabel(frame2, text='Defense', font=andy_header1,)
+defense_label = tk.CTkLabel(frame2, text='Defense', font=andy_header1)
 defense_label.grid(row=2, column=1, pady=10, sticky='w')
 
-defense_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=100, height=20, command=None)
+defense_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=defense_slider_update)
 defense_slider.grid(row=2, column=2, padx=10, pady=10, sticky='ew')
 
-defense_number = tk.CTkLabel(frame2, text='1.00', font=andy_subtitle)
+defense_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 defense_number.grid(row=2, column=1, sticky='e')
 
 movement_label = tk.CTkLabel(frame2, text='Movement', font=andy_header1,)
 movement_label.grid(row=3, column=1, pady=10, sticky='w')
 
-movement_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=100, height=20, command=None)
+movement_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=movement_slider_update)
 movement_slider.grid(row=3, column=2, padx=10, pady=10, sticky='ew')
 
-movement_number = tk.CTkLabel(frame2, text='1.00', font=andy_subtitle)
+movement_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 movement_number.grid(row=3, column=1, sticky='e')
 
 class_specific_slider_label = tk.CTkLabel(frame2, text='Melee Speed', font=andy_header1)
 class_specific_slider_label.grid(row=4, column=1, pady=10, sticky='w')
 
-class_specific_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=100, height=20, command=None)
+class_specific_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=class_specific_slider_update)
 class_specific_slider.grid(row=4, column=2, padx=10, pady=10, sticky='ew')
 
-class_specific_number = tk.CTkLabel(frame2, text='1.00', font=andy_subtitle)
+class_specific_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 class_specific_number.grid(row=4, column=1, sticky='e')
 
-dropdown_class_specific = tk.CTkButton(frame2, text='', width=0, height=0, fg_color='transparent', image=tk.CTkImage(dropdown_caret))
-dropdown_class_specific.grid(row=4, column=0)
+dropdown_all = tk.CTkButton(frame2, text='Show Detailed Stats', font=andy_subtitle, width=0, height=0, fg_color='transparent', image=tk.CTkImage(dropdown_caret), command=dropdown_all_toggle)
+dropdown_all.grid(row=5, column=1, sticky='w')
 
-create_preset = tk.CTkButton(frame2, height= 40, border_width=0, text='Set Current As Preset', font=andy_header2, corner_radius=0)
-create_preset.grid(row=5, column=1, pady=10, sticky='e')
+create_preset_button = tk.CTkButton(frame2, height= 40, border_width=0, text='Set Current As Preset', font=andy_header2, corner_radius=0, command=create_preset)
+create_preset_button.grid(row=6, column=1, pady=10, sticky='e')
 
 preset_name = tk.CTkEntry(frame2, width=300, height=40, border_width=0, placeholder_text='Input your preset name here', font=andy_subtitle, corner_radius=0)
-preset_name.grid(row=5, column=2, pady=10, sticky='w')
+preset_name.grid(row=6, column=2, pady=10, sticky='w')
 
 
 frame3 = tk.CTkFrame(root, corner_radius=20)
@@ -348,4 +457,3 @@ calculate_button = tk.CTkButton(root, corner_radius=20, text='Calculate', border
 calculate_button.grid(row=3, column=0, padx=50, pady=5, columnspan=2, sticky='nesw')
 
 root.mainloop()
-
