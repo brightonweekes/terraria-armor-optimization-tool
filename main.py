@@ -253,6 +253,52 @@ def damage_slider_update(damage_weight):
 def dropdown_all_toggle():
     global show_detailed_stats
     show_detailed_stats = not show_detailed_stats
+    if show_detailed_stats:
+        dropdown_all.configure(text='Hide Detailed Stats', image=tk.CTkImage(retract_dropdown_caret))
+        melee_damage_label.grid(row=2, column=0, pady=2)
+        melee_damage_slider.grid(row=2, column=1, padx=80, pady=10, sticky='ew')
+        melee_damage_number.grid(row=2, column=1, padx=60, sticky='w')
+        melee_crit_label.grid(row=3, column=0, pady=2)
+        melee_crit_slider.grid(row=3, column=1, padx=80, pady=10, sticky='ew')
+        melee_crit_number.grid(row=3, column=1, padx=60, sticky='w')
+        ranged_damage_label.grid(row=4, column=0, pady=2)
+        ranged_damage_slider.grid(row=4, column=1, padx=80, pady=10, sticky='ew')
+        melee_damage_number.grid(row=4, column=1, padx=60, sticky='w')
+        ranged_crit_label.grid(row=5, column=0, pady=2)
+        ranged_crit_slider.grid(row=5, column=1, padx=80, pady=10, sticky='ew')
+        ranged_crit_number.grid(row=5, column=1, padx=60, sticky='w')
+        magic_damage_label.grid(row=6, column=0, pady=2)
+        magic_damage_slider.grid(row=6, column=1, padx=80, pady=10, sticky='ew')
+        magic_damage_number.grid(row=6, column=1, padx=60 ,sticky='w')
+        magic_crit_label.grid(row=7, column=0, pady=2)
+        magic_crit_slider.grid(row=7, column=1, padx=80, pady=10, sticky='ew')
+        magic_crit_number.grid(row=7, column=1, padx=60, sticky='w')
+        summoner_damage_label.grid(row=8, column=0, pady=2)
+        summoner_damage_slider.grid(row=8, column=1, padx=80, pady=10, sticky='ew')
+        summoner_damage_number.grid(row=8, column=1, padx=60, sticky='w')
+    else:
+        dropdown_all.configure(text='Show Detailed Stats', image=tk.CTkImage(dropdown_caret))
+        melee_damage_label.grid_forget()
+        melee_crit_label.grid_forget()
+        ranged_damage_label.grid_forget()
+        ranged_crit_label.grid_forget()
+        magic_damage_label.grid_forget()
+        magic_crit_label.grid_forget()
+        summoner_damage_label.grid_forget()
+        melee_damage_slider.grid_forget()
+        melee_crit_slider.grid_forget()
+        ranged_damage_slider.grid_forget()
+        ranged_crit_slider.grid_forget()
+        magic_damage_slider.grid_forget()
+        magic_crit_slider.grid_forget()
+        summoner_damage_slider.grid_forget()
+        melee_damage_number.grid_forget()
+        melee_crit_number.grid_forget()
+        ranged_damage_number.grid_forget()
+        ranged_crit_number.grid_forget()
+        magic_damage_number.grid_forget()
+        magic_crit_number.grid_forget()
+        summoner_damage_number.grid_forget()
 
 def defense_slider_update(defense_weight):
     defense_number.configure(text=round(defense_weight, 1))
@@ -321,6 +367,7 @@ root.rowconfigure((0, 1, 3), weight=1)
 root.rowconfigure(2, weight=10)
 
 dropdown_caret = Image.open("./guiAssets/down_caret.png")
+retract_dropdown_caret = Image.open("./guiAssets/up_caret.png")
 add_icon = Image.open("./guiAssets/plus_icon.png")
 
 andy_title = tk.CTkFont(family='Andy Bold', size=60)
@@ -364,61 +411,104 @@ stage_selection.grid(column=1, row=2, padx=50, pady=10, sticky='ew')
 frame2 = tk.CTkFrame(root, corner_radius=20)
 frame2.grid(row=2, column=0, padx=10, pady=10, sticky='nesw')
 frame2.columnconfigure(0, weight=1)
-frame2.columnconfigure(1, weight=5)
-frame2.columnconfigure(2, weight=1)
-frame2.rowconfigure((0, 1, 2, 3, 4, 5), weight=1)
+frame2.columnconfigure(1, weight=3)
+frame2.rowconfigure((0, 1, 9, 10, 11, 12, 13, 14, 15, 16), weight=1)
+frame2.rowconfigure((2, 3, 4, 5, 6, 7, 8), weight=0)
+
 
 balance_label = tk.CTkLabel(frame2, text='Stat Weighting', font=andy_header1)
-balance_label.grid(row=0, column=1, pady=10, sticky='w')
+balance_label.grid(row=0, column=0, padx=10, pady=10, sticky='w')
 
 weight_presets = ['Balanced', 'Damage-focused', 'Defense-focused']
-balance_selection = tk.CTkOptionMenu(frame2, width=270, anchor='center', dynamic_resizing=False, values=weight_presets, font=andy_header2, dropdown_font=andy_header3, command=update_stat_weight_preset)
-balance_selection.grid(row=0, column=2, padx=50, pady=10, sticky='ew')
+balance_selection = tk.CTkOptionMenu(frame2, width=310, anchor='center', dynamic_resizing=False, values=weight_presets, font=andy_header2, dropdown_font=andy_header3, command=update_stat_weight_preset)
+balance_selection.grid(row=0, column=1, padx=50, pady=10, sticky='e')
 
 damage_label = tk.CTkLabel(frame2, text='Damage', font=andy_header1,)
-damage_label.grid(row=1, column=1, pady=10, sticky='w')
+damage_label.grid(row=1, column=0, padx=10, pady=10, sticky='w')
 
 damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=damage_slider_update)
-damage_slider.grid(row=1, column=2, padx=10, pady=10, sticky='ew')
+damage_slider.grid(row=1, column=1, padx=10, pady=10, sticky='ew')
 
 damage_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
-damage_number.grid(row=1, column=1, sticky='e')
+damage_number.grid(row=1, column=0, sticky='e')
+
+melee_damage_label = tk.CTkLabel(frame2, text='Melee Damage', font=andy_header3)
+
+melee_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+
+melee_damage_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
+
+melee_crit_label = tk.CTkLabel(frame2, text='Melee Crit', font=andy_header3)
+
+melee_crit_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+
+melee_crit_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
+
+ranged_damage_label = tk.CTkLabel(frame2, text='Ranged Damage', font=andy_header3)
+
+ranged_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+
+ranged_damage_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
+
+ranged_crit_label = tk.CTkLabel(frame2, text='Ranged Crit', font=andy_header3)
+
+ranged_crit_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+
+ranged_crit_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
+
+magic_damage_label = tk.CTkLabel(frame2, text='Magic Damage', font=andy_header3)
+
+magic_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+
+magic_damage_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
+
+magic_crit_label = tk.CTkLabel(frame2, text='Magic Crit', font=andy_header3)
+
+magic_crit_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+
+magic_crit_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
+
+summoner_damage_label = tk.CTkLabel(frame2, text='Summon Damage', font=andy_header3)
+
+summoner_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+
+summoner_damage_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 
 defense_label = tk.CTkLabel(frame2, text='Defense', font=andy_header1)
-defense_label.grid(row=2, column=1, pady=10, sticky='w')
+defense_label.grid(row=9, column=0, padx=10, pady=10, sticky='w')
 
 defense_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=defense_slider_update)
-defense_slider.grid(row=2, column=2, padx=10, pady=10, sticky='ew')
+defense_slider.grid(row=9, column=1, padx=10, pady=10, sticky='ew')
 
 defense_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
-defense_number.grid(row=2, column=1, sticky='e')
+defense_number.grid(row=9, column=0, sticky='e')
 
-movement_label = tk.CTkLabel(frame2, text='Movement', font=andy_header1,)
-movement_label.grid(row=3, column=1, pady=10, sticky='w')
+movement_label = tk.CTkLabel(frame2, text='Movement', font=andy_header1)
+movement_label.grid(row=10, column=0, padx=10, pady=10, sticky='w')
 
 movement_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=movement_slider_update)
-movement_slider.grid(row=3, column=2, padx=10, pady=10, sticky='ew')
+movement_slider.grid(row=10, column=1, padx=10, pady=10, sticky='ew')
 
 movement_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
-movement_number.grid(row=3, column=1, sticky='e')
+movement_number.grid(row=10, column=0, sticky='e')
 
 class_specific_slider_label = tk.CTkLabel(frame2, text='Melee Speed', font=andy_header1)
-class_specific_slider_label.grid(row=4, column=1, pady=10, sticky='w')
+class_specific_slider_label.grid(row=11, column=0, padx=10, pady=10, sticky='w')
 
 class_specific_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=class_specific_slider_update)
-class_specific_slider.grid(row=4, column=2, padx=10, pady=10, sticky='ew')
+class_specific_slider.grid(row=11, column=1, padx=10, pady=10, sticky='ew')
 
 class_specific_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
-class_specific_number.grid(row=4, column=1, sticky='e')
+class_specific_number.grid(row=11, column=0, sticky='e')
 
 dropdown_all = tk.CTkButton(frame2, text='Show Detailed Stats', font=andy_subtitle, width=0, height=0, fg_color='transparent', image=tk.CTkImage(dropdown_caret), command=dropdown_all_toggle)
-dropdown_all.grid(row=5, column=1, sticky='w')
+dropdown_all.grid(row=12, column=0, padx=10, sticky='w')
 
 create_preset_button = tk.CTkButton(frame2, height= 40, border_width=0, text='Set Current As Preset', font=andy_header2, corner_radius=0, command=create_preset)
-create_preset_button.grid(row=6, column=1, pady=10, sticky='e')
+create_preset_button.grid(row=13, column=0, pady=10, sticky='e')
 
 preset_name = tk.CTkEntry(frame2, width=300, height=40, border_width=0, placeholder_text='Input your preset name here', font=andy_subtitle, corner_radius=0)
-preset_name.grid(row=6, column=2, pady=10, sticky='w')
+preset_name.grid(row=13, column=1, pady=10, sticky='w')
 
 
 frame3 = tk.CTkFrame(root, corner_radius=20)
