@@ -1,5 +1,6 @@
 import customtkinter as tk
 from PIL import Image
+from CTkListbox import *
 import armor
 import calamity_armor
 
@@ -231,9 +232,9 @@ def update_class(updated_class):
     target_class = updated_class
     if type(class_specific_traits[updated_class]) == str:
         class_specific_slider_label.configure(text=class_specific_traits[updated_class])
-        class_specific_slider_label.grid(row=4, column=1, pady=10, sticky='w')
-        class_specific_slider.grid(row=4, column=2, padx=10, pady=10, sticky='ew')
-        class_specific_number.grid(row=4, column=1, sticky='e')
+        class_specific_slider_label.grid(row=11, column=0, padx=10, pady=10, sticky='w')
+        class_specific_slider.grid(row=11, column=1, padx=10, pady=10, sticky='ew')
+        class_specific_number.grid(row=11, column=0, sticky='e')
     else:
         class_specific_slider_label.grid_forget()
         class_specific_slider.grid_forget()
@@ -249,6 +250,27 @@ def update_stat_weight_preset(updated_weight_preset):
 
 def damage_slider_update(damage_weight):
     damage_number.configure(text=round(damage_weight, 1))
+    
+def melee_damage_slider_update(melee_damage_weight):
+    melee_damage_number.configure(text=round(melee_damage_weight, 1))
+
+def melee_crit_slider_update(melee_crit_weight):
+    melee_crit_number.configure(text=round(melee_crit_weight, 1))
+
+def ranged_damage_slider_update(ranged_damage_weight):
+    ranged_damage_number.configure(text=round(ranged_damage_weight, 1))
+
+def ranged_crit_slider_update(ranged_crit_weight):
+    ranged_crit_number.configure(text=round(ranged_crit_weight, 1))
+
+def magic_damage_slider_update(magic_damage_weight):
+    magic_damage_number.configure(text=round(magic_damage_weight, 1))
+
+def magic_crit_slider_update(magic_crit_weight):
+    magic_crit_number.configure(text=round(magic_crit_weight, 1))
+    
+def summoner_damage_slider_update(summoner_damage_weight):
+    summoner_damage_number.configure(text=round(summoner_damage_weight, 1))
 
 def dropdown_all_toggle():
     global show_detailed_stats
@@ -352,13 +374,16 @@ def update_redundant_armor():
     else:
         redundant_armor_button.configure(text='Included')
 
+def search_sets():
+    print('I am searching')
+
 
 
 # Menu Setup
 root = tk.CTk()
 root.title("What are you lookin' at!")
 tk.set_appearance_mode("dark")
-tk.set_default_color_theme("./color_themes/DaynNight(custom).json")
+tk.set_default_color_theme("./color_themes/TrojanBlue.json")
 root_size = root_width, root_height = 1440, 810
 root.geometry(f'{root_width}x{root_height}')
 root.columnconfigure(0, weight=2)
@@ -434,43 +459,43 @@ damage_number.grid(row=1, column=0, sticky='e')
 
 melee_damage_label = tk.CTkLabel(frame2, text='Melee Damage', font=andy_header3)
 
-melee_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+melee_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12, command=melee_damage_slider_update)
 
 melee_damage_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 
 melee_crit_label = tk.CTkLabel(frame2, text='Melee Crit', font=andy_header3)
 
-melee_crit_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+melee_crit_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12, command=melee_crit_slider_update)
 
 melee_crit_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 
 ranged_damage_label = tk.CTkLabel(frame2, text='Ranged Damage', font=andy_header3)
 
-ranged_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+ranged_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12, command=ranged_damage_slider_update)
 
 ranged_damage_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 
 ranged_crit_label = tk.CTkLabel(frame2, text='Ranged Crit', font=andy_header3)
 
-ranged_crit_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+ranged_crit_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12, command=ranged_crit_slider_update)
 
 ranged_crit_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 
 magic_damage_label = tk.CTkLabel(frame2, text='Magic Damage', font=andy_header3)
 
-magic_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+magic_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12, command=magic_damage_slider_update)
 
 magic_damage_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 
 magic_crit_label = tk.CTkLabel(frame2, text='Magic Crit', font=andy_header3)
 
-magic_crit_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+magic_crit_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12, command=magic_crit_slider_update)
 
 magic_crit_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 
 summoner_damage_label = tk.CTkLabel(frame2, text='Summon Damage', font=andy_header3)
 
-summoner_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12)
+summoner_damage_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=12, command=summoner_damage_slider_update)
 
 summoner_damage_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 
@@ -542,6 +567,7 @@ excluded_armor_input.grid(row=4, column=0, padx=50, pady=10, columnspan=2, stick
 exclude_armor_add = tk.CTkButton(frame3, width=0, height=0, fg_color='#a9b8c4', bg_color='#a9b8c4', text='', image=tk.CTkImage(add_icon, size=(16, 16)))
 exclude_armor_add.grid(row=4, column=1, padx=60, sticky='e')
 
+search_box = CTkListbox(frame3)
 
 calculate_button = tk.CTkButton(root, corner_radius=20, text='Calculate', border_color="#586b78", border_width=1, font=andy_header1, command=main)
 calculate_button.grid(row=3, column=0, padx=50, pady=5, columnspan=2, sticky='nesw')
