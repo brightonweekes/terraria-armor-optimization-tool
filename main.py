@@ -12,15 +12,14 @@ stat_weights = 'Balanced'
 show_detailed_stats = False
 class_specific_expanded = False
 world_evil = 'Corruption and Crimson'
+world_evil_excluded = set()
 exclude_redundant = True
+redundant_excluded = {armor.PinkSnowSet, armor.AncientCobaltSet, armor.AncientHallowedSet}
+sets_excluded = set()
+for s in (world_evil_excluded, redundant_excluded):
+    sets_excluded.union(s)
+sets_included = armor.armor_sets.difference(sets_excluded)
 
-
-class_specific_traits = {
-    'Melee': 'Melee Speed',
-    'Ranged': None,
-    'Magic': 'Mana',
-    'Summoner': 'Minion Slots'
-}
 
 stat_weight_presets = {
     'Balanced': {
@@ -228,17 +227,57 @@ def toggle_calamity():
 
 
 def update_class(updated_class):
-    global target_class
+    global target_class, show_detailed_stats
     target_class = updated_class
-    if type(class_specific_traits[updated_class]) == str:
-        class_specific_slider_label.configure(text=class_specific_traits[updated_class])
-        class_specific_slider_label.grid(row=11, column=0, padx=10, pady=10, sticky='w')
-        class_specific_slider.grid(row=11, column=1, padx=10, pady=10, sticky='ew')
-        class_specific_number.grid(row=11, column=0, sticky='e')
-    else:
-        class_specific_slider_label.grid_forget()
-        class_specific_slider.grid_forget()
-        class_specific_number.grid_forget()
+    if updated_class == 'Melee':
+        mana_slider_label.grid_forget()
+        mana_slider.grid_forget()
+        mana_number.grid_forget()
+        minion_slot_slider_label.grid_forget()
+        minion_slot_slider.grid_forget()
+        minion_slot_number.grid_forget()
+        melee_speed_slider_label.configure(font=andy_header1)
+        melee_speed_slider.configure(height=20)
+        melee_speed_slider_label.grid(row=11, column=0, padx=10, pady=10, sticky='w')
+        melee_speed_slider.grid(row=11, column=1, padx=10, pady=10, sticky='ew')
+        melee_speed_number.grid(row=11, column=0, sticky='e')
+    elif updated_class == 'Ranged':
+        mana_slider_label.grid_forget()
+        mana_slider.grid_forget()
+        mana_number.grid_forget()
+        minion_slot_slider_label.grid_forget()
+        minion_slot_slider.grid_forget()
+        minion_slot_number.grid_forget()
+        melee_speed_slider_label.grid_forget()
+        melee_speed_slider.grid_forget()
+        melee_speed_number.grid_forget()
+    elif updated_class == 'Magic':
+        melee_speed_slider_label.grid_forget()
+        melee_speed_slider.grid_forget()
+        melee_speed_number.grid_forget()
+        minion_slot_slider_label.grid_forget()
+        minion_slot_slider.grid_forget()
+        minion_slot_number.grid_forget()
+        mana_slider_label.configure(font=andy_header1)
+        mana_slider.configure(height=20)
+        mana_slider_label.grid(row=11, column=0, padx=10, pady=10, sticky='w')
+        mana_slider.grid(row=11, column=1, padx=10, pady=10, sticky='ew')
+        mana_number.grid(row=11, column=0, sticky='e')
+    elif updated_class == 'Summoner':
+        melee_speed_slider_label.grid_forget()
+        melee_speed_slider.grid_forget()
+        melee_speed_number.grid_forget()
+        mana_slider_label.grid_forget()
+        mana_slider.grid_forget()
+        mana_number.grid_forget()
+        minion_slot_slider_label.configure(font=andy_header1)
+        minion_slot_slider.configure(height=20)
+        minion_slot_slider_label.grid(row=11, column=0, padx=10, pady=10, sticky='w')
+        minion_slot_slider.grid(row=11, column=1, padx=10, pady=10, sticky='ew')
+        minion_slot_number.grid(row=11, column=0, sticky='e')
+    show_detailed_stats = not show_detailed_stats
+    dropdown_all_toggle()
+
 
 def update_stage(updated_stage):
     global game_stage
@@ -273,31 +312,80 @@ def summoner_damage_slider_update(summoner_damage_weight):
     summoner_damage_number.configure(text=round(summoner_damage_weight, 1))
 
 def dropdown_all_toggle():
-    global show_detailed_stats
+    global show_detailed_stats, target_class
     show_detailed_stats = not show_detailed_stats
     if show_detailed_stats:
         dropdown_all.configure(text='Hide Detailed Stats', image=tk.CTkImage(retract_dropdown_caret))
-        melee_damage_label.grid(row=2, column=0, pady=2)
+        melee_damage_label.grid(row=2, column=0, pady=4)
         melee_damage_slider.grid(row=2, column=1, padx=80, pady=10, sticky='ew')
         melee_damage_number.grid(row=2, column=1, padx=60, sticky='w')
-        melee_crit_label.grid(row=3, column=0, pady=2)
+        melee_crit_label.grid(row=3, column=0, pady=4)
         melee_crit_slider.grid(row=3, column=1, padx=80, pady=10, sticky='ew')
         melee_crit_number.grid(row=3, column=1, padx=60, sticky='w')
-        ranged_damage_label.grid(row=4, column=0, pady=2)
+        ranged_damage_label.grid(row=4, column=0, pady=4)
         ranged_damage_slider.grid(row=4, column=1, padx=80, pady=10, sticky='ew')
-        melee_damage_number.grid(row=4, column=1, padx=60, sticky='w')
-        ranged_crit_label.grid(row=5, column=0, pady=2)
+        ranged_damage_number.grid(row=4, column=1, padx=60, sticky='w')
+        ranged_crit_label.grid(row=5, column=0, pady=4)
         ranged_crit_slider.grid(row=5, column=1, padx=80, pady=10, sticky='ew')
         ranged_crit_number.grid(row=5, column=1, padx=60, sticky='w')
-        magic_damage_label.grid(row=6, column=0, pady=2)
+        magic_damage_label.grid(row=6, column=0, pady=4)
         magic_damage_slider.grid(row=6, column=1, padx=80, pady=10, sticky='ew')
         magic_damage_number.grid(row=6, column=1, padx=60 ,sticky='w')
-        magic_crit_label.grid(row=7, column=0, pady=2)
+        magic_crit_label.grid(row=7, column=0, pady=4)
         magic_crit_slider.grid(row=7, column=1, padx=80, pady=10, sticky='ew')
         magic_crit_number.grid(row=7, column=1, padx=60, sticky='w')
-        summoner_damage_label.grid(row=8, column=0, pady=2)
+        summoner_damage_label.grid(row=8, column=0, pady=4)
         summoner_damage_slider.grid(row=8, column=1, padx=80, pady=10, sticky='ew')
         summoner_damage_number.grid(row=8, column=1, padx=60, sticky='w')
+        if target_class == 'Melee':
+            mana_slider_label.configure(font=andy_header3)
+            mana_slider.configure(height=12)
+            mana_slider_label.grid(row=12, column=0, pady=4)
+            mana_slider.grid(row=12, column=1, padx=80, pady=10, sticky='ew')
+            mana_number.grid(row=12, column=1, padx=60, sticky='w')
+            minion_slot_slider_label.configure(font=andy_header3)
+            minion_slot_slider.configure(height=12)
+            minion_slot_slider_label.grid(row=13, column=0, pady=4)
+            minion_slot_slider.grid(row=13, column=1, padx=80, pady=10, sticky='ew')
+            minion_slot_number.grid(row=13, column=1, padx=60, sticky='w')
+        elif target_class == 'Ranged':
+            melee_speed_slider_label.configure(font=andy_header3)
+            melee_speed_slider.configure(height=12)
+            melee_speed_slider_label.grid(row=11, column=0, pady=4)
+            melee_speed_slider.grid(row=11, column=1, padx=80, pady=10, sticky='ew')
+            melee_speed_number.grid(row=11, column=1, padx=60, sticky='w')
+            mana_slider_label.configure(font=andy_header3)
+            mana_slider.configure(height=12)
+            mana_slider_label.grid(row=12, column=0, pady=4)
+            mana_slider.grid(row=12, column=1, padx=80, pady=10, sticky='ew')
+            mana_number.grid(row=12, column=1, padx=60, sticky='w')
+            minion_slot_slider_label.configure(font=andy_header3)
+            minion_slot_slider.configure(height=12)
+            minion_slot_slider_label.grid(row=13, column=0, pady=4)
+            minion_slot_slider.grid(row=13, column=1, padx=80, pady=10, sticky='ew')
+            minion_slot_number.grid(row=13, column=1, padx=60, sticky='w')
+        elif target_class == 'Magic':
+            melee_speed_slider_label.configure(font=andy_header3)
+            melee_speed_slider.configure(height=12)
+            melee_speed_slider_label.grid(row=12, column=0, pady=4)
+            melee_speed_slider.grid(row=12, column=1, padx=80, pady=10, sticky='ew')
+            melee_speed_number.grid(row=12, column=1, padx=60, sticky='w')
+            minion_slot_slider_label.configure(font=andy_header3)
+            minion_slot_slider.configure(height=12)
+            minion_slot_slider_label.grid(row=13, column=0, pady=4)
+            minion_slot_slider.grid(row=13, column=1, padx=80, pady=10, sticky='ew')
+            minion_slot_number.grid(row=13, column=1, padx=60, sticky='w')
+        elif target_class == 'Summoner':
+            melee_speed_slider_label.configure(font=andy_header3)
+            melee_speed_slider.configure(height=12)
+            melee_speed_slider_label.grid(row=12, column=0, pady=4)
+            melee_speed_slider.grid(row=12, column=1, padx=80, pady=10, sticky='ew')
+            melee_speed_number.grid(row=12, column=1, padx=60, sticky='w')
+            mana_slider_label.configure(font=andy_header3)
+            mana_slider.configure(height=12)
+            mana_slider_label.grid(row=13, column=0, pady=4)
+            mana_slider.grid(row=13, column=1, padx=80, pady=10, sticky='ew')
+            mana_number.grid(row=13, column=1, padx=60, sticky='w')
     else:
         dropdown_all.configure(text='Show Detailed Stats', image=tk.CTkImage(dropdown_caret))
         melee_damage_label.grid_forget()
@@ -321,6 +409,37 @@ def dropdown_all_toggle():
         magic_damage_number.grid_forget()
         magic_crit_number.grid_forget()
         summoner_damage_number.grid_forget()
+        if target_class == 'Melee':
+            mana_slider_label.grid_forget()
+            mana_slider.grid_forget()
+            mana_number.grid_forget()
+            minion_slot_slider_label.grid_forget()
+            minion_slot_slider.grid_forget()
+            minion_slot_number.grid_forget()
+        elif target_class == 'Ranged':
+            melee_speed_slider_label.grid_forget()
+            melee_speed_slider.grid_forget()
+            melee_speed_number.grid_forget()
+            mana_slider_label.grid_forget()
+            mana_slider.grid_forget()
+            mana_number.grid_forget()
+            minion_slot_slider_label.grid_forget()
+            minion_slot_slider.grid_forget()
+            minion_slot_number.grid_forget()
+        elif target_class == 'Magic':
+            melee_speed_slider_label.grid_forget()
+            melee_speed_slider.grid_forget()
+            melee_speed_number.grid_forget()
+            minion_slot_slider_label.grid_forget()
+            minion_slot_slider.grid_forget()
+            minion_slot_number.grid_forget()
+        elif target_class == 'Summoner':
+            melee_speed_slider_label.grid_forget()
+            melee_speed_slider.grid_forget()
+            melee_speed_number.grid_forget()
+            mana_slider_label.grid_forget()
+            mana_slider.grid_forget()
+            mana_number.grid_forget()
 
 def defense_slider_update(defense_weight):
     defense_number.configure(text=round(defense_weight, 1))
@@ -328,8 +447,14 @@ def defense_slider_update(defense_weight):
 def movement_slider_update(movement_weight):
     movement_number.configure(text=round(movement_weight, 1))
 
-def class_specific_slider_update(class_specific_weight):
-    class_specific_number.configure(text=round(class_specific_weight, 1))
+def melee_speed_slider_update(melee_speed_weight):
+    melee_speed_number.configure(text=round(melee_speed_weight, 1))
+
+def mana_slider_update(mana_weight):
+    mana_number.configure(text=round(mana_weight, 1))
+
+def minion_slot_slider_update(minion_slot_weight):
+    minion_slot_number.configure(text=round(minion_slot_weight, 1))
 
 def create_preset():
     global stat_weights, stat_weight_presets
@@ -378,12 +503,11 @@ def search_sets():
     print('I am searching')
 
 
-
 # Menu Setup
 root = tk.CTk()
 root.title("What are you lookin' at!")
 tk.set_appearance_mode("dark")
-tk.set_default_color_theme("./color_themes/TrojanBlue.json")
+tk.set_default_color_theme("./color_themes/DaynNight(custom).json")
 root_size = root_width, root_height = 1440, 810
 root.geometry(f'{root_width}x{root_height}')
 root.columnconfigure(0, weight=2)
@@ -433,11 +557,11 @@ stage_selection = tk.CTkOptionMenu(frame1, width=270, anchor='center', dynamic_r
 stage_selection.grid(column=1, row=2, padx=50, pady=10, sticky='ew')
 
 
-frame2 = tk.CTkFrame(root, corner_radius=20)
+frame2 = tk.CTkScrollableFrame(root, corner_radius=0, border_width=0)
 frame2.grid(row=2, column=0, padx=10, pady=10, sticky='nesw')
 frame2.columnconfigure(0, weight=1)
 frame2.columnconfigure(1, weight=3)
-frame2.rowconfigure((0, 1, 9, 10, 11, 12, 13, 14, 15, 16), weight=1)
+frame2.rowconfigure((0, 1, 9, 10, 11, 12, 13, 14, 15), weight=1)
 frame2.rowconfigure((2, 3, 4, 5, 6, 7, 8), weight=0)
 
 
@@ -517,23 +641,35 @@ movement_slider.grid(row=10, column=1, padx=10, pady=10, sticky='ew')
 movement_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 movement_number.grid(row=10, column=0, sticky='e')
 
-class_specific_slider_label = tk.CTkLabel(frame2, text='Melee Speed', font=andy_header1)
-class_specific_slider_label.grid(row=11, column=0, padx=10, pady=10, sticky='w')
+melee_speed_slider_label = tk.CTkLabel(frame2, text='Melee Speed', font=andy_header1)
+melee_speed_slider_label.grid(row=11, column=0, padx=10, pady=10, sticky='w')
 
-class_specific_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=class_specific_slider_update)
-class_specific_slider.grid(row=11, column=1, padx=10, pady=10, sticky='ew')
+melee_speed_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=melee_speed_slider_update)
+melee_speed_slider.grid(row=11, column=1, padx=10, pady=10, sticky='ew')
 
-class_specific_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
-class_specific_number.grid(row=11, column=0, sticky='e')
+melee_speed_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
+melee_speed_number.grid(row=11, column=0, sticky='e')
+
+mana_slider_label = tk.CTkLabel(frame2, text='Mana', font=andy_header1)
+
+mana_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=mana_slider_update)
+
+mana_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
+
+minion_slot_slider_label = tk.CTkLabel(frame2, text='Minion Slots', font=andy_header1)
+
+minion_slot_slider = tk.CTkSlider(frame2, from_=0, to=1, number_of_steps=10, height=20, command=minion_slot_slider_update)
+
+minion_slot_number = tk.CTkLabel(frame2, text='0.5', font=andy_subtitle)
 
 dropdown_all = tk.CTkButton(frame2, text='Show Detailed Stats', font=andy_subtitle, width=0, height=0, fg_color='transparent', image=tk.CTkImage(dropdown_caret), command=dropdown_all_toggle)
-dropdown_all.grid(row=12, column=0, padx=10, sticky='w')
+dropdown_all.grid(row=14, column=0, padx=10, sticky='w')
 
 create_preset_button = tk.CTkButton(frame2, height= 40, border_width=0, text='Set Current As Preset', font=andy_header2, corner_radius=0, command=create_preset)
-create_preset_button.grid(row=13, column=0, pady=10, sticky='e')
+create_preset_button.grid(row=15, column=0, pady=10, sticky='e')
 
 preset_name = tk.CTkEntry(frame2, width=300, height=40, border_width=0, placeholder_text='Input your preset name here', font=andy_subtitle, corner_radius=0)
-preset_name.grid(row=13, column=1, pady=10, sticky='w')
+preset_name.grid(row=15, column=1, pady=10, sticky='w')
 
 
 frame3 = tk.CTkFrame(root, corner_radius=20)
@@ -564,10 +700,9 @@ excluded_armor_output.grid(row=3, column=0, columnspan=2, padx=5, sticky='nesw')
 excluded_armor_input = tk.CTkEntry(frame3, placeholder_text='Add more sets to exclude here', font=andy_subtitle)
 excluded_armor_input.grid(row=4, column=0, padx=50, pady=10, columnspan=2, sticky='new')
 
-exclude_armor_add = tk.CTkButton(frame3, width=0, height=0, fg_color='#a9b8c4', bg_color='#a9b8c4', text='', image=tk.CTkImage(add_icon, size=(16, 16)))
-exclude_armor_add.grid(row=4, column=1, padx=60, sticky='e')
 
 search_box = CTkListbox(frame3)
+
 
 calculate_button = tk.CTkButton(root, corner_radius=20, text='Calculate', border_color="#586b78", border_width=1, font=andy_header1, command=main)
 calculate_button.grid(row=3, column=0, padx=50, pady=5, columnspan=2, sticky='nesw')
