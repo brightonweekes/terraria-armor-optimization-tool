@@ -502,6 +502,10 @@ def update_redundant_armor():
 def search_sets():
     print('I am searching')
 
+def update_excluded_list(clicked):
+    global sets_excluded
+    print(sets_excluded)
+
 
 # Menu Setup
 root = tk.CTk()
@@ -694,15 +698,16 @@ redundant_armor_button.grid(row=1, column=1, padx=50, pady=10, sticky='e')
 excluded_armor_label = tk.CTkLabel(frame3, text='Excluded Armor', font=andy_header2)
 excluded_armor_label.grid(row=2, column=0, columnspan=2, sticky='s')
 
-excluded_armor_output = tk.CTkTextbox(frame3, corner_radius=0, state='disabled')
-excluded_armor_output.grid(row=3, column=0, columnspan=2, padx=5, sticky='nesw')
+# excluded_armor_output = tk.CTkTextbox(frame3, corner_radius=0, state='disabled')
+# excluded_armor_output.grid(row=3, column=0, columnspan=2, padx=5, sticky='nesw')
 
-excluded_armor_input = tk.CTkEntry(frame3, placeholder_text='Add more sets to exclude here', font=andy_subtitle)
-excluded_armor_input.grid(row=4, column=0, padx=50, pady=10, columnspan=2, sticky='new')
+excluded_armor_search = tk.CTkEntry(frame3, placeholder_text='Add more sets to exclude here', font=andy_subtitle)
+excluded_armor_search.grid(row=3, column=0, padx=50, pady=10, columnspan=2, sticky='new')
 
-
-search_box = CTkListbox(frame3)
-
+excluded_armor_select = CTkListbox(frame3, multiple_selection=True, font=andy_subtitle, command=update_excluded_list)
+excluded_armor_select.grid(row=4, column=0, padx=50, pady=10, columnspan=2, sticky='new')
+for st in armor.armor_sets:
+    excluded_armor_select.insert("END", st)
 
 calculate_button = tk.CTkButton(root, corner_radius=20, text='Calculate', border_color="#586b78", border_width=1, font=andy_header1, command=main)
 calculate_button.grid(row=3, column=0, padx=50, pady=5, columnspan=2, sticky='nesw')
