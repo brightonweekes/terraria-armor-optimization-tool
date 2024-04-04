@@ -1,3 +1,4 @@
+import tkinter
 import customtkinter as tk
 from PIL import Image
 from CTkListbox import *
@@ -502,9 +503,14 @@ def update_redundant_armor():
 def search_sets():
     print('I am searching')
 
-def update_excluded_list(clicked):
+def reset_exclude_list():
     global sets_excluded
-    print(sets_excluded)
+    for excluded in excluded_armor_select.curselection():
+        pass
+
+def update_excluded_list(selected):
+    global sets_excluded
+    print(selected)
 
 
 # Menu Setup
@@ -522,6 +528,7 @@ root.rowconfigure(2, weight=10)
 dropdown_caret = Image.open("./guiAssets/down_caret.png")
 retract_dropdown_caret = Image.open("./guiAssets/up_caret.png")
 add_icon = Image.open("./guiAssets/plus_icon.png")
+reset_icon = Image.open("./guiAssets/reset_icon.png")
 
 andy_title = tk.CTkFont(family='Andy Bold', size=60)
 andy_header1 = tk.CTkFont(family='Andy Bold', size=40)
@@ -680,8 +687,8 @@ frame3 = tk.CTkFrame(root, corner_radius=20)
 frame3.grid(row=0, column=1, padx=10, pady=10, rowspan=3, sticky='nesw')
 frame3.columnconfigure(0, weight=5)
 frame3.columnconfigure(1, weight=1)
-frame3.rowconfigure((0, 1, 2), weight=1)
-frame3.rowconfigure(3, weight=10)
+frame3.rowconfigure((0, 1, 2, 3), weight=1)
+frame3.rowconfigure(4, weight=10)
 
 world_evil_label = tk.CTkLabel(frame3, text='World Evil', font=andy_header2)
 world_evil_label.grid(row=0, column=0, padx=10, pady=10, sticky='w')
@@ -698,14 +705,14 @@ redundant_armor_button.grid(row=1, column=1, padx=50, pady=10, sticky='e')
 excluded_armor_label = tk.CTkLabel(frame3, text='Excluded Armor', font=andy_header2)
 excluded_armor_label.grid(row=2, column=0, columnspan=2, sticky='s')
 
-# excluded_armor_output = tk.CTkTextbox(frame3, corner_radius=0, state='disabled')
-# excluded_armor_output.grid(row=3, column=0, columnspan=2, padx=5, sticky='nesw')
-
 excluded_armor_search = tk.CTkEntry(frame3, placeholder_text='Add more sets to exclude here', font=andy_subtitle)
-excluded_armor_search.grid(row=3, column=0, padx=50, pady=10, columnspan=2, sticky='new')
+excluded_armor_search.grid(row=3, column=0, padx=50, pady=10, columnspan=2, sticky='ew')
+
+reset_excluded_button = tk.CTkButton(frame3, width=0, text='Reset', image=tk.CTkImage(reset_icon), command=reset_exclude_list)
+reset_excluded_button.grid(row=3, column=1, padx=10, sticky='e')
 
 excluded_armor_select = CTkListbox(frame3, multiple_selection=True, font=andy_subtitle, command=update_excluded_list)
-excluded_armor_select.grid(row=4, column=0, padx=50, pady=10, columnspan=2, sticky='new')
+excluded_armor_select.grid(row=4, column=0, padx=50, pady=10, columnspan=2, sticky='nesw')
 for st in armor.armor_sets:
     excluded_armor_select.insert("END", st)
 
