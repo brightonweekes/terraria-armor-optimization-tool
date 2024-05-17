@@ -13,3 +13,11 @@ pip install -r requirements.txt
 ```
 
 To use, open the folder in a code editor like VS Code or PyCharm and run main.py. Usage instructions can be found from within the program.
+
+
+### Version
+
+The versions listed below are the version which the armor information is updated to. If you are on a different version, the program will still be a good point of reference for progression, however it may not produce the most optimal combination in every scenario.
+
+Up to date with Terraria version 1.4.4.9
+Up to date with Calamity version 2.0.3.011
