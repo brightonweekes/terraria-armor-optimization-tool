@@ -1,4 +1,3 @@
-import tkinter
 import customtkinter as tk
 from PIL import Image
 from CTkListbox import *
