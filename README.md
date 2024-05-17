@@ -16,6 +16,10 @@ pip install -r requirements.txt
 
 To use, open the folder in a code editor like VS Code or PyCharm and run main.py. Usage instructions can be found from within the program.
 
+## Collaboration and Fixes
+
+If find any bugs or would like to suggest any changes, please feel free to let me know by filling out the porper form as stated in the CONTRIBUTING.md file.
+
 ## Version
 
 The versions listed below are the version which the armor information is updated to. If you are on a different version, the program will still be a good point of reference for progression, however it may not produce the most optimal combination in every scenario.
