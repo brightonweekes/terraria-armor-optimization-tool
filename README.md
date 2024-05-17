@@ -18,7 +18,7 @@ To use, open the folder in a code editor like VS Code or PyCharm and run main.py
 
 ## Collaboration and Fixes
 
-If find any bugs or would like to suggest any changes, please feel free to let me know by filling out the porper form as stated in the CONTRIBUTING.md file.
+If find any bugs or would like to suggest any changes, please feel free to let me know by filling out the proper form as stated in the CONTRIBUTING.md file.
 
 ## Version
 
