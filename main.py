@@ -22,53 +22,205 @@ sets_included = armor.armor_sets.difference(sets_excluded)
 
 
 stat_weight_presets = {
-    'Balanced': {
-        'defense_weight': .5,
-        'damage_weight': 1,
-        'crit_weight': 1,
-        'movement_weight': .2,
-        'melee_damage_weight': 1,
-        'melee_crit_weight': 1,
-        'melee_speed_weight': 1,
-        'ranged_damage_weight': 0, 
-        'ranged_crit_weight': 0,
-        'magic_damage_weight': 0,
-        'magic_crit_weight': 0,
-        'mana_weight': 0,
-        'summoner_damage_weight': 0,
-        'minion_slots_weight': 0
+    'Melee': {
+        'Balanced': {
+            'defense_weight': .5,
+            'damage_weight': 1,
+            'crit_weight': 1,
+            'movement_weight': .2,
+            'melee_damage_weight': 1,
+            'melee_crit_weight': 1,
+            'melee_speed_weight': 1,
+            'ranged_damage_weight': 0, 
+            'ranged_crit_weight': 0,
+            'magic_damage_weight': 0,
+            'magic_crit_weight': 0,
+            'mana_weight': 0,
+            'summon_damage_weight': 0,
+            'minion_slots_weight': 0
+        },
+        'Damage-focused': {
+            'defense_weight': 0,
+            'damage_weight': 1,
+            'crit_weight': 1,
+            'movement_weight': .2,
+            'melee_damage_weight': 1,
+            'melee_crit_weight': 1,
+            'melee_speed_weight': 1,
+            'ranged_damage_weight': 0, 
+            'ranged_crit_weight': 0,
+            'magic_damage_weight': 0,
+            'magic_crit_weight': 0,
+            'mana_weight': 0,
+            'summon_damage_weight': 0,
+            'minion_slots_weight': 0
+        },
+        'Defense-focused': {
+            'defense_weight': 1,
+            'damage_weight': .5,
+            'crit_weight': .5,
+            'movement_weight': .1,
+            'melee_damage_weight': .5,
+            'melee_crit_weight': .5,
+            'melee_speed_weight': .5,
+            'ranged_damage_weight': 0, 
+            'ranged_crit_weight': 0,
+            'magic_damage_weight': 0,
+            'magic_crit_weight': 0,
+            'mana_weight': 0,
+            'summon_damage_weight': 0,
+            'minion_slots_weight': 0
+        },
     },
-    'Damage-focused': {
-        'defense_weight': 0,
-        'damage_weight': 1,
-        'crit_weight': 1,
-        'movement_weight': .2,
-        'melee_damage_weight': 1,
-        'melee_crit_weight': 1,
-        'melee_speed_weight': 1,
-        'ranged_damage_weight': 0, 
-        'ranged_crit_weight': 0,
-        'magic_damage_weight': 0,
-        'magic_crit_weight': 0,
-        'mana_weight': 0,
-        'summoner_damage_weight': 0,
-        'minion_slots_weight': 0
+    'Ranged': {
+        'Balanced': {
+            'defense_weight': .3,
+            'damage_weight': 1,
+            'crit_weight': 1,
+            'movement_weight': .2,
+            'melee_damage_weight': 0,
+            'melee_crit_weight': 0,
+            'melee_speed_weight': 0,
+            'ranged_damage_weight': 1, 
+            'ranged_crit_weight': 1,
+            'magic_damage_weight': 0,
+            'magic_crit_weight': 0,
+            'mana_weight': 0,
+            'summon_damage_weight': 0,
+            'minion_slots_weight': 0
+        },
+        'Damage-focused': {
+            'defense_weight': 0,
+            'damage_weight': 1,
+            'crit_weight': 1,
+            'movement_weight': .2,
+            'melee_damage_weight': 0,
+            'melee_crit_weight': 0,
+            'melee_speed_weight': 0,
+            'ranged_damage_weight': 1, 
+            'ranged_crit_weight': 1,
+            'magic_damage_weight': 0,
+            'magic_crit_weight': 0,
+            'mana_weight': 0,
+            'summon_damage_weight': 0,
+            'minion_slots_weight': 0
+        },
+        'Defense-focused': {
+            'defense_weight': 1,
+            'damage_weight': .5,
+            'crit_weight': .5,
+            'movement_weight': .1,
+            'melee_damage_weight': .5,
+            'melee_crit_weight': .5,
+            'melee_speed_weight': .5,
+            'ranged_damage_weight': 0, 
+            'ranged_crit_weight': 0,
+            'magic_damage_weight': 0,
+            'magic_crit_weight': 0,
+            'mana_weight': 0,
+            'summon_damage_weight': 0,
+            'minion_slots_weight': 0
+        },
     },
-    'Defense-focused': {
-        'defense_weight': 1,
-        'damage_weight': .5,
-        'crit_weight': .5,
-        'movement_weight': .1,
-        'melee_damage_weight': .5,
-        'melee_crit_weight': .5,
-        'melee_speed_weight': .5,
-        'ranged_damage_weight': 0, 
-        'ranged_crit_weight': 0,
-        'magic_damage_weight': 0,
-        'magic_crit_weight': 0,
-        'mana_weight': 0,
-        'summoner_damage_weight': 0,
-        'minion_slots_weight': 0
+    'Magic': {
+        'Balanced': {
+            'defense_weight': .5,
+            'damage_weight': 1,
+            'crit_weight': 1,
+            'movement_weight': .2,
+            'melee_damage_weight': 0,
+            'melee_crit_weight': 0,
+            'melee_speed_weight': 0,
+            'ranged_damage_weight': 0, 
+            'ranged_crit_weight': 0,
+            'magic_damage_weight': 1,
+            'magic_crit_weight': 1,
+            'mana_weight': .05,
+            'summon_damage_weight': 0,
+            'minion_slots_weight': 0
+        },
+        'Damage-focused': {
+            'defense_weight': 0,
+            'damage_weight': 1,
+            'crit_weight': 1,
+            'movement_weight': .2,
+            'melee_damage_weight': 0,
+            'melee_crit_weight': 0,
+            'melee_speed_weight': 0,
+            'ranged_damage_weight': 0, 
+            'ranged_crit_weight': 0,
+            'magic_damage_weight': 1,
+            'magic_crit_weight': 1,
+            'mana_weight': .05,
+            'summon_damage_weight': 0,
+            'minion_slots_weight': 0
+        },
+        'Defense-focused': {
+            'defense_weight': 1,
+            'damage_weight': .5,
+            'crit_weight': .5,
+            'movement_weight': .1,
+            'melee_damage_weight': 0,
+            'melee_crit_weight': 0,
+            'melee_speed_weight': 0,
+            'ranged_damage_weight': 0, 
+            'ranged_crit_weight': 0,
+            'magic_damage_weight': .5,
+            'magic_crit_weight': .5,
+            'mana_weight': .02,
+            'summon_damage_weight': 0,
+            'minion_slots_weight': 0
+        },
+    },
+    'Summoner': {
+        'Balanced': {
+            'defense_weight': .5,
+            'damage_weight': 1,
+            'crit_weight': 1,
+            'movement_weight': .2,
+            'melee_damage_weight': 0,
+            'melee_crit_weight': 0,
+            'melee_speed_weight': .3,
+            'ranged_damage_weight': 0, 
+            'ranged_crit_weight': 0,
+            'magic_damage_weight': 0,
+            'magic_crit_weight': 0,
+            'mana_weight': 0,
+            'summon_damage_weight': 1,
+            'minion_slots_weight': 25
+        },
+        'Damage-focused': {
+            'defense_weight': 0,
+            'damage_weight': 1,
+            'crit_weight': 1,
+            'movement_weight': .2,
+            'melee_damage_weight': 0,
+            'melee_crit_weight': 0,
+            'melee_speed_weight': .5,
+            'ranged_damage_weight': 0, 
+            'ranged_crit_weight': 0,
+            'magic_damage_weight': 0,
+            'magic_crit_weight': 0,
+            'mana_weight': 0,
+            'summon_damage_weight': 1,
+            'minion_slots_weight': 25
+        },
+        'Defense-focused': {
+            'defense_weight': 1,
+            'damage_weight': .5,
+            'crit_weight': .5,
+            'movement_weight': .1,
+            'melee_damage_weight': 0,
+            'melee_crit_weight': 0,
+            'melee_speed_weight': .1,
+            'ranged_damage_weight': 0, 
+            'ranged_crit_weight': 0,
+            'magic_damage_weight': 0,
+            'magic_crit_weight': 0,
+            'mana_weight': 0,
+            'summon_damage_weight': .5,
+            'minion_slots_weight': 10
+        },
     },
 }
 
@@ -114,69 +266,74 @@ calamity_stage_tranlsation = {
 # Main Calculation
 def main():
     combo_scores = []
-    for set in filtered_sets:
-        for set2 in filtered_sets:
-            for set3 in filtered_sets:
-                if hasattr(set, 'helmets') and hasattr(set2, 'chestplates') and hasattr(set3, 'leggings'):
-                    for helm in set.helmets:
-                        for chest in set2.chestplates:
-                            helmet_score, chestplate_score, leggings_score, set_bonus_score = 0, 0, 0, 0
-                            if hasattr(set, 'helmets'):
-                                helmet_score = (helm.defense*defense_weight + helm.damage*damage_weight + helm.crit*crit_weight + helm.movement*movement_weight + helm.melee_damage*melee_damage_weight + 
-                                    helm.melee_crit*melee_crit_weight + helm.melee_speed*melee_speed_weight + helm.ranged_damage*ranged_damage_weight + helm.ranged_crit*ranged_crit_weight + 
-                                    helm.magic_damage*magic_damage_weight + helm.magic_crit*magic_crit_weight + helm.mana*mana_weight + helm.summon_damage*summon_damage_weight + 
-                                    helm.minion_slots*minion_slots_weight)
-                                if calamity:
-                                    helmet_score += helm.rogue_damage*rogue_damage_weight + helm.rogue_crit*rogue_crit_weight + helm.stealth*stealth_weight
-                            if hasattr(set2, 'chestplates'):
-                                chestplate_score = (chest.defense*defense_weight + chest.damage*damage_weight + chest.crit*crit_weight + chest.movement*movement_weight + chest.melee_damage*melee_damage_weight + 
-                                    chest.melee_crit*melee_crit_weight + chest.melee_speed*melee_speed_weight + chest.ranged_damage*ranged_damage_weight + chest.ranged_crit*ranged_crit_weight + 
-                                    chest.magic_damage*magic_damage_weight + chest.magic_crit*magic_crit_weight + chest.mana*mana_weight + chest.summon_damage*summon_damage_weight + 
-                                    chest.minion_slots*minion_slots_weight)
-                                if calamity:
-                                    chestplate_score += chest.rogue_damage*rogue_damage_weight + chest.rogue_crit*rogue_crit_weight + chest.stealth*stealth_weight
-                            if hasattr(set3, 'leggings'):
-                                leggings_score = (set3.leggings.defense*defense_weight + set3.leggings.damage*damage_weight + set3.leggings.crit*crit_weight + set3.leggings.movement*movement_weight + set3.leggings.melee_damage*melee_damage_weight + 
-                                    set3.leggings.melee_crit*melee_crit_weight + set3.leggings.melee_speed*melee_speed_weight + set3.leggings.ranged_damage*ranged_damage_weight + set3.leggings.ranged_crit*ranged_crit_weight + 
-                                    set3.leggings.magic_damage*magic_damage_weight + set3.leggings.magic_crit*magic_crit_weight + set3.leggings.mana*mana_weight + set3.leggings.summon_damage*summon_damage_weight + 
-                                    set3.leggings.minion_slots*minion_slots_weight)
-                                if calamity:
-                                    leggings_score += set3.leggings.rogue_damage*rogue_damage_weight + set3.leggings.rogue_crit*rogue_crit_weight + set3.leggings.stealth*stealth_weight
-                            if hasattr(set, 'helmets') and hasattr(set2, 'chestplates') and hasattr(set3, 'leggings'):
-                                if helm.set_identifier == chest.set_identifier == set3.leggings.set_identifier or helm.set_identifier == chest.set_identifier == 87:   # if combo is a full set, calculate the set_bonus score
-                                    if set.set_bonus != None:
-                                        set_bonus_score += (set.set_bonus.defense*defense_weight +
-                                            set.set_bonus.damage*damage_weight + set.set_bonus.crit*crit_weight + set.set_bonus.movement*movement_weight + 
-                                            set.set_bonus.melee_damage*melee_damage_weight + set.set_bonus.melee_crit*melee_crit_weight + set.set_bonus.melee_speed*melee_speed_weight + 
-                                            set.set_bonus.ranged_damage*ranged_damage_weight + set.set_bonus.ranged_crit*ranged_crit_weight + 
-                                            set.set_bonus.magic_damage*magic_damage_weight + set.set_bonus.magic_crit*magic_crit_weight + set.set_bonus.mana*mana_weight + 
-                                            set.set_bonus.summon_damage*summon_damage_weight + set.set_bonus.minion_slots*minion_slots_weight)
+    for set in sets_included:
+        for set2 in sets_included:
+            for set3 in sets_included:
+                if calamity:
+                    if calamity_stage_tranlsation[set.stage] and calamity_stage_tranlsation[set2.stage] and calamity_stage_tranlsation[set3.stage]:
+                        pass
+                else:
+                    if vanilla_stage_tranlsation[set.stage] <= vanilla_stage_tranlsation[game_stage] and vanilla_stage_tranlsation[set2.stage] <= vanilla_stage_tranlsation[game_stage] and vanilla_stage_tranlsation[set3.stage] <= vanilla_stage_tranlsation[game_stage]:
+                        if hasattr(set, 'helmets') and hasattr(set2, 'chestplates') and hasattr(set3, 'leggings'):
+                            for helm in set.helmets:
+                                for chest in set2.chestplates:
+                                    helmet_score, chestplate_score, leggings_score, set_bonus_score = 0, 0, 0, 0
+                                    if hasattr(set, 'helmets'):
+                                        helmet_score = (helm.defense*stat_weight_presets[target_class][stat_weights]['defense_weight'] + helm.damage*stat_weight_presets[target_class][stat_weights]['damage_weight'] + helm.crit*stat_weight_presets[target_class][stat_weights]['crit_weight'] + helm.movement*stat_weight_presets[target_class][stat_weights]['movement_weight'] + helm.melee_damage*stat_weight_presets[target_class][stat_weights]['melee_damage_weight'] + 
+                                            helm.melee_crit*stat_weight_presets[target_class][stat_weights]['melee_crit_weight'] + helm.melee_speed*stat_weight_presets[target_class][stat_weights]['melee_speed_weight'] + helm.ranged_damage*stat_weight_presets[target_class][stat_weights]['ranged_damage_weight'] + helm.ranged_crit*stat_weight_presets[target_class][stat_weights]['ranged_crit_weight'] + 
+                                            helm.magic_damage*stat_weight_presets[target_class][stat_weights]['magic_damage_weight'] + helm.magic_crit*stat_weight_presets[target_class][stat_weights]['magic_crit_weight'] + helm.mana*stat_weight_presets[target_class][stat_weights]['mana_weight'] + helm.summon_damage*stat_weight_presets[target_class][stat_weights]['summon_damage_weight'] + 
+                                            helm.minion_slots*stat_weight_presets[target_class][stat_weights]['minion_slots_weight'])
                                         if calamity:
-                                            set_bonus_score += set.set_bonus.rogue_damage*rogue_damage_weight + set.set_bonus.rogue_crit*rogue_crit_weight + set.set_bonus.stealth*stealth_weight
-                                    if helm.set_bonus != None:
-                                        set_bonus_score += (helm.set_bonus.defense*defense_weight +
-                                            helm.set_bonus.damage*damage_weight + helm.set_bonus.crit*crit_weight + helm.set_bonus.movement*movement_weight + 
-                                            helm.set_bonus.melee_damage*melee_damage_weight + helm.set_bonus.melee_crit*melee_crit_weight + helm.set_bonus.melee_speed*melee_speed_weight + 
-                                            helm.set_bonus.ranged_damage*ranged_damage_weight + helm.set_bonus.ranged_crit*ranged_crit_weight + 
-                                            helm.set_bonus.magic_damage*magic_damage_weight + helm.set_bonus.magic_crit*magic_crit_weight + helm.set_bonus.mana*mana_weight + 
-                                            helm.set_bonus.summon_damage*summon_damage_weight + helm.set_bonus.minion_slots*minion_slots_weight)
+                                            helmet_score += helm.rogue_damage*stat_weight_presets[target_class][stat_weights]['rogue_damage_weight'] + helm.rogue_crit*stat_weight_presets[target_class][stat_weights]['rogue_crit_weight'] + helm.stealth*stat_weight_presets[target_class][stat_weights]['stealth_weight']
+                                    if hasattr(set2, 'chestplates'):
+                                        chestplate_score = (chest.defense*stat_weight_presets[target_class][stat_weights]['defense_weight'] + chest.damage*stat_weight_presets[target_class][stat_weights]['damage_weight'] + chest.crit*stat_weight_presets[target_class][stat_weights]['crit_weight'] + chest.movement*stat_weight_presets[target_class][stat_weights]['movement_weight'] + chest.melee_damage*stat_weight_presets[target_class][stat_weights]['melee_damage_weight'] + 
+                                            chest.melee_crit*stat_weight_presets[target_class][stat_weights]['melee_crit_weight'] + chest.melee_speed*stat_weight_presets[target_class][stat_weights]['melee_speed_weight'] + chest.ranged_damage*stat_weight_presets[target_class][stat_weights]['ranged_damage_weight'] + chest.ranged_crit*stat_weight_presets[target_class][stat_weights]['ranged_crit_weight'] + 
+                                            chest.magic_damage*stat_weight_presets[target_class][stat_weights]['magic_damage_weight'] + chest.magic_crit*stat_weight_presets[target_class][stat_weights]['magic_crit_weight'] + chest.mana*stat_weight_presets[target_class][stat_weights]['mana_weight'] + chest.summon_damage*stat_weight_presets[target_class][stat_weights]['summon_damage_weight'] + 
+                                            chest.minion_slots*stat_weight_presets[target_class][stat_weights]['minion_slots_weight'])
                                         if calamity:
-                                            set_bonus_score += helm.set_bonus.rogue_damage*rogue_damage_weight + helm.set_bonus.rogue_crit*rogue_crit_weight + helm.set_bonus.stealth*stealth_weight
-                                    if chest.set_bonus != None:
-                                        set_bonus_score += (chest.set_bonus.defense*defense_weight +
-                                            chest.set_bonus.damage*damage_weight + chest.set_bonus.crit*crit_weight + chest.set_bonus.movement*movement_weight + 
-                                            chest.set_bonus.melee_damage*melee_damage_weight + chest.set_bonus.melee_crit*melee_crit_weight + chest.set_bonus.melee_speed*melee_speed_weight + 
-                                            chest.set_bonus.ranged_damage*ranged_damage_weight + chest.set_bonus.ranged_crit*ranged_crit_weight + 
-                                            chest.set_bonus.magic_damage*magic_damage_weight + chest.set_bonus.magic_crit*magic_crit_weight + chest.set_bonus.mana*mana_weight + 
-                                            chest.set_bonus.summon_damage*summon_damage_weight + chest.set_bonus.minion_slots*minion_slots_weight)
+                                            chestplate_score += chest.rogue_damage*stat_weight_presets[target_class][stat_weights]['rogue_damage_weight'] + chest.rogue_crit*stat_weight_presets[target_class][stat_weights]['rogue_crit_weight'] + chest.stealth*stat_weight_presets[target_class][stat_weights]['stealth_weight']
+                                    if hasattr(set3, 'leggings'):
+                                        leggings_score = (set3.leggings.defense*stat_weight_presets[target_class][stat_weights]['defense_weight'] + set3.leggings.damage*stat_weight_presets[target_class][stat_weights]['damage_weight'] + set3.leggings.crit*stat_weight_presets[target_class][stat_weights]['crit_weight'] + set3.leggings.movement*stat_weight_presets[target_class][stat_weights]['movement_weight'] + set3.leggings.melee_damage*stat_weight_presets[target_class][stat_weights]['melee_damage_weight'] + 
+                                            set3.leggings.melee_crit*stat_weight_presets[target_class][stat_weights]['melee_crit_weight'] + set3.leggings.melee_speed*stat_weight_presets[target_class][stat_weights]['melee_speed_weight'] + set3.leggings.ranged_damage*stat_weight_presets[target_class][stat_weights]['ranged_damage_weight'] + set3.leggings.ranged_crit*stat_weight_presets[target_class][stat_weights]['ranged_crit_weight'] + 
+                                            set3.leggings.magic_damage*stat_weight_presets[target_class][stat_weights]['magic_damage_weight'] + set3.leggings.magic_crit*stat_weight_presets[target_class][stat_weights]['magic_crit_weight'] + set3.leggings.mana*stat_weight_presets[target_class][stat_weights]['mana_weight'] + set3.leggings.summon_damage*stat_weight_presets[target_class][stat_weights]['summon_damage_weight'] + 
+                                            set3.leggings.minion_slots*stat_weight_presets[target_class][stat_weights]['minion_slots_weight'])
                                         if calamity:
-                                            set_bonus_score += chest.set_bonus.rogue_damage*rogue_damage_weight + chest.set_bonus.rogue_crit*rogue_crit_weight + chest.set_bonus.stealth*stealth_weight  
-                            
-                            total_score = helmet_score + chestplate_score + leggings_score + set_bonus_score
-                            if type(set_bonus_score) == float:
-                                combo_scores.append((total_score, (helm, chest, set3.leggings), set))
-                            else:
-                                combo_scores.append((total_score, (helm, chest, set3.leggings), None))     
+                                            leggings_score += set3.leggings.rogue_damage*stat_weight_presets[target_class][stat_weights]['rogue_damage_weight'] + set3.leggings.rogue_crit*stat_weight_presets[target_class][stat_weights]['rogue_crit_weight'] + set3.leggings.stealth*stat_weight_presets[target_class][stat_weights]['stealth_weight']
+                                    if hasattr(set, 'helmets') and hasattr(set2, 'chestplates') and hasattr(set3, 'leggings'):
+                                        if helm.set_identifier == chest.set_identifier == set3.leggings.set_identifier or helm.set_identifier == chest.set_identifier == 87:   # if combo is a full set, calculate the set_bonus score
+                                            if set.set_bonus != None:
+                                                set_bonus_score += (set.set_bonus.defense*stat_weight_presets[target_class][stat_weights]['defense_weight'] +
+                                                    set.set_bonus.damage*stat_weight_presets[target_class][stat_weights]['damage_weight'] + set.set_bonus.crit*stat_weight_presets[target_class][stat_weights]['crit_weight'] + set.set_bonus.movement*stat_weight_presets[target_class][stat_weights]['movement_weight'] + 
+                                                    set.set_bonus.melee_damage*stat_weight_presets[target_class][stat_weights]['melee_damage_weight'] + set.set_bonus.melee_crit*stat_weight_presets[target_class][stat_weights]['melee_crit_weight'] + set.set_bonus.melee_speed*stat_weight_presets[target_class][stat_weights]['melee_speed_weight'] + 
+                                                    set.set_bonus.ranged_damage*stat_weight_presets[target_class][stat_weights]['ranged_damage_weight'] + set.set_bonus.ranged_crit*stat_weight_presets[target_class][stat_weights]['ranged_crit_weight'] + 
+                                                    set.set_bonus.magic_damage*stat_weight_presets[target_class][stat_weights]['magic_damage_weight'] + set.set_bonus.magic_crit*stat_weight_presets[target_class][stat_weights]['magic_crit_weight'] + set.set_bonus.mana*stat_weight_presets[target_class][stat_weights]['mana_weight'] + 
+                                                    set.set_bonus.summon_damage*stat_weight_presets[target_class][stat_weights]['summon_damage_weight'] + set.set_bonus.minion_slots*stat_weight_presets[target_class][stat_weights]['minion_slots_weight'])
+                                                if calamity:
+                                                    set_bonus_score += set.set_bonus.rogue_damage*stat_weight_presets[target_class][stat_weights]['rogue_damage_weight'] + set.set_bonus.rogue_crit*stat_weight_presets[target_class][stat_weights]['rogue_crit_weight'] + set.set_bonus.stealth*stat_weight_presets[target_class][stat_weights]['stealth_weight']
+                                            if helm.set_bonus != None:
+                                                set_bonus_score += (helm.set_bonus.defense*stat_weight_presets[target_class][stat_weights]['defense_weight'] +
+                                                    helm.set_bonus.damage*stat_weight_presets[target_class][stat_weights]['damage_weight'] + helm.set_bonus.crit*stat_weight_presets[target_class][stat_weights]['crit_weight'] + helm.set_bonus.movement*stat_weight_presets[target_class][stat_weights]['movement_weight'] + 
+                                                    helm.set_bonus.melee_damage*stat_weight_presets[target_class][stat_weights]['melee_damage_weight'] + helm.set_bonus.melee_crit*stat_weight_presets[target_class][stat_weights]['melee_crit_weight'] + helm.set_bonus.melee_speed*stat_weight_presets[target_class][stat_weights]['melee_speed_weight'] + 
+                                                    helm.set_bonus.ranged_damage*stat_weight_presets[target_class][stat_weights]['ranged_damage_weight'] + helm.set_bonus.ranged_crit*stat_weight_presets[target_class][stat_weights]['ranged_crit_weight'] + 
+                                                    helm.set_bonus.magic_damage*stat_weight_presets[target_class][stat_weights]['magic_damage_weight'] + helm.set_bonus.magic_crit*stat_weight_presets[target_class][stat_weights]['magic_crit_weight'] + helm.set_bonus.mana*stat_weight_presets[target_class][stat_weights]['mana_weight'] + 
+                                                    helm.set_bonus.summon_damage*stat_weight_presets[target_class][stat_weights]['summon_damage_weight'] + helm.set_bonus.minion_slots*stat_weight_presets[target_class][stat_weights]['minion_slots_weight'])
+                                                if calamity:
+                                                    set_bonus_score += helm.set_bonus.rogue_damage*stat_weight_presets[target_class][stat_weights]['rogue_damage_weight'] + helm.set_bonus.rogue_crit*stat_weight_presets[target_class][stat_weights]['rogue_crit_weight'] + helm.set_bonus.stealth*stat_weight_presets[target_class][stat_weights]['stealth_weight']
+                                            if chest.set_bonus != None:
+                                                set_bonus_score += (chest.set_bonus.defense*stat_weight_presets[target_class][stat_weights]['defense_weight'] +
+                                                    chest.set_bonus.damage*stat_weight_presets[target_class][stat_weights]['damage_weight'] + chest.set_bonus.crit*stat_weight_presets[target_class][stat_weights]['crit_weight'] + chest.set_bonus.movement*stat_weight_presets[target_class][stat_weights]['movement_weight'] + 
+                                                    chest.set_bonus.melee_damage*stat_weight_presets[target_class][stat_weights]['melee_damage_weight'] + chest.set_bonus.melee_crit*stat_weight_presets[target_class][stat_weights]['melee_crit_weight'] + chest.set_bonus.melee_speed*stat_weight_presets[target_class][stat_weights]['melee_speed_weight'] + 
+                                                    chest.set_bonus.ranged_damage*stat_weight_presets[target_class][stat_weights]['ranged_damage_weight'] + chest.set_bonus.ranged_crit*stat_weight_presets[target_class][stat_weights]['ranged_crit_weight'] + 
+                                                    chest.set_bonus.magic_damage*stat_weight_presets[target_class][stat_weights]['magic_damage_weight'] + chest.set_bonus.magic_crit*stat_weight_presets[target_class][stat_weights]['magic_crit_weight'] + chest.set_bonus.mana*stat_weight_presets[target_class][stat_weights]['mana_weight'] + 
+                                                    chest.set_bonus.summon_damage*stat_weight_presets[target_class][stat_weights]['summon_damage_weight'] + chest.set_bonus.minion_slots*stat_weight_presets[target_class][stat_weights]['minion_slots_weight'])
+                                                if calamity:
+                                                    set_bonus_score += chest.set_bonus.rogue_damage*stat_weight_presets[target_class][stat_weights]['rogue_damage_weight'] + chest.set_bonus.rogue_crit*stat_weight_presets[target_class][stat_weights]['rogue_crit_weight'] + chest.set_bonus.stealth*stat_weight_presets[target_class][stat_weights]['stealth_weight']  
+                                    
+                                    total_score = helmet_score + chestplate_score + leggings_score + set_bonus_score
+                                    if type(set_bonus_score) == float:
+                                        combo_scores.append((total_score, (helm, chest, set3.leggings), set))
+                                    else:
+                                        combo_scores.append((total_score, (helm, chest, set3.leggings), None))     
 
 
     # Sort the combo_scores list based on descending scores
@@ -563,7 +720,7 @@ stage_label.grid(column=0, row=2, padx=10, pady=10, sticky='w')
 
 stages = ['Pre-Boss', 'Pre-World Evil Boss', 'Pre-Skeletron', 'Pre-Wall of Flesh', 'Pre-Mech Bosses', 'Post-First Mech Boss', 'Pre-Plantera', 'Pre-Golem', 
                 'Pre-Lunatic Cultist', 'Endgame']
-stage_selection = tk.CTkOptionMenu(frame1, width=270, anchor='center', dynamic_resizing=False, values=stages, font=andy_header2, dropdown_font=andy_header3)
+stage_selection = tk.CTkOptionMenu(frame1, width=270, anchor='center', dynamic_resizing=False, values=stages, font=andy_header2, dropdown_font=andy_header3, command=update_stage)
 stage_selection.grid(column=1, row=2, padx=50, pady=10, sticky='ew')
 
 
