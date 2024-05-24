@@ -1,4 +1,3 @@
-import os
 import customtkinter as ctk
 from PIL import Image
 from CTkListbox import *
@@ -687,8 +686,6 @@ retract_dropdown_caret = Image.open("./guiAssets/up_caret.png")
 add_icon = Image.open("./guiAssets/plus_icon.png")
 reset_icon = Image.open("./guiAssets/reset_icon.png")
 
-font_path = os.path.join(os.path.dirname(__file__), 'guiAssets', 'andy_bold.ttf')
-root.tk.call('font', 'create', 'andy', '-family', 'andy', '-size', 12)
 andy_title = ctk.CTkFont(family='andy', size=60)
 andy_header1 = ctk.CTkFont(family='andy', size=40)
 andy_header2 = ctk.CTkFont(family='andy', size=30)
