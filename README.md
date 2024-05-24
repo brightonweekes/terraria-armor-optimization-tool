@@ -15,6 +15,8 @@ pip install -r requirements.txt
 
 To use, open the folder in a code editor like VS Code or PyCharm and run main.py. Usage instructions can be found from within the program.
 
+Although not required, this program uses custom fonts. If you would like to use the program with the custom font, you must install it on your system first. You may do this manually using the andy_bold.ttf file under the guiAssets folder, or by using the provided font_installer.sh script, which must be run with root privalege.
+
 ## Collaboration and Fixes
 
 If find any bugs or would like to suggest any changes, please feel free to let me know by filling out the proper form as stated in the CONTRIBUTING.md file.
