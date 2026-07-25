@@ -213,7 +213,7 @@ class MeteorSet:
     helmets = [Armor(28, 'Meteor Helmet', 5, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, '', None)]
     chestplates = [Armor(28, 'Meteor Suit', 6, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, '', None)]
     leggings = Armor(28, 'Meteor Leggings', 5, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, '', None)
-    set_bonus = Armor(28, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Space Gun costs 0 mana', None)
+    set_bonus = Armor(28, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Space Gun and Laser Rifle cost 0 mana', None)
     stage = 'Pre-Skeletron'
 
 class JungleSet:
@@ -262,7 +262,7 @@ class MoltenSet:
     helmets = [Armor(35, 'Molten Helmet', 8, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
     chestplates = [Armor(35, 'Molten Breastplate', 9, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
     leggings = Armor(35, 'Molten Greaves', 8, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, '', None)
-    set_bonus = Armor(35, '', 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cannot be set on fire', None)
+    set_bonus = Armor(35, '', 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Grants immunity to burning blocks. Cannot be set on fire', None)
     stage = 'Pre-Skeletron'
 
 class PearlwoodSet:
@@ -385,7 +385,7 @@ class AncientHallowedSet:
     stage = 'Post-First Mech Boss'
 
 class ChlorophyteSet:
-    helmets = [Armor(67, 'Chlorophyte Mask', 20, 0, 0, 0, 16, 6, 0, 0, 0, 0, 0, 0, 0, 0, '', None), Armor(67, 'Chlorophyte Helmet', 13, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 0, '20% chance to save ammo', None), Armor(67, 'Chlorophyte Headgear', 7, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 80, 0, 0, '17% reduced mana cost', None)]
+    helmets = [Armor(67, 'Chlorophyte Mask', 20, 0, 0, 0, 16, 6, 0, 0, 0, 0, 0, 0, 0, 0, '', 'Reduces damage taken by 5%'), Armor(67, 'Chlorophyte Helmet', 13, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 0, '20% chance to save ammo', None), Armor(67, 'Chlorophyte Headgear', 7, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 80, 0, 0, '17% reduced mana cost', None), Armor(67, 'Chlorophyte Visor', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 1, '', 'Grants 2 extra minions')]
     chestplates = [Armor(67, 'Chlorophyte Plate Mail', 18, 5, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)]
     leggings = Armor(67, 'Chlorophyte Greaves', 13, 0, 8, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', None)
     set_bonus = Armor(67, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Summons a powerful leaf crystal to shoot at nearby enemies\nReduces damage taken by 5%', None)
@@ -413,7 +413,7 @@ class BeetleSet:
     stage = 'Pre-Lunatic Cultist'
 
 class ShroomiteSet:
-    helmets = [Armor(73, 'Shroomite Headgear', 11, 0, 0, 0, 0, 0, 0, 15, 5, 0, 0, 0, 0, 0, 'Note: 15% ranged damage buff only applies to bows', None), Armor(73, 'Shroomite Mask', 11, 0, 0, 0, 0, 0, 0, 15, 5, 0, 0, 0, 0, 0, 'Note: 15% ranged damage buff only applies to guns', None), Armor(73, 'Shroomite Helmet', 11, 0, 0, 0, 0, 0, 0, 15, 5, 0, 0, 0, 0, 0, 'Note: 15% ranged damage buff only applies to non-bow and non-gun weapons', None)]
+    helmets = [Armor(73, 'Shroomite Headgear', 11, 0, 0, 0, 0, 0, 0, 12, 5, 0, 0, 0, 0, 0, 'Note: 12% ranged damage buff only applies to bows', None), Armor(73, 'Shroomite Mask', 11, 0, 0, 0, 0, 0, 0, 12, 5, 0, 0, 0, 0, 0, 'Note: 12% ranged damage buff only applies to guns', None), Armor(73, 'Shroomite Helmet', 11, 0, 0, 0, 0, 0, 0, 12, 5, 0, 0, 0, 0, 0, 'Note: 12% ranged damage buff only applies to non-bow and non-gun weapons', None)]
     chestplates = [Armor(73, 'Shroomite Breastplate', 24, 0, 0, 0, 0, 0, 0, 13, 13, 0, 0, 0, 0, 0, '20% chance to save ammo', None)]
     leggings = Armor(73, 'Shroomite Leggings', 16, 0, 0, 12, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, '', None)
     set_bonus = Armor(73, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Not moving puts you in stealth, increasing ranged ability and reducing chance to enemies to target you', None)
@@ -545,9 +545,15 @@ class MoonLordSet:
     set_bonus = None
     stage = 'Pre-Boss'
 
+class DeadMansSweaterSet:
+    chestplates = [Armor(98, "Dead Man's Sweater", 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '50% reduced damage and debuff time from traps', None)]
+    set_bonus = Nonestage = 'Pre-Boss'
+    stage = 'Pre-Boss'
+
+
 armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, ShadewoodSet, AshWoodSet, RainSet, SnowSet, PinkSnowSet, AnglerSet, CactusSet, CopperSet, TinSet, PumpkinSet, 
               NinjaSet, IronSet, LeadSet, SilverSet, TungstenSet, GoldSet, PlatinumSet, FossilSet, BeeSet, ObsidianSet, GladiatorSet, MeteorSet, JungleSet, AncientCobaltSet, NecroSet, 
               ShadowSet, AncientShadowSet, CrimsonSet, MoltenSet, PearlwoodSet, SpiderSet, CobaltSet, PalladiumSet, MythrilSet, OrichalcumSet, AdamantiteSet,
               TitaniumSet, CrystalAssassinSet, FrostSet, ForbiddenSet, SquireSet, MonkSet, HuntressSet, ApprenticeSet, HallowedSet, AncientHallowedSet, ChlorophyteSet, TurtleSet, TikiSet, BeetleSet, ShroomiteSet,
               SpectreSet, ValhallaKnightSet, ShinobiInfiltratorSet, RedRidingSet, DarkArtistSet, SolarFlareSet, VortexSet, NebulaSet, StardustSet, WizardSet, EmptyBucketSet,
-              GogglesSet, GreenCapSet, DivingHelmetSet, NightVisionSet, VikingSet, FlinxSet, GiSet, DjinnSet, MoonLordSet}
+              GogglesSet, GreenCapSet, DivingHelmetSet, NightVisionSet, VikingSet, FlinxSet, GiSet, DjinnSet, MoonLordSet, DeadMansSweaterSet}
