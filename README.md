@@ -25,6 +25,6 @@ If find any bugs or would like to suggest any changes, please feel free to let m
 
 The versions listed below are the version which the armor information is updated to. If you are on a different version, the program will still be a good point of reference for progression, however it may not produce the most optimal combination in every scenario.
 
-Up to date with Terraria version 1.4.4.9
+Up to date with Terraria version 1.4.5.6
 
 Up to date with Calamity version 2.0.3.011
