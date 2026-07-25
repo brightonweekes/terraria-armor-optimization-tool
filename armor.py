@@ -550,10 +550,24 @@ class DeadMansSweaterSet:
     set_bonus = Nonestage = 'Pre-Boss'
     stage = 'Pre-Boss'
 
+class ProspectorSet:
+    helmets = [Armor(99, 'Prospector Helmet', 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Provides light when worn', None)]
+    chestplates = [Armor(99, 'Prospector Shirt', 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '10% increased mining speed', None)]
+    leggings = Armor(99, 'Prospector Pants', 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '10% increased mining speed', None)
+    set_bonus = Armor(99, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '10% increased mining speed', None)
+    stage = 'Pre-Mech Bosses'
+
+class CaptainSet:
+    helmets = [Armor(100, 'Captain Hat', 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Increases fishing power by 5', None)]
+    chestplates = [Armor(100, 'Captain Vest', 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Increases fishing power by 5', None)]
+    leggings = Armor(100, 'Captain Pants', 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Increases fishing power by 5', None)
+    set_bonus = Armor(100, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Decreased enemy spawn rate', None)
+    stage = 'Pre-Mech Bosses'
+
 
 armor_sets = {MiningSet, WoodSet, MahoganySet, BorealSet, PalmSet, EbonwoodSet, ShadewoodSet, AshWoodSet, RainSet, SnowSet, PinkSnowSet, AnglerSet, CactusSet, CopperSet, TinSet, PumpkinSet, 
               NinjaSet, IronSet, LeadSet, SilverSet, TungstenSet, GoldSet, PlatinumSet, FossilSet, BeeSet, ObsidianSet, GladiatorSet, MeteorSet, JungleSet, AncientCobaltSet, NecroSet, 
               ShadowSet, AncientShadowSet, CrimsonSet, MoltenSet, PearlwoodSet, SpiderSet, CobaltSet, PalladiumSet, MythrilSet, OrichalcumSet, AdamantiteSet,
               TitaniumSet, CrystalAssassinSet, FrostSet, ForbiddenSet, SquireSet, MonkSet, HuntressSet, ApprenticeSet, HallowedSet, AncientHallowedSet, ChlorophyteSet, TurtleSet, TikiSet, BeetleSet, ShroomiteSet,
               SpectreSet, ValhallaKnightSet, ShinobiInfiltratorSet, RedRidingSet, DarkArtistSet, SolarFlareSet, VortexSet, NebulaSet, StardustSet, WizardSet, EmptyBucketSet,
-              GogglesSet, GreenCapSet, DivingHelmetSet, NightVisionSet, VikingSet, FlinxSet, GiSet, DjinnSet, MoonLordSet, DeadMansSweaterSet}
+              GogglesSet, GreenCapSet, DivingHelmetSet, NightVisionSet, VikingSet, FlinxSet, GiSet, DjinnSet, MoonLordSet, DeadMansSweaterSet, ProspectorSet, CaptainSet}
